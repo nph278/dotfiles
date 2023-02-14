@@ -13,10 +13,12 @@
 	     (gnu packages version-control)
 	     (gnu packages fonts)
 	     (gnu packages gimp)
+	     (gnu packages ssh)
 	     (guix gexp))
 
 (home-environment
   (packages (list
+
 	    ;; Admin
 	    htop
 	    neofetch
@@ -43,6 +45,7 @@
 
 	    ;; Development
 	    git
+	    openssh
 
 	    ;; Fonts
 	    font-google-noto
@@ -50,4 +53,21 @@
 	    font-google-noto-sans-cjk
 	    font-victor-mono))
  (services
-  (list)))
+  (list
+   (simple-service 'configuration-files
+		   home-xdg-configuration-files-service-type
+
+		   (map (lambda (x)
+			 (define filename (car x))
+			 (define contents (car (cdr x)))
+			 (list filename (plain-file "config-file" contents)))
+			'(
+
+			 ;; MPV
+			 ("mpv/mpv.conf" "osc=no")
+			 ("mpv/input.conf" "h seek -2
+					    l seek 2
+					    j add volume -2
+					    k add volume 2
+					    J add speed -0.05
+					    K add speed 0.05")))))))
