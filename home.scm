@@ -14,7 +14,10 @@
 	     (gnu packages fonts)
 	     (gnu packages gimp)
 	     (gnu packages ssh)
-	     (guix gexp))
+	     (guix gexp)
+	     (ice-9 textual-ports))
+
+(define (read-file filename) (call-with-input-file filename get-string-all))
 
 (home-environment
   (packages (list
@@ -61,13 +64,8 @@
 			 (define filename (car x))
 			 (define contents (car (cdr x)))
 			 (list filename (plain-file "config-file" contents)))
-			'(
+			`(
 
 			 ;; MPV
-			 ("mpv/mpv.conf" "osc=no")
-			 ("mpv/input.conf" "h seek -2
-					    l seek 2
-					    j add volume -2
-					    k add volume 2
-					    J add speed -0.05
-					    K add speed 0.05")))))))
+			 ("mpv/mpv.conf" ,(read-file "mpv/mpv.conf"))
+			 ("mpv/input.conf" ,(read-file "mpv/input.conf"))))))))
