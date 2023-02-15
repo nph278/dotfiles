@@ -14,6 +14,8 @@
 	     (gnu packages fonts)
 	     (gnu packages gimp)
 	     (gnu packages ssh)
+	     (gnu packages rust)
+	     (gnu packages rust-apps)
 	     (guix gexp)
 	     (ice-9 textual-ports))
 
@@ -26,6 +28,9 @@
 	    htop
 	    neofetch
 	    alacritty
+
+	    ;; Utilities
+	    ripgrep
 
 	    ;; Sway
 	    sway
@@ -49,6 +54,11 @@
 	    ;; Development
 	    git
 	    openssh
+
+	    ;; Rust
+	    rust
+	    (list rust "cargo")
+	    (list rust "rustfmt")
 
 	    ;; Fonts
 	    font-google-noto
