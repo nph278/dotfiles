@@ -45,6 +45,7 @@
 
 	    ;; Web
 	    qutebrowser
+	    vimb
 
 	    ;; Media
 	    beets
