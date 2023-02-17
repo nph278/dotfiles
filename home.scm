@@ -16,6 +16,8 @@
 	     (gnu packages ssh)
 	     (gnu packages rust)
 	     (gnu packages rust-apps)
+	     (gnu packages emacs)
+	     (gnu packages emacs-xyz)
 	     (guix gexp)
 	     (ice-9 textual-ports))
 
@@ -60,6 +62,11 @@
 	    (list rust "cargo")
 	    (list rust "rustfmt")
 
+	    ;; Emacs
+	    emacs
+	    emacs-evil
+	    emacs-geiser
+
 	    ;; Fonts
 	    font-google-noto
 	    font-google-noto-emoji
@@ -68,7 +75,7 @@
  (services
   (list
    (simple-service 'configuration-files
-		   home-xdg-configuration-files-service-type
+		   home-files-service-type
 
 		   (map (lambda (x)
 			 (define filename (car x))
@@ -76,6 +83,9 @@
 			 (list filename (plain-file "config-file" contents)))
 			`(
 
-			 ;; MPV
-			 ("mpv/mpv.conf" ,(read-file "mpv/mpv.conf"))
-			 ("mpv/input.conf" ,(read-file "mpv/input.conf"))))))))
+			 ;; mpv
+			 (".config/mpv/mpv.conf" ,(read-file "mpv/mpv.conf"))
+			 (".config/mpv/input.conf" ,(read-file "mpv/input.conf"))
+
+			 ;; Emacs
+			 (".emacs.d/init.el" ,(read-file "emacs/init.el"))))))))
