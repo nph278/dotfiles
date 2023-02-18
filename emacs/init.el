@@ -11,9 +11,15 @@
 (evil-global-set-key 'normal (kbd "gh") 'windmove-left)
 (evil-global-set-key 'normal (kbd "gl") 'windmove-right)
 
+;; No menus
+(menu-bar-mode -1)
+(scroll-bar-mode -1)
+(tool-bar-mode -1)
+
 ;; Theme
 (load-theme 'deeper-blue)
 
-;; (menu-bar-mode -1)
-(scroll-bar-mode -1)
-(tool-bar-mode -1)
+;; Fonts
+(add-to-list 'default-frame-alist
+             '(font . "Victor Mono Regular-10"))
+

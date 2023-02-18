@@ -75,7 +75,7 @@
 						       "alias "
 						       (car a)
 						       "='"
-						       (string-replace-substring (cdr a) "'" "'\\''")
+						       (string-replace-substring (cdr a) "'" "'\\''") ;; Escape '
 						       "'\n")) shell-aliases))))
 
 (home-environment
