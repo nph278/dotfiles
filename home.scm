@@ -71,12 +71,9 @@
 
 (define bashrc (string-append
 		"set -o vi\n"
-		(apply string-append (map (lambda (a) (string-append
-						       "alias "
-						       (car a)
-						       "='"
-						       (string-replace-substring (cdr a) "'" "'\\''") ;; Escape '
-						       "'\n")) shell-aliases))))
+		(apply string-append (map (lambda (a) (format #f "alias ~a='~a'\n" (car a) (string-replace-substring (cdr a) "'" "'\\''"))) shell-aliases))))
+
+;; jasonm23/emacs-theme-kanagawa/master/kanagawa-theme.el
 
 (home-environment
   (packages (list
@@ -125,6 +122,8 @@
 	    emacs-evil
 	    emacs-geiser
 	    emacs-geiser-guile
+	    emacs-autothemer
+	    emacs-paredit
 
 	    ;; Fonts
 	    font-google-noto

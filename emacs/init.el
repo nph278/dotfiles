@@ -16,10 +16,22 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 
-;; Theme
-(load-theme 'deeper-blue)
+;; Line numbers
+(linum-mode)
 
 ;; Fonts
 (add-to-list 'default-frame-alist
-             '(font . "Victor Mono Regular-10"))
+             '(font . "Victor Mono Medium-10"))
 
+;; Paredit
+(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
+(add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
+(add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
+(add-hook 'ielm-mode-hook             #'enable-paredit-mode)
+(add-hook 'lisp-mode-hook             #'enable-paredit-mode)
+(add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
+(add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+
+
+;; Theme
+(load-theme 'tango-dark) ;; switch to kanagawa when you know how
