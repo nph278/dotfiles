@@ -18,10 +18,65 @@
 	     (gnu packages rust-apps)
 	     (gnu packages emacs)
 	     (gnu packages emacs-xyz)
+	     (gnu packages shellutils)
 	     (guix gexp)
-	     (ice-9 textual-ports))
+	     (guix store)
+	     (guix packages)
+	     (ice-9 textual-ports)
+	     (ice-9 string-fun))
 
 (define (read-file filename) (call-with-input-file filename get-string-all))
+
+(define (store-path package) (with-store store (package-output store package)))
+
+(define shell-aliases '(
+
+			;; ls
+			("ls" . "ls --color")
+			("l" . "ls -la")
+
+			;; git
+                        ("ga" . "git add -A")
+                        ("gc" . "git commit -m")
+                        ("gp" . "git push origin")
+                        ("gg" . "git log --graph --pretty=oneline --abbrev-commit")
+                        ("gl" . "git log --graph --pretty=short")
+                        ("gac" . "ga && gc")
+                        ("gf" . "git fetch")
+                        ("gs" . "git status")
+                        ("gd" . "git diff")
+
+			;; Passwords
+			("kee" . "keepassxc-cli open ~/.KeePass.kdbx")
+
+			;; mpv
+			("mpva" . "mpv --no-video")
+			("mpvterm" . "DISPLAY= mpv -vo caca")
+
+			;; guix
+			("ghr" . "guix home reconfigure")
+			("gsr" . "guix system reconfigure")
+			("ghdg" . "guix home delete-generations")
+			("gsdg" . "guix system delete-generations")
+			("ggc" . "guix gc")
+
+			;; Music
+			("muspath" . "beet ls -f '$path'") ;; fix
+                        ("musa" . "mpva \"$(muspath -a \"$(beet ls -f '$album' -a | fzf)\")\"")
+                        ("muss" . "mpva \"$(muspath \"$(beet ls -f '$title' | fzf)\")\"")
+                        ("muscrazy" . "mpva --shuffle ~/Music/")
+
+			;; Other
+			("rm" . "trash")))
+
+(define bashrc (string-append
+		"set -o vi\n"
+		(apply string-append (map (lambda (a) (string-append
+						       "alias "
+						       (car a)
+						       "='"
+						       (string-replace-substring (cdr a) "'" "'\\''")
+						       "'\n")) shell-aliases))))
 
 (home-environment
   (packages (list
@@ -33,6 +88,8 @@
 
 	    ;; Utilities
 	    ripgrep
+	    fzf
+	    trash-cli
 
 	    ;; Sway
 	    sway
@@ -67,6 +124,7 @@
 	    emacs
 	    emacs-evil
 	    emacs-geiser
+	    emacs-geiser-guile
 
 	    ;; Fonts
 	    font-google-noto
@@ -75,7 +133,7 @@
 	    font-victor-mono))
  (services
   (list
-   (simple-service 'configuration-files
+    (simple-service 'configuration-files
 		   home-files-service-type
 
 		   (map (lambda (x)
@@ -89,4 +147,10 @@
 			 (".config/mpv/input.conf" ,(read-file "mpv/input.conf"))
 
 			 ;; Emacs
-			 (".emacs.d/init.el" ,(read-file "emacs/init.el"))))))))
+			 (".emacs.d/init.el" ,(read-file "emacs/init.el"))
+
+			 ;; Sway
+			 (".config/sway/config" ,(read-file "sway/config"))
+
+			 ;; Bash
+			 (".bashrc" ,bashrc)))))))
