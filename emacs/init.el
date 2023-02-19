@@ -10,11 +10,13 @@
 ;; Window movement
 (evil-global-set-key 'normal (kbd "gh") 'windmove-left)
 (evil-global-set-key 'normal (kbd "gl") 'windmove-right)
+(evil-global-set-key 'normal (kbd "<tab>") 'org-cycle)
 
-;; No menus
+;; GUI
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
+(setq confirm-kill-processes nil)
 
 ;; Line numbers
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
@@ -32,6 +34,8 @@
 (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
 
+;; Org
+(setq org-agenda-files (list "~/Documents/all.org"))
 
 ;; Theme
 (load-theme 'tango-dark) ;; switch to kanagawa when you know how

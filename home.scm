@@ -19,6 +19,9 @@
 	     (gnu packages emacs)
 	     (gnu packages emacs-xyz)
 	     (gnu packages shellutils)
+	     (gnu packages containers)
+	     (gnu packages linux)
+	     (gnu packages pulseaudio)
 	     (guix gexp)
 	     (guix store)
 	     (guix packages)
@@ -117,7 +120,7 @@ exec swayidle -w \\
 				;; mod+a keybinds
 
 				;; Applications
-				("Return" . "exec alacritty")
+				("Return" . "exec emacs --eval '(term \"bash\")'")
 				("q" . "exec qutebrowser")
 				("e" . "exec emacs")
 
@@ -165,7 +168,6 @@ exec swayidle -w \\
 	    ;; Admin
 	    htop
 	    neofetch
-	    alacritty
 
 	    ;; Utilities
 	    ripgrep
@@ -208,6 +210,11 @@ exec swayidle -w \\
 	    emacs-geiser-guile
 	    emacs-autothemer
 	    emacs-paredit
+	    emacs-org
+
+	    ;; Containers
+	    ;; podman
+	    ;; iptables
 
 	    ;; Fonts
 	    font-google-noto
