@@ -17,7 +17,7 @@
 (tool-bar-mode -1)
 
 ;; Line numbers
-(linum-mode)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
 ;; Fonts
 (add-to-list 'default-frame-alist

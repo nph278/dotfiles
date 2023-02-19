@@ -73,10 +73,94 @@
 		"set -o vi\n"
 		(apply string-append (map (lambda (a) (format #f "alias ~a='~a'\n" (car a) (string-replace-substring (cdr a) "'" "'\\''"))) shell-aliases))))
 
+(define sway-mod "Mod4")
+
+(define sway-extra-config "
+exec swayidle -w \\
+    timeout 300 'swaylock -f -c 000000' \\
+    timeout 600 'swaymsg \"output * dpms off\"' resume 'swaymsg \"output * dpms on\"' \\
+    before-sleep 'swaylock -f -c 000000'
+")
+
+(define sway-options `(
+                       ,(format #f "floating_modifier ~a normal" sway-mod)
+                       
+	               ;; Output
+                       "output * bg #1f1f28 solid_color"
+
+		       ;; Input
+                       "input * natural_scroll enabled"
+                       "input * middle_emulation enabled"
+                       "input * xkb_options caps:escape"
+                       "input * repeat_delay 200"
+                       "input * repeat_rate 70"
+                       
+		       ;; Border
+                       ;; "border pixel"
+                       
+		       ;; Resize
+                       "mode resize bindsym h resize shrink width 10px"
+                       "mode resize bindsym j resize grow height 10px"
+                       "mode resize bindsym k resize shrink height 10px"
+                       "mode resize bindsym l resize grow width 10px"
+                       "mode resize bindsym Return mode \"default\""
+                       "mode resize bindsym Escape mode \"default\""
+                       
+		       ;; Bar
+                       "bar position top"
+                       "bar status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done"
+                       "bar colors statusline #ffffff"
+                       "bar colors background #323232"
+                       "bar colors inactive_workspace #32323200 #32323200 #5c5c5c"))
+
+(define sway-keybinds (append '(
+				;; mod+a keybinds
+
+				;; Applications
+				("Return" . "exec alacritty")
+				("q" . "exec qutebrowser")
+				("e" . "exec emacs")
+
+				;; Windows
+				("h" . "focus left")
+				("j" . "focus down")
+				("k" . "focus up")
+				("l" . "focus right")
+				("Shift+h" . "move left")
+				("Shift+j" . "move down")
+				("Shift+k" . "move up")
+				("Shift+l" . "move right")
+
+				;; Layout
+				("b" . "splith")
+				("v" . "splitv")
+				("w" . "layout tabbed")
+				("s" . "layout toggle split")
+				("f" . "fullscreen")
+				("Shift+space" . "floating toggle")
+				("space" . "focus mode_toggle")
+				("r" . "mode resize")
+
+				;; Other
+				("Shift+q" . "kill")
+				("Shift+c" . "reload")
+				("Shift+e" . "exec swaynag -t warning -m 'Exit?' -b 'Yes' 'swaymsg exit'"))
+			       ;; Workspaces
+			       (apply append (map (lambda (n) (list (cons (format #f "~a" n) (format #f "workspace number ~a" n))
+								    (cons (format #f "Shift+~a" n) (format #f "move container to workspace number ~a" n))))
+						  (iota 9 1)))))
+
+(define sway-config (string-append
+		     (apply string-append (map
+					   (lambda (a) (format #f "bindsym ~a+~a ~a\n" sway-mod (car a) (cdr a)))
+					   sway-keybinds))
+		     (apply string-append (map (lambda (a) (format #f "~a\n" a)) sway-options))
+		     sway-extra-config))
+
 ;; jasonm23/emacs-theme-kanagawa/master/kanagawa-theme.el
 
 (home-environment
-  (packages (list
+ (packages (list
 
 	    ;; Admin
 	    htop
@@ -132,24 +216,24 @@
 	    font-victor-mono))
  (services
   (list
-    (simple-service 'configuration-files
+   (simple-service 'configuration-files
 		   home-files-service-type
 
 		   (map (lambda (x)
-			 (define filename (car x))
-			 (define contents (car (cdr x)))
-			 (list filename (plain-file "config-file" contents)))
+			  (define filename (car x))
+			  (define contents (car (cdr x)))
+			  (list filename (plain-file "config-file" contents)))
 			`(
 
-			 ;; mpv
-			 (".config/mpv/mpv.conf" ,(read-file "mpv/mpv.conf"))
-			 (".config/mpv/input.conf" ,(read-file "mpv/input.conf"))
+			  ;; mpv
+			  (".config/mpv/mpv.conf" ,(read-file "mpv/mpv.conf"))
+			  (".config/mpv/input.conf" ,(read-file "mpv/input.conf"))
 
-			 ;; Emacs
-			 (".emacs.d/init.el" ,(read-file "emacs/init.el"))
+			  ;; Emacs
+			  (".emacs.d/init.el" ,(read-file "emacs/init.el"))
 
-			 ;; Sway
-			 (".config/sway/config" ,(read-file "sway/config"))
+			  ;; Sway
+			  (".config/sway/config" ,sway-config)
 
-			 ;; Bash
-			 (".bashrc" ,bashrc)))))))
+			  ;; Bash
+			  (".bashrc" ,bashrc)))))))
