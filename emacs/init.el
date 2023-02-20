@@ -3,9 +3,13 @@
 
 ;; evil
 (setq evil-want-C-u-scroll 1)
-
 (require 'evil)
 (evil-mode 1)
+
+;; Undo-tree
+(require 'undo-tree)
+(global-undo-tree-mode)
+(evil-set-undo-system 'undo-tree)
 
 ;; Window movement
 (evil-global-set-key 'normal (kbd "gh") 'windmove-left)
@@ -28,7 +32,6 @@
 ;; Paredit
 (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
 (add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
-(add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
 (add-hook 'ielm-mode-hook             #'enable-paredit-mode)
 (add-hook 'lisp-mode-hook             #'enable-paredit-mode)
 (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)

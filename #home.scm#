@@ -36,7 +36,6 @@
 
 			;; ls
 			("ls" . "ls --color")
-			("l" . "ls -la")
 
 			;; git
                         ("ga" . "git add -A")
