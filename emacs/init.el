@@ -14,7 +14,6 @@
 ;; Window movement
 (evil-global-set-key 'normal (kbd "gh") 'windmove-left)
 (evil-global-set-key 'normal (kbd "gl") 'windmove-right)
-(evil-global-set-key 'normal (kbd "<tab>") 'org-cycle)
 
 ;; GUI
 (menu-bar-mode -1)
@@ -39,6 +38,9 @@
 
 ;; Org
 (setq org-agenda-files (list "~/Documents/all.org"))
+(defun evil-org-settings () (evil-org-set-key-theme '(textobjects insert navigation additional shift)))
+(add-hook 'evil-org-mode-hook         #'evil-org-settings nil 'local)
+(add-hook 'org-mode-hook              #'evil-org-mode)
 
 ;; Theme
 (load-theme 'tango-dark) ;; switch to kanagawa when you know how

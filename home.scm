@@ -212,6 +212,7 @@ exec swayidle -w \\
 	    emacs-paredit
 	    emacs-org
 	    emacs-undo-tree
+	    emacs-evil-org
 
 	    ;; Containers
 	    ;; podman
