@@ -19,6 +19,7 @@
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
+(setq use-dialog-box nil)
 (setq confirm-kill-processes nil)
 
 ;; Line numbers
@@ -37,10 +38,19 @@
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
 
 ;; Org
-(setq org-agenda-files (list "~/Documents/all.org"))
+(setq org-agenda-files (list "~/Roam"))
 (defun evil-org-settings () (evil-org-set-key-theme '(textobjects insert navigation additional shift)))
 (add-hook 'evil-org-mode-hook         #'evil-org-settings nil 'local)
 (add-hook 'org-mode-hook              #'evil-org-mode)
+
+;; Org-roam
+(setq org-roam-directory "~/Roam")
+(org-roam-db-autosync-mode)
+(evil-global-set-key 'normal (kbd "C-c n f") 'org-roam-node-find)
+(evil-global-set-key 'normal (kbd "C-c n i") 'org-roam-node-insert)
+(evil-global-set-key 'insert (kbd "C-c n f") 'org-roam-node-find)
+(evil-global-set-key 'insert (kbd "C-c n i") 'org-roam-node-insert)
+(setq org-todo-keywords '((sequence "TODO(t)" "WAIT(w)" "PLAN(p)" "|" "DONE(d)" "STOP(s)")))
 
 ;; Theme
 (load-theme 'tango-dark) ;; switch to kanagawa when you know how

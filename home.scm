@@ -120,12 +120,11 @@ exec swayidle -w \\
 				;; mod+a keybinds
 
 				;; Applications
-				("Return" . "exec emacs --eval '(term \"bash\")'")
+				("Return" . "exec emacs --eval '(eshell)'")
 				("q" . "exec qutebrowser")
 				("e" . "exec emacs")
 				("x" . "exec bemenu-run")
 				("y" . "exec emacs --eval '(eww \"ddg.gg\")'")
-				("o" . "exec emacs ~/Documents/all.org")
 				("Alt+s" . "exec grimshot save screen ~/Pictures")
 				("Shift+s" . "exec grimshot save area ~/Pictures")
 
@@ -222,6 +221,7 @@ exec swayidle -w \\
 	    emacs-autothemer
 	    emacs-paredit
 	    emacs-org
+	    emacs-org-roam
 	    emacs-undo-tree
 	    emacs-evil-org
 
