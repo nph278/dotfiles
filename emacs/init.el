@@ -42,6 +42,7 @@
 (defun evil-org-settings () (evil-org-set-key-theme '(textobjects insert navigation additional shift)))
 (add-hook 'evil-org-mode-hook         #'evil-org-settings nil 'local)
 (add-hook 'org-mode-hook              #'evil-org-mode)
+(evil-global-set-key 'normal (kbd "C-c t") 'org-todo)
 
 ;; Org-roam
 (setq org-roam-directory "~/Roam")
