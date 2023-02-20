@@ -123,6 +123,16 @@ exec swayidle -w \\
 				("Return" . "exec emacs --eval '(term \"bash\")'")
 				("q" . "exec qutebrowser")
 				("e" . "exec emacs")
+				("x" . "exec bemenu-run")
+				("y" . "exec emacs --eval '(eww \"ddg.gg\")'")
+				("o" . "exec emacs ~/Documents/all.org")
+				("Alt+s" . "exec grimshot save screen ~/Pictures")
+				("Shift+s" . "exec grimshot save area ~/Pictures")
+
+				;; Music
+				("m" . "exec mpv \"$(beet ls -f '$path' \"$(beet ls -f '$title' | bemenu -i)\")\"")
+				("Shift+m" . "exec mpv \"$(beet ls -a -f '$path' \"$(beet ls -a -f '$album' | bemenu -i)\")\"")
+				("Alt+m" . "exec mpv --shuffle ~/Music")
 
 				;; Windows
 				("h" . "focus left")
@@ -173,6 +183,7 @@ exec swayidle -w \\
 	    ripgrep
 	    fzf
 	    trash-cli
+	    bemenu
 
 	    ;; Sway
 	    sway
