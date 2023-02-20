@@ -22,6 +22,7 @@
 	     (gnu packages containers)
 	     (gnu packages linux)
 	     (gnu packages pulseaudio)
+	     (gnu packages tex)
 	     (guix gexp)
 	     (guix store)
 	     (guix packages)
@@ -203,6 +204,7 @@ exec swayidle -w \\
 
 	    ;; Editing/Creation
 	    gimp
+	    texlive
 
 	    ;; Development
 	    git
@@ -222,6 +224,7 @@ exec swayidle -w \\
 	    emacs-paredit
 	    emacs-org
 	    emacs-org-roam
+	    emacs-org-fragtog
 	    emacs-undo-tree
 	    emacs-evil-org
 
