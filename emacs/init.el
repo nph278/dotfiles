@@ -44,6 +44,7 @@
 (add-hook 'org-mode-hook              #'evil-org-mode)
 (add-hook 'org-mode-hook              #'org-fragtog-mode)
 (evil-global-set-key 'normal (kbd "C-c t") 'org-todo)
+(evil-global-set-key 'normal (kbd "C-c a") 'org-agenda)
 
 ;; Org-roam
 (setq org-roam-directory "~/Roam")
