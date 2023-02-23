@@ -170,6 +170,12 @@ exec swayidle -w \\
 		     (apply string-append (map (lambda (a) (format #f "~a\n" a)) sway-options))
 		     sway-extra-config))
 
+(define git-config "
+[user]
+	email = carllegrone@protonmail.com
+	name = nph278
+")
+
 ;; jasonm23/emacs-theme-kanagawa/master/kanagawa-theme.el
 
 (home-environment
@@ -259,4 +265,7 @@ exec swayidle -w \\
 			  (".config/sway/config" ,sway-config)
 
 			  ;; Bash
-			  (".bashrc" ,bashrc)))))))
+			  (".bashrc" ,bashrc)
+
+			  ;; Git
+			  (".gitconfig" ,git-config)))))))
