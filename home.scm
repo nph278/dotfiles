@@ -172,8 +172,10 @@ exec swayidle -w \\
 
 (define git-config "
 [user]
-	email = carllegrone@protonmail.com
-	name = nph278
+  email = carllegrone@protonmail.com
+  name = nph278
+[core]
+  excludesfile = ~/.global.gitignore   
 ")
 
 ;; jasonm23/emacs-theme-kanagawa/master/kanagawa-theme.el
@@ -268,4 +270,5 @@ exec swayidle -w \\
 			  (".bashrc" ,bashrc)
 
 			  ;; Git
-			  (".gitconfig" ,git-config)))))))
+			  (".gitconfig" ,git-config)
+			  (".global.gitignore" ,(read-file ".global.gitignore"))))))))
