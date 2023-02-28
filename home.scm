@@ -209,6 +209,7 @@ exec swayidle -w \\
 	    ;; Media
 	    beets
 	    mpv
+	    ffmpeg
 
 	    ;; Editing/Creation
 	    gimp
