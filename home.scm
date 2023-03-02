@@ -122,7 +122,7 @@ exec swayidle -w \\
 
 				;; Applications
 				("Return" . "exec emacs --eval '(eshell)'")
-				("q" . "exec qutebrowser")
+				("q" . "exec qutebrowser --qt-flag disable-seccomp-filter-sandbox")
 				("e" . "exec emacs")
 				("x" . "exec bemenu-run")
 				("y" . "exec emacs --eval '(eww \"ddg.gg\")'")

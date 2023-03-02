@@ -5,4 +5,4 @@
       (channel
         (name 'nonguix)
         (url "https://gitlab.com/nonguix/nonguix")
-        (commit "63145a63fb40f92a8162eb2c1853e8b953f2ee79")))
+        (commit "110f914f81d0d2c67a45f9b2f87a5dc7ec54dfd0")))
