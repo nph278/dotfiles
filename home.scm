@@ -27,6 +27,8 @@
 	     (gnu packages python-xyz)
 	     (gnu packages speech)
 	     (gnu packages upnp)
+	     (gnu packages cdrom)
+	     (gnu packages image-viewers)
 	     (guix gexp)
 	     (guix store)
 	     (guix packages)
@@ -190,6 +192,9 @@ exec swayidle -w \\
 						    ("inotify" . "yes")
 						    ("presentation_url" . "http://192.168.1.5")))))
 
+(define abcde-config (apply string-append (map (lambda (x) (string-append (car x) "=" (cdr x) "\n"))
+					       '(("OUTPUTTYPE" . "flac")))))
+
 ;; jasonm23/emacs-theme-kanagawa/master/kanagawa-theme.el
 
 (home-environment
@@ -223,6 +228,9 @@ exec swayidle -w \\
 	    readymedia
 	    mpv
 	    ffmpeg
+	    abcde
+	    imv
+	    glyr
 
 	    ;; Editing/Creation
 	    gimp
@@ -273,26 +281,29 @@ exec swayidle -w \\
 
 		   (map (lambda (x)
 			  (define filename (car x))
-			  (define contents (car (cdr x)))
+			  (define contents (cdr x))
 			  (list filename (plain-file "config-file" contents)))
 			`(
 
 			  ;; mpv
-			  (".config/mpv/mpv.conf" ,(read-file "mpv/mpv.conf"))
-			  (".config/mpv/input.conf" ,(read-file "mpv/input.conf"))
+			  (".config/mpv/mpv.conf" . ,(read-file "mpv/mpv.conf"))
+			  (".config/mpv/input.conf" . ,(read-file "mpv/input.conf"))
 
 			  ;; Emacs
-			  (".emacs.d/init.el" ,(read-file "emacs/init.el"))
+			  (".emacs.d/init.el" . ,(read-file "emacs/init.el"))
 
 			  ;; Sway
-			  (".config/sway/config" ,sway-config)
+			  (".config/sway/config" . ,sway-config)
 
 			  ;; Bash
-			  (".bashrc" ,bashrc)
+			  (".bashrc" . ,bashrc)
 
 			  ;; Git
-			  (".gitconfig" ,git-config)
-			  (".global.gitignore" ,(read-file ".global.gitignore"))
+			  (".gitconfig" . ,git-config)
+			  (".global.gitignore" . ,(read-file ".global.gitignore"))
 
 			  ;; Minidlna
-			  (".config/minidlna/minidlna.conf" ,minidlna-config)))))))
+			  (".config/minidlna/minidlna.conf" . ,minidlna-config)
+
+			  ;; ABCDE
+			  (".abcde.conf" . ,abcde-config)))))))
