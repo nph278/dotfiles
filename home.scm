@@ -182,6 +182,14 @@ exec swayidle -w \\
   excludesfile = ~/.global.gitignore   
 ")
 
+(define minidlna-config (apply string-append (map (lambda (x) (string-append (car x) "=" (cdr x) "\n"))
+						  '(("media_dir" . "A,/home/carl/Music")
+						    ("db_dir" . "/home/carl/.config/minidlna/db")
+						    ("log_dir" . "/home/carl/.config/minidlna/log")
+						    ("friendly_name" . "Media Server")
+						    ("inotify" . "yes")
+						    ("presentation_url" . "http://192.168.1.5")))))
+
 ;; jasonm23/emacs-theme-kanagawa/master/kanagawa-theme.el
 
 (home-environment
@@ -284,4 +292,7 @@ exec swayidle -w \\
 
 			  ;; Git
 			  (".gitconfig" ,git-config)
-			  (".global.gitignore" ,(read-file ".global.gitignore"))))))))
+			  (".global.gitignore" ,(read-file ".global.gitignore"))
+
+			  ;; Minidlna
+			  (".config/minidlna/minidlna.conf" ,minidlna-config)))))))
