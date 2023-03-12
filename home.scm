@@ -26,6 +26,7 @@
 	     (gnu packages python)
 	     (gnu packages python-xyz)
 	     (gnu packages speech)
+	     (gnu packages upnp)
 	     (guix gexp)
 	     (guix store)
 	     (guix packages)
