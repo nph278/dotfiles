@@ -23,6 +23,9 @@
 	     (gnu packages linux)
 	     (gnu packages pulseaudio)
 	     (gnu packages tex)
+	     (gnu packages python)
+	     (gnu packages python-xyz)
+	     (gnu packages speech)
 	     (guix gexp)
 	     (guix store)
 	     (guix packages)
@@ -208,6 +211,7 @@ exec swayidle -w \\
 
 	    ;; Media
 	    beets
+	    readymedia
 	    mpv
 	    ffmpeg
 
@@ -223,6 +227,10 @@ exec swayidle -w \\
 	    rust
 	    (list rust "cargo")
 	    (list rust "rustfmt")
+
+	    ;; Python
+	    python
+	    python-numpy
 
 	    ;; Emacs
 	    emacs
@@ -245,7 +253,10 @@ exec swayidle -w \\
 	    font-google-noto
 	    font-google-noto-emoji
 	    font-google-noto-sans-cjk
-	    font-victor-mono))
+	    font-victor-mono
+
+	    ;; Other
+	    espeak))
  (services
   (list
    (simple-service 'configuration-files
