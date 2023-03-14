@@ -29,6 +29,7 @@
 	     (gnu packages upnp)
 	     (gnu packages cdrom)
 	     (gnu packages image-viewers)
+	     (gnu packages assembly)
 	     (guix gexp)
 	     (guix store)
 	     (guix packages)
@@ -248,6 +249,9 @@ exec swayidle -w \\
 	    ;; Python
 	    python
 	    python-numpy
+
+	    ;; Assembly
+	    fasm
 
 	    ;; Emacs
 	    emacs
