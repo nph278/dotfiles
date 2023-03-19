@@ -11,9 +11,13 @@
 (global-undo-tree-mode)
 (evil-set-undo-system 'undo-tree)
 
-;; Window movement
-(evil-global-set-key 'normal (kbd "gh") 'windmove-left)
-(evil-global-set-key 'normal (kbd "gl") 'windmove-right)
+;; Buffers
+(evil-global-set-key 'normal (kbd "SPC w h") 'windmove-left)
+(evil-global-set-key 'normal (kbd "SPC w l") 'windmove-right)
+(evil-global-set-key 'normal (kbd "SPC w k") 'windmove-up)
+(evil-global-set-key 'normal (kbd "SPC w j") 'windmove-down)
+(evil-global-set-key 'normal (kbd "SPC w J") 'split-window-below)
+(evil-global-set-key 'normal (kbd "SPC w L") 'split-window-right)
 
 ;; GUI
 (menu-bar-mode -1)
@@ -24,6 +28,9 @@
 
 ;; Line numbers
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+
+;; Cursor line
+
 
 ;; Fonts
 (add-to-list 'default-frame-alist
@@ -43,17 +50,23 @@
 (add-hook 'evil-org-mode-hook         #'evil-org-settings nil 'local)
 (add-hook 'org-mode-hook              #'evil-org-mode)
 (add-hook 'org-mode-hook              #'org-fragtog-mode)
-(evil-global-set-key 'normal (kbd "C-c t") 'org-todo)
-(evil-global-set-key 'normal (kbd "C-c a") 'org-agenda)
+(evil-global-set-key 'normal (kbd "SPC o t") 'org-todo)
+(evil-global-set-key 'normal (kbd "SPC o a") 'org-agenda)
 
 ;; Org-roam
 (setq org-roam-directory "~/Roam")
 (org-roam-db-autosync-mode)
-(evil-global-set-key 'normal (kbd "C-c n l") 'org-roam-buffer-toggle)
-(evil-global-set-key 'normal (kbd "C-c n f") 'org-roam-node-find)
-(evil-global-set-key 'normal (kbd "C-c n i") 'org-roam-node-insert)
-(evil-global-set-key 'insert (kbd "C-c n i") 'org-roam-node-insert)
+(evil-global-set-key 'normal (kbd "SPC n l") 'org-roam-buffer-toggle)
+(evil-global-set-key 'normal (kbd "SPC n f") 'org-roam-node-find)
+(evil-global-set-key 'normal (kbd "SPC n i") 'org-roam-node-insert)
 (setq org-todo-keywords '((sequence "TODO(t)" "WAIT(w)" "PLAN(p)" "|" "DONE(d)" "STOP(s)")))
 
 ;; Theme
 (load-theme 'tango-dark) ;; switch to kanagawa when you know how
+
+;; Geiser
+(evil-global-set-key 'normal (kbd "SPC g s") 'geiser)
+(evil-global-set-key 'normal (kbd "SPC g b") 'geiser-eval-buffer)
+
+;; Eww
+(evil-global-set-key 'normal (kbd "SPC e") 'eww)
