@@ -3,11 +3,9 @@
 
 ;; evil
 (setq evil-want-C-u-scroll 1)
-(require 'evil)
 (evil-mode 1)
 
 ;; Undo-tree
-(require 'undo-tree)
 (global-undo-tree-mode)
 (evil-set-undo-system 'undo-tree)
 
@@ -30,7 +28,7 @@
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
 ;; Cursor line
-
+;; (global-hl-line-mode +1)
 
 ;; Fonts
 (add-to-list 'default-frame-alist
@@ -43,6 +41,8 @@
 (add-hook 'lisp-mode-hook             #'enable-paredit-mode)
 (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+(setq show-paren-delay 0)
+(show-paren-mode 1)
 
 ;; Org
 (setq org-agenda-files (list "~/Roam"))
@@ -65,6 +65,8 @@
 (load-theme 'tango-dark) ;; switch to kanagawa when you know how
 
 ;; Geiser
+;; (add-hook 'scheme-mode-hook           #'geiser-mode 1)
+;; (add-hook 'emacs-lisp-mode-hook       #'geiser-mode 1)
 (evil-global-set-key 'normal (kbd "SPC g s") 'geiser)
 (evil-global-set-key 'normal (kbd "SPC g b") 'geiser-eval-buffer)
 
