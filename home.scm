@@ -266,6 +266,7 @@ exec swayidle -w \\
 	    emacs-evil-org
 	    emacs-evil-collection
 	    emacs-vterm
+	    emacs-git-gutter-fringe
 
 	    ;; Containers
 	    ;; podman

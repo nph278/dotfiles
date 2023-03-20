@@ -107,3 +107,6 @@
 ;; Elisp
 (evil-global-set-key 'normal (kbd "SPC x b") 'eval-buffer)
 (evil-global-set-key 'normal (kbd "SPC x s") 'eval-last-sexp)
+
+;; git gutter
+(global-git-gutter-mode)
