@@ -40,45 +40,46 @@
 
 (define (store-path package) (with-store store (package-output store package)))
 
-(define shell-aliases '(
+(define shell-aliases
+  '(
 
-			;; ls
-			("ls" . "ls --color")
-			("l" . "ls -la")
+    ;; ls
+    ("ls" . "ls --color")
+    ("l" . "ls -la")
 
-			;; git
-                        ("ga" . "git add -A")
-                        ("gc" . "git commit -m")
-                        ("gp" . "git push origin")
-                        ("gg" . "git log --graph --pretty=oneline --abbrev-commit")
-                        ("gl" . "git log --graph --pretty=short")
-                        ("gac" . "ga && gc")
-                        ("gf" . "git fetch")
-                        ("gs" . "git status")
-                        ("gd" . "git diff")
+    ;; git
+    ("ga" . "git add -A")
+    ("gc" . "git commit -m")
+    ("gp" . "git push origin")
+    ("gg" . "git log --graph --pretty=oneline --abbrev-commit")
+    ("gl" . "git log --graph --pretty=short")
+    ("gac" . "ga && gc")
+    ("gf" . "git fetch")
+    ("gs" . "git status")
+    ("gd" . "git diff")
 
-			;; Passwords
-			("kee" . "keepassxc-cli open ~/.KeePass.kdbx")
+    ;; Passwords
+    ("kee" . "keepassxc-cli open ~/.KeePass.kdbx")
 
-			;; mpv
-			("mpva" . "mpv --no-video")
-			("mpvterm" . "DISPLAY= mpv -vo caca")
+    ;; mpv
+    ("mpva" . "mpv --no-video")
+    ("mpvterm" . "DISPLAY= mpv -vo caca")
 
-			;; guix
-			("ghr" . "guix home reconfigure")
-			("gsr" . "guix system reconfigure")
-			("ghdg" . "guix home delete-generations")
-			("gsdg" . "guix system delete-generations")
-			("ggc" . "guix gc")
+    ;; guix
+    ("ghr" . "guix home reconfigure")
+    ("gsr" . "guix system reconfigure")
+    ("ghdg" . "guix home delete-generations")
+    ("gsdg" . "guix system delete-generations")
+    ("ggc" . "guix gc")
 
-			;; Music
-			("muspath" . "beet ls -f '$path'") ;; fix
-                        ("musa" . "mpva \"$(muspath -a \"$(beet ls -f '$album' -a | fzf)\")\"")
-                        ("muss" . "mpva \"$(muspath \"$(beet ls -f '$title' | fzf)\")\"")
-                        ("muscrazy" . "mpva --shuffle ~/Music/")
+    ;; Music
+    ("muspath" . "beet ls -f '$path'") ;; fix
+    ("musa" . "mpva \"$(muspath -a \"$(beet ls -f '$album' -a | fzf)\")\"")
+    ("muss" . "mpva \"$(muspath \"$(beet ls -f '$title' | fzf)\")\"")
+    ("muscrazy" . "mpva --shuffle ~/Music/")
 
-			;; Other
-			("rm" . "trash")))
+    ;; Other
+    ("rm" . "trash")))
 
 (define bashrc (string-append
 		(read-file "./bash/vterm.sh")
@@ -94,82 +95,84 @@ exec swayidle -w \\
     before-sleep 'swaylock -f -c 000000'
 ")
 
-(define sway-options `(
-                       ,(format #f "floating_modifier ~a normal" sway-mod)
+(define sway-options
+  `(
+    ,(format #f "floating_modifier ~a normal" sway-mod)
                        
-	               ;; Output
-                       "output * bg #1f1f28 solid_color"
+    ;; Output
+    "output * bg #1f1f28 solid_color"
 
-		       ;; Input
-                       "input * natural_scroll enabled"
-                       "input * middle_emulation enabled"
-                       "input * xkb_options caps:escape"
-                       "input * repeat_delay 200"
-                       "input * repeat_rate 70"
+    ;; Input
+    "input * natural_scroll enabled"
+    "input * middle_emulation enabled"
+    "input * xkb_options caps:escape"
+    "input * repeat_delay 200"
+    "input * repeat_rate 70"
                        
-		       ;; Border
-                       ;; "border pixel"
+    ;; Border
+    ;; "border pixel"
                        
-		       ;; Resize
-                       "mode resize bindsym h resize shrink width 10px"
-                       "mode resize bindsym j resize grow height 10px"
-                       "mode resize bindsym k resize shrink height 10px"
-                       "mode resize bindsym l resize grow width 10px"
-                       "mode resize bindsym Return mode \"default\""
-                       "mode resize bindsym Escape mode \"default\""
+    ;; Resize
+    "mode resize bindsym h resize shrink width 10px"
+    "mode resize bindsym j resize grow height 10px"
+    "mode resize bindsym k resize shrink height 10px"
+    "mode resize bindsym l resize grow width 10px"
+    "mode resize bindsym Return mode \"default\""
+    "mode resize bindsym Escape mode \"default\""
                        
-		       ;; Bar
-                       "bar position top"
-                       "bar status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done"
-                       "bar colors statusline #ffffff"
-                       "bar colors background #323232"
-                       "bar colors inactive_workspace #32323200 #32323200 #5c5c5c"))
+    ;; Bar
+    "bar position top"
+    "bar status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done"
+    "bar colors statusline #ffffff"
+    "bar colors background #323232"
+    "bar colors inactive_workspace #32323200 #32323200 #5c5c5c"))
 
-(define sway-keybinds (append '(
-				;; mod+a keybinds
+(define sway-keybinds
+  (append '(
+	    ;; mod+a keybinds
 
-				;; Applications
-				("Return" . "exec emacs --eval '(eshell)'")
-				("q" . "exec qutebrowser --qt-flag disable-seccomp-filter-sandbox")
-				("e" . "exec emacs")
-				("x" . "exec bemenu-run")
-				("y" . "exec emacs --eval '(eww \"ddg.gg\")'")
-				("Alt+s" . "exec grimshot save screen ~/Pictures")
-				("Shift+s" . "exec grimshot save area ~/Pictures")
+	    ;; Applications
+	    ("Return" . "exec emacs --eval '(eshell)'")
+	    ("q" . "exec qutebrowser --qt-flag disable-seccomp-filter-sandbox")
+	    ("e" . "exec emacs")
+	    ("x" . "exec bemenu-run")
+	    ("y" . "exec emacs --eval '(eww \"ddg.gg\")'")
+	    ("Alt+s" . "exec grimshot save screen ~/Pictures")
+	    ("Shift+s" . "exec grimshot save area ~/Pictures")
 
-				;; Music
-				("m" . "exec mpv \"$(beet ls -f '$path' \"$(beet ls -f '$title' | bemenu -i)\")\"")
-				("Shift+m" . "exec mpv \"$(beet ls -a -f '$path' \"$(beet ls -a -f '$album' | bemenu -i)\")\"")
-				("Alt+m" . "exec mpv --shuffle ~/Music")
+	    ;; Music
+	    ("m" . "exec mpv \"$(beet ls -f '$path' \"$(beet ls -f '$title' | bemenu -i)\")\"")
+	    ("Shift+m" . "exec mpv \"$(beet ls -a -f '$path' \"$(beet ls -a -f '$album' | bemenu -i)\")\"")
+	    ("Alt+m" . "exec mpv --shuffle ~/Music")
 
-				;; Windows
-				("h" . "focus left")
-				("j" . "focus down")
-				("k" . "focus up")
-				("l" . "focus right")
-				("Shift+h" . "move left")
-				("Shift+j" . "move down")
-				("Shift+k" . "move up")
-				("Shift+l" . "move right")
+	    ;; Windows
+	    ("h" . "focus left")
+	    ("j" . "focus down")
+	    ("k" . "focus up")
+	    ("l" . "focus right")
+	    ("Shift+h" . "move left")
+	    ("Shift+j" . "move down")
+	    ("Shift+k" . "move up")
+	    ("Shift+l" . "move right")
 
-				;; Layout
-				("b" . "splith")
-				("v" . "splitv")
-				("w" . "layout tabbed")
-				("s" . "layout toggle split")
-				("f" . "fullscreen")
-				("Shift+space" . "floating toggle")
-				("space" . "focus mode_toggle")
-				("r" . "mode resize")
+	    ;; Layout
+	    ("b" . "splith")
+	    ("v" . "splitv")
+	    ("w" . "layout tabbed")
+	    ("s" . "layout toggle split")
+	    ("f" . "fullscreen")
+	    ("Shift+space" . "floating toggle")
+	    ("space" . "focus mode_toggle")
+	    ("r" . "mode resize")
 
-				;; Other
-				("Shift+q" . "kill")
-				("Shift+c" . "reload")
-				("Shift+e" . "exec swaynag -t warning -m 'Exit?' -b 'Yes' 'swaymsg exit'"))
-			       ;; Workspaces
-			       (apply append (map (lambda (n) (list (cons (format #f "~a" n) (format #f "workspace number ~a" n))
-								    (cons (format #f "Shift+~a" n) (format #f "move container to workspace number ~a" n))))
-						  (iota 9 1)))))
+	    ;; Other
+	    ("Shift+q" . "kill")
+	    ("Shift+c" . "reload")
+	    ("Shift+e" . "exec swaynag -t warning -m 'Exit?' -b 'Yes' 'swaymsg exit'"))
+	  ;; Workspaces
+	  (apply append (map (lambda (n) (list (cons (format #f "~a" n) (format #f "workspace number ~a" n))
+					       (cons (format #f "Shift+~a" n) (format #f "move container to workspace number ~a" n))))
+			     (iota 9 1)))))
 
 (define sway-config (string-append
 		     (apply string-append (map
