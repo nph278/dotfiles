@@ -81,7 +81,8 @@
 			("rm" . "trash")))
 
 (define bashrc (string-append
-		"set -o vi\n"
+		(read-file "./bash/vterm.sh")
+		"set -o vi\n" ; VI mode
 		(apply string-append (map (lambda (a) (format #f "alias ~a='~a'\n" (car a) (string-replace-substring (cdr a) "'" "'\\''"))) shell-aliases))))
 
 (define sway-mod "Mod4")
@@ -209,7 +210,7 @@ exec swayidle -w \\
 	    trash-cli
 	    bemenu
 
-	    ;; Sway
+
 	    sway
 	    swaylock
 	    grimshot
@@ -263,6 +264,7 @@ exec swayidle -w \\
 	    emacs-org-fragtog
 	    emacs-undo-tree
 	    emacs-evil-org
+	    emacs-vterm
 
 	    ;; Containers
 	    ;; podman

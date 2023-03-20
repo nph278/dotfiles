@@ -89,4 +89,9 @@
 (evil-global-set-key 'normal (kbd "SPC g b") 'geiser-eval-buffer)
 
 ;; Eww
-(evil-global-set-key 'normal (kbd "SPC e") 'eww)
+(evil-global-set-key 'normal (kbd "SPC e o") 'eww)
+(evil-global-set-key 'normal (kbd "SPC e h") 'eww-back-url)
+(evil-global-set-key 'normal (kbd "SPC e l") 'eww-forward-url)
+
+;; Vterm
+(evil-global-set-key 'normal (kbd "SPC v") 'vterm)
