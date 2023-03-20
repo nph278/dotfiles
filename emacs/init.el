@@ -110,3 +110,6 @@
 
 ;; git gutter
 (global-git-gutter-mode)
+
+;; Magit
+(evil-global-set-key 'normal (kbd "SPC m s") 'magit-status)
