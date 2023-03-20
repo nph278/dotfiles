@@ -28,7 +28,7 @@
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
 ;; Cursor line
-;; (global-hl-line-mode +1)
+(global-hl-line-mode +1)
 
 ;; Fonts
 (add-to-list 'default-frame-alist
@@ -62,7 +62,9 @@
 (setq org-todo-keywords '((sequence "TODO(t)" "WAIT(w)" "PLAN(p)" "|" "DONE(d)" "STOP(s)")))
 
 ;; Theme
-(load-theme 'tango-dark) ;; switch to kanagawa when you know how
+(setq custom-safe-themes t)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+(load-theme 'kanagawa)
 
 ;; Geiser
 ;; (add-hook 'scheme-mode-hook           #'geiser-mode 1)

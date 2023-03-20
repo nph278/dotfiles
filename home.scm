@@ -196,8 +196,6 @@ exec swayidle -w \\
 (define abcde-config (apply string-append (map (lambda (x) (string-append (car x) "=" (cdr x) "\n"))
 					       '(("OUTPUTTYPE" . "flac")))))
 
-;; jasonm23/emacs-theme-kanagawa/master/kanagawa-theme.el
-
 (home-environment
  (packages (list
 
@@ -295,6 +293,7 @@ exec swayidle -w \\
 
 			  ;; Emacs
 			  (".emacs.d/init.el" . ,(read-file "emacs/init.el"))
+			  (".emacs.d/themes/kanagawa-theme.el" . ,(read-file "emacs/kanagawa-theme.el"))
 
 			  ;; Sway
 			  (".config/sway/config" . ,sway-config)
