@@ -264,6 +264,7 @@ exec swayidle -w \\
 	    emacs-org-fragtog
 	    emacs-undo-tree
 	    emacs-evil-org
+	    emacs-evil-collection
 	    emacs-vterm
 
 	    ;; Containers

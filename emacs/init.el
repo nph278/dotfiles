@@ -18,8 +18,10 @@
 (let ((default-directory "~/.guix-home/profile/share/emacs/site-lisp/")) (normal-top-level-add-subdirs-to-load-path))
 
 ;; evil
+(setq evil-want-keybinding nil)
 (setq evil-want-C-u-scroll 1)
 (evil-mode 1)
+(evil-collection-init)
 
 ;; Undo-tree
 (global-undo-tree-mode)
@@ -58,7 +60,6 @@
 (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
 (setq show-paren-delay 0)
-(show-paren-mode 1)
 
 ;; Org
 (setq org-agenda-files (list "~/Roam"))
