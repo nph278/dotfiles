@@ -69,6 +69,7 @@
 (add-hook 'org-mode-hook              #'org-fragtog-mode)
 (evil-global-set-key 'normal (kbd "SPC o t") 'org-todo)
 (evil-global-set-key 'normal (kbd "SPC o a") 'org-agenda)
+(evil-global-set-key 'normal (kbd "SPC o b") 'org-insert-structure-template)
 (evil-define-key 'normal org-mode-map (kbd "RET") 'org-open-at-point)
 
 ;; Org-roam
