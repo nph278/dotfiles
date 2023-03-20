@@ -70,6 +70,9 @@
 (evil-global-set-key 'normal (kbd "SPC o t") 'org-todo)
 (evil-global-set-key 'normal (kbd "SPC o a") 'org-agenda)
 (evil-global-set-key 'normal (kbd "SPC o b") 'org-insert-structure-template)
+(evil-global-set-key 'normal (kbd "SPC o .") 'org-time-stamp)
+(evil-global-set-key 'normal (kbd "SPC o s") 'org-schedule)
+(evil-global-set-key 'normal (kbd "SPC o d") 'org-deadline)
 (evil-define-key 'normal org-mode-map (kbd "RET") 'org-open-at-point)
 
 ;; Org-roam
@@ -100,3 +103,7 @@
 
 ;; Vterm
 (evil-global-set-key 'normal (kbd "SPC v") 'vterm)
+
+;; Elisp
+(evil-global-set-key 'normal (kbd "SPC x b") 'eval-buffer)
+(evil-global-set-key 'normal (kbd "SPC x s") 'eval-last-sexp)
