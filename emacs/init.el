@@ -92,6 +92,7 @@
 (evil-global-set-key 'normal (kbd "SPC e o") 'eww)
 (evil-global-set-key 'normal (kbd "SPC e h") 'eww-back-url)
 (evil-global-set-key 'normal (kbd "SPC e l") 'eww-forward-url)
+(evil-global-set-key 'normal (kbd "SPC e r") 'eww-reload)
 
 ;; Vterm
 (evil-global-set-key 'normal (kbd "SPC v") 'vterm)
