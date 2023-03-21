@@ -107,6 +107,7 @@
 ;; Elisp
 (evil-global-set-key 'normal (kbd "SPC x b") 'eval-buffer)
 (evil-global-set-key 'normal (kbd "SPC x s") 'eval-last-sexp)
+(evil-global-set-key 'normal (kbd "SPC x e") 'eval-expression)
 
 ;; git gutter
 (global-git-gutter-mode)
@@ -117,3 +118,6 @@
 ;; Project
 (evil-global-set-key 'normal (kbd "SPC p f") 'project-find-file)
 (evil-global-set-key 'normal (kbd "SPC p r") 'project-find-regexp)
+(evil-global-set-key 'normal (kbd "SPC p p") 'project-switch-project)
+(defun project-path (name) `(,(concat "~/Projects/" name)))
+(setq project--list (mapcar #'project-path (cddr (directory-files "~/Projects"))))
