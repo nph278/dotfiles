@@ -30,6 +30,7 @@
 	     (gnu packages cdrom)
 	     (gnu packages image-viewers)
 	     (gnu packages assembly)
+	     (gnu packages xorg)
 	     (guix gexp)
 	     (guix store)
 	     (guix packages)
@@ -85,6 +86,9 @@
 		(read-file "./bash/vterm.sh")
 		"set -o vi\n" ; VI mode
 		(apply string-append (map (lambda (a) (format #f "alias ~a='~a'\n" (car a) (string-replace-substring (cdr a) "'" "'\\''"))) shell-aliases))))
+
+(define bash_profile (string-append
+		(read-file "./bash/exwm.sh")))
 
 (define sway-mod "Mod4")
 
@@ -271,6 +275,7 @@ exec swayidle -w \\
 	    emacs-evil-collection
 	    emacs-vterm
 	    emacs-git-gutter-fringe
+	    emacs-exwm
 
 	    ;; Containers
 	    ;; podman
@@ -281,6 +286,10 @@ exec swayidle -w \\
 	    font-google-noto-emoji
 	    font-google-noto-sans-cjk
 	    font-victor-mono
+
+	    ;; X
+	    xorg-server
+	    xinit
 
 	    ;; Other
 	    espeak))
@@ -308,6 +317,7 @@ exec swayidle -w \\
 
 			  ;; Bash
 			  (".bashrc" . ,bashrc)
+			  (".bash_profile" . ,bash_profile)
 
 			  ;; Git
 			  (".gitconfig" . ,git-config)
@@ -317,4 +327,7 @@ exec swayidle -w \\
 			  (".config/minidlna/minidlna.conf" . ,minidlna-config)
 
 			  ;; ABCDE
-			  (".abcde.conf" . ,abcde-config)))))))
+			  (".abcde.conf" . ,abcde-config)
+
+			  ;; WM
+			  (".xinitrc" . "exec emacs")))))))
