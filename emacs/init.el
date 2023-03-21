@@ -113,3 +113,7 @@
 
 ;; Magit
 (evil-global-set-key 'normal (kbd "SPC m s") 'magit-status)
+
+;; Project
+(evil-global-set-key 'normal (kbd "SPC p f") 'project-find-file)
+(evil-global-set-key 'normal (kbd "SPC p r") 'project-find-regexp)

@@ -212,8 +212,9 @@ exec swayidle -w \\
 	    fzf
 	    trash-cli
 	    bemenu
+	    ripgrep
 
-
+	    ;; Sway
 	    sway
 	    swaylock
 	    grimshot
