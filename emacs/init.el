@@ -17,6 +17,10 @@
 ;; Load guix plugins
 (let ((default-directory "~/.guix-home/profile/share/emacs/site-lisp/")) (normal-top-level-add-subdirs-to-load-path))
 
+(setq inhibit-startup-screen t 
+    inhibit-startup-message t
+    inhibit-startup-echo-area-message t)
+
 ;; evil
 (setq evil-want-keybinding nil)
 (setq evil-want-C-u-scroll 1)
