@@ -125,3 +125,10 @@
 (evil-global-set-key 'normal (kbd "SPC p p") 'project-switch-project)
 (defun project-path (name) `(,(concat "~/Projects/" name)))
 (setq project--list (mapcar #'project-path (cddr (directory-files "~/Projects"))))
+
+;; Persepective
+(persp-mode)
+(persp-rename "code")
+(evil-global-set-key 'normal (kbd "SPC w o") 'persp-switch)
+(evil-global-set-key 'normal (kbd "SPC w d") 'persp-kill)
+(evil-global-set-key 'normal (kbd "SPC w r") 'persp-rename)
