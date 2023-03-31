@@ -30,6 +30,9 @@
 	     (gnu packages cdrom)
 	     (gnu packages image-viewers)
 	     (gnu packages assembly)
+	     (gnu packages compression)
+	     (gnu packages cryptsetup)
+	     (gnu packages libreoffice)
 	     (guix gexp)
 	     (guix store)
 	     (guix packages)
@@ -213,6 +216,8 @@ exec swayidle -w \\
 	    trash-cli
 	    bemenu
 	    ripgrep
+	    zip
+	    cryptsetup
 
 	    ;; Sway
 	    sway
@@ -282,6 +287,9 @@ exec swayidle -w \\
 	    font-google-noto-emoji
 	    font-google-noto-sans-cjk
 	    font-victor-mono
+
+	    ;; Libreoffice
+	    libreoffice
 
 	    ;; Other
 	    espeak))
