@@ -33,6 +33,7 @@
 	     (gnu packages compression)
 	     (gnu packages cryptsetup)
 	     (gnu packages libreoffice)
+	     (gnu packages audio)
 	     (guix gexp)
 	     (guix store)
 	     (guix packages)
@@ -240,6 +241,7 @@ exec swayidle -w \\
 	    abcde
 	    imv
 	    glyr
+	    audacity
 
 	    ;; Editing/Creation
 	    gimp
