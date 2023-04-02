@@ -34,6 +34,7 @@
 	     (gnu packages cryptsetup)
 	     (gnu packages libreoffice)
 	     (gnu packages audio)
+	     (gnu packages package-management)
 	     (guix gexp)
 	     (guix store)
 	     (guix packages)
@@ -262,6 +263,9 @@ exec swayidle -w \\
 
 	    ;; Assembly
 	    fasm
+
+	    ;; Flatpak
+	    flatpak
 
 	    ;; Emacs
 	    emacs
