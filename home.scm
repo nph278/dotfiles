@@ -219,6 +219,7 @@ exec swayidle -w \\
 	    bemenu
 	    ripgrep
 	    zip
+	    unzip
 	    cryptsetup
 
 	    ;; Sway
