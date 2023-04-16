@@ -125,6 +125,10 @@
 (evil-global-set-key 'normal (kbd "SPC p p") 'project-switch-project)
 (defun project-path (name) `(,(concat "~/Projects/" name)))
 (setq project--list (mapcar #'project-path (cddr (directory-files "~/Projects"))))
+(defun create-project (l name)
+  (interactive "P\nsProject name: ")
+  (mkdir (concat "~/Projects/" name)))
+(evil-global-set-key 'normal (kbd "SPC p n") #'create-project)
 
 ;; Persepective
 (setq persp-suppress-no-prefix-key-warning t)
