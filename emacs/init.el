@@ -127,7 +127,9 @@
 (setq project--list (mapcar #'project-path (cddr (directory-files "~/Projects"))))
 (defun create-project (l name)
   (interactive "P\nsProject name: ")
-  (mkdir (concat "~/Projects/" name)))
+  (let ((path (concat "~/Projects/" name)))
+    (mkdir path)
+    (project-switch-project path)))
 (evil-global-set-key 'normal (kbd "SPC p n") #'create-project)
 
 ;; Persepective
