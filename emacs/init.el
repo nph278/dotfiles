@@ -139,3 +139,7 @@
 (evil-global-set-key 'normal (kbd "SPC w o") 'persp-switch)
 (evil-global-set-key 'normal (kbd "SPC w d") 'persp-kill)
 (evil-global-set-key 'normal (kbd "SPC w r") 'persp-rename)
+
+;; Rust
+(setq rust-format-on-save t)
+(add-hook 'rust-mode-hook #'prettify-symbols-mode)

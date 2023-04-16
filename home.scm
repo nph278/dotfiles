@@ -284,6 +284,7 @@ exec swayidle -w \\
 	    emacs-vterm
 	    emacs-git-gutter-fringe
 	    emacs-perspective
+	    emacs-rust-mode
 
 	    ;; Containers
 	    ;; podman
@@ -333,4 +334,4 @@ exec swayidle -w \\
 			  (".config/minidlna/minidlna.conf" . ,minidlna-config)
 
 			  ;; ABCDE
-			  (".abcde.conf" . ,abcde-config)))))))
+			  ))))))
