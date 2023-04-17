@@ -221,6 +221,33 @@ exec swayidle -w \\
 			      ("J" "add" "speed" "-0.05")
 			      ("K" "add" "speed" "0.05")))))
 
+(define config-files
+  `(
+
+    ;; mpv
+    (".config/mpv/mpv.conf" . ,mpv-config)
+    (".config/mpv/input.conf" . ,mpv-input-config)
+
+    ;; Emacs
+    (".emacs.d/init.el" . ,(read-file "emacs/init.el"))
+    (".emacs.d/themes/kanagawa-theme.el" . ,(read-file "emacs/kanagawa-theme.el"))
+
+    ;; Sway
+    (".config/sway/config" . ,sway-config)
+
+    ;; Bash
+    (".bashrc" . ,bashrc)
+
+    ;; Git
+    (".gitconfig" . ,git-config)
+    (".global.gitignore" . ,(read-file ".global.gitignore"))
+
+    ;; Minidlna
+    (".config/minidlna/minidlna.conf" . ,minidlna-config)
+
+    ;; ABCDE
+    (".abcde.conf" . ,abcde-config)))
+
 (home-environment
  (packages (list
 
@@ -327,28 +354,4 @@ exec swayidle -w \\
 			  (define filename (car x))
 			  (define contents (cdr x))
 			  (list filename (plain-file "config-file" contents)))
-			`(
-
-			  ;; mpv
-			  (".config/mpv/mpv.conf" . ,mpv-config)
-			  (".config/mpv/input.conf" . ,mpv-input-config)
-
-			  ;; Emacs
-			  (".emacs.d/init.el" . ,(read-file "emacs/init.el"))
-			  (".emacs.d/themes/kanagawa-theme.el" . ,(read-file "emacs/kanagawa-theme.el"))
-
-			  ;; Sway
-			  (".config/sway/config" . ,sway-config)
-
-			  ;; Bash
-			  (".bashrc" . ,bashrc)
-
-			  ;; Git
-			  (".gitconfig" . ,git-config)
-			  (".global.gitignore" . ,(read-file ".global.gitignore"))
-
-			  ;; Minidlna
-			  (".config/minidlna/minidlna.conf" . ,minidlna-config)
-
-			  ;; ABCDE
-			  ))))))
+			config-files)))))
