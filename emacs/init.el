@@ -47,7 +47,7 @@
 (setq confirm-kill-processes nil)
 
 ;; Line numbers
-(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
 
 ;; Cursor line
 (global-hl-line-mode +1)
@@ -134,7 +134,7 @@
   (let ((path (project-path name)))
     (mkdir path)
     (project-switch-project path)))
-(evil-global-set-key 'normal (kbd "SPC p n") #'create-project)
+(evil-global-set-key 'normal (kbd "SPC p n") 'create-project)
 
 ;; Persepective
 (setq persp-suppress-no-prefix-key-warning t)
