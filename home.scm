@@ -94,6 +94,7 @@
 (define sway-mod "Mod4")
 
 (define sway-extra-config "
+exec emacs --daemon
 exec swayidle -w \\
     timeout 300 'swaylock -f -c 000000' \\
     timeout 600 'swaymsg \"output * dpms off\"' resume 'swaymsg \"output * dpms on\"' \\
@@ -139,7 +140,7 @@ exec swayidle -w \\
 	    ;; Applications
 	    ("Return" . "exec emacs --eval '(eshell)'")
 	    ("q" . "exec qutebrowser --qt-flag disable-seccomp-filter-sandbox")
-	    ("e" . "exec emacs")
+	    ("e" . "exec emacsclient -c")
 	    ("x" . "exec bemenu-run")
 	    ("y" . "exec emacs --eval '(eww \"ddg.gg\")'")
 	    ("Alt+s" . "exec grimshot save screen ~/Pictures")
