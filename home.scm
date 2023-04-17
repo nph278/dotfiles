@@ -285,6 +285,7 @@ exec swayidle -w \\
 	    emacs-git-gutter-fringe
 	    emacs-perspective
 	    emacs-rust-mode
+	    emacs-ligature
 
 	    ;; Containers
 	    ;; podman
