@@ -72,6 +72,7 @@
 (show-paren-mode 1)
 
 ;; Org
+(setq org-hide-emphasis-markers t)
 (setq org-agenda-files (list "~/Roam"))
 (defun evil-org-settings () (evil-org-set-key-theme '(textobjects insert navigation additional shift)))
 (add-hook 'evil-org-mode-hook         #'evil-org-settings nil 'local)
@@ -155,4 +156,5 @@
 (ligature-set-ligatures '(rust-mode) '("<=" ">=" "==" "!=" "::" "&&" "++"))
 (ligature-set-ligatures '(scheme-mode emacs-lisp-mode lisp-mode) '("->" ";;"))
 (ligature-set-ligatures '(html-mode nxml-mode web-mode) '("<!--" "-->" "</>" "</" "/>" "://"))
+(ligature-set-ligatures '(org-mode) '("::" "->" "<-" "<->" "-->" "<--" "=>" "<=" "<=>" "==>" "<=="))
 (global-ligature-mode)
