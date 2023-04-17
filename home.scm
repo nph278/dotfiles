@@ -202,7 +202,7 @@ exec swayidle -w \\
 						    ("inotify" . "yes")
 						    ("presentation_url" . "http://192.168.1.5")))))
 
-(define (equals-line) (format #f "~a=~a\n" (car a) (cdr a)))
+(define (equals-line a) (format #f "~a=~a\n" (car a) (cdr a)))
 
 (define abcde-config (apply string-append (map equals-line '(("OUTPUTTYPE" . "flac")))))
 
