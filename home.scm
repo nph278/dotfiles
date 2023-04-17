@@ -179,12 +179,11 @@ exec swayidle -w \\
 					       (cons (format #f "Shift+~a" n) (format #f "move container to workspace number ~a" n))))
 			     (iota 9 1)))))
 
-(define sway-config (string-append
-		     (apply string-append (map
-					   (lambda (a) (format #f "bindsym ~a+~a ~a\n" sway-mod (car a) (cdr a)))
-					   sway-keybinds))
-		     (apply string-append (map (lambda (a) (format #f "~a\n" a)) sway-options))
-		     sway-extra-config))
+(define sway-config
+  (string-append
+   (apply string-append (map (lambda (a) (format #f "bindsym ~a+~a ~a\n" sway-mod (car a) (cdr a))) sway-keybinds))
+   (apply string-append (map (lambda (a) (format #f "~a\n" a)) sway-options))
+   sway-extra-config))
 
 (define git-config "
 [user]
@@ -194,28 +193,33 @@ exec swayidle -w \\
   excludesfile = ~/.global.gitignore   
 ")
 
-(define minidlna-config (apply string-append (map (lambda (x) (string-append (car x) "=" (cdr x) "\n"))
-						  '(("media_dir" . "A,/home/carl/Music")
-						    ("db_dir" . "/home/carl/.config/minidlna/db")
-						    ("log_dir" . "/home/carl/.config/minidlna/log")
-						    ("friendly_name" . "Media Server")
-						    ("inotify" . "yes")
-						    ("presentation_url" . "http://192.168.1.5")))))
+(define minidlna-config
+  (apply string-append (map (lambda (x) (string-append (car x) "=" (cdr x) "\n"))
+			    '(("media_dir" . "A,/home/carl/Music")
+			      ("db_dir" . "/home/carl/.config/minidlna/db")
+			      ("log_dir" . "/home/carl/.config/minidlna/log")
+			      ("friendly_name" . "Media Server")
+			      ("inotify" . "yes")
+			      ("presentation_url" . "http://192.168.1.5")))))
 
-(define (equals-line a) (format #f "~a=~a\n" (car a) (cdr a)))
+(define (equals-line a)
+  (format #f "~a=~a\n" (car a) (cdr a)))
 
-(define abcde-config (apply string-append (map equals-line '(("OUTPUTTYPE" . "flac")))))
+(define abcde-config
+  (apply string-append (map equals-line '(("OUTPUTTYPE" . "flac")))))
 
-(define mpv-config (apply string-append (map equals-line '(("osc" . "no")
-							   ("volume" . "50")))))
+(define mpv-config
+  (apply string-append (map equals-line '(("osc" . "no")
+					  ("volume" . "50")))))
 
-(define mpv-input-config (apply string-append (map (lambda (a) (string-append (string-join a " ") "\n"))
-						   '(("h" "seek" "-2")
-						     ("l" "seek" "2")
-						     ("j" "add" "volume" "-2")
-						     ("k" "add" "volume" "2")
-						     ("J" "add" "speed" "-0.05")
-						     ("K" "add" "speed" "0.05")))))
+(define mpv-input-config
+  (apply string-append (map (lambda (a) (string-append (string-join a " ") "\n"))
+			    '(("h" "seek" "-2")
+			      ("l" "seek" "2")
+			      ("j" "add" "volume" "-2")
+			      ("k" "add" "volume" "2")
+			      ("J" "add" "speed" "-0.05")
+			      ("K" "add" "speed" "0.05")))))
 
 (home-environment
  (packages (list
