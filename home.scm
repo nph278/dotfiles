@@ -199,7 +199,7 @@ exec swayidle -w \\
 			    '(("media_dir" . "A,/home/carl/Music")
 			      ("db_dir" . "/home/carl/.config/minidlna/db")
 			      ("log_dir" . "/home/carl/.config/minidlna/log")
-			      ("friendly_name" . "Media Server")
+			      ("friendly_name" . "Vargomax V. Vargomax's Insane Collection")
 			      ("inotify" . "yes")
 			      ("presentation_url" . "http://192.168.1.5")))))
 
