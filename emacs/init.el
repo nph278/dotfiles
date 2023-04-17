@@ -63,7 +63,11 @@
 (add-hook 'lisp-mode-hook             #'enable-paredit-mode)
 (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+
+;; Show Parens
 (setq show-paren-delay 0)
+(setq show-paren-style 'parenthesis)
+(show-paren-mode 1)
 
 ;; Org
 (setq org-agenda-files (list "~/Roam"))
