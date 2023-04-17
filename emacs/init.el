@@ -24,6 +24,7 @@
 ;; evil
 (setq evil-want-keybinding nil)
 (setq evil-want-C-u-scroll 1)
+(setq evil-want-minibuffer 1)
 (evil-mode 1)
 (evil-collection-init)
 
