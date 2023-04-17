@@ -202,8 +202,20 @@ exec swayidle -w \\
 						    ("inotify" . "yes")
 						    ("presentation_url" . "http://192.168.1.5")))))
 
-(define abcde-config (apply string-append (map (lambda (x) (string-append (car x) "=" (cdr x) "\n"))
-					       '(("OUTPUTTYPE" . "flac")))))
+(define (equals-line) (format #f "~a=~a\n" (car a) (cdr a)))
+
+(define abcde-config (apply string-append (map equals-line '(("OUTPUTTYPE" . "flac")))))
+
+(define mpv-config (apply string-append (map equals-line '(("osc" . "no")
+							   ("volume" . "50")))))
+
+(define mpv-input-config (apply string-append (map (lambda (a) (string-append (string-join a " ") "\n"))
+						   '(("h" "seek" "-2")
+						     ("l" "seek" "2")
+						     ("j" "add" "volume" "-2")
+						     ("k" "add" "volume" "2")
+						     ("J" "add" "speed" "-0.05")
+						     ("K" "add" "speed" "0.05")))))
 
 (home-environment
  (packages (list
@@ -314,8 +326,8 @@ exec swayidle -w \\
 			`(
 
 			  ;; mpv
-			  (".config/mpv/mpv.conf" . ,(read-file "mpv/mpv.conf"))
-			  (".config/mpv/input.conf" . ,(read-file "mpv/input.conf"))
+			  (".config/mpv/mpv.conf" . ,mpv-config)
+			  (".config/mpv/input.conf" . ,mpv-input-config)
 
 			  ;; Emacs
 			  (".emacs.d/init.el" . ,(read-file "emacs/init.el"))
