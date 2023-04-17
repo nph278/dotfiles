@@ -326,7 +326,7 @@ exec swayidle -w \\
 	    emacs-evil-collection
 	    emacs-vterm
 	    emacs-git-gutter-fringe
-	    emacs-perspective
+	    ;; emacs-perspective
 	    emacs-rust-mode
 	    emacs-ligature
 

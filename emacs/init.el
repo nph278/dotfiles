@@ -139,12 +139,12 @@
 (evil-global-set-key 'normal (kbd "SPC p n") 'create-project)
 
 ;; Persepective
-(setq persp-suppress-no-prefix-key-warning t)
-(persp-mode)
-(persp-rename "code")
-(evil-global-set-key 'normal (kbd "SPC w o") 'persp-switch)
-(evil-global-set-key 'normal (kbd "SPC w d") 'persp-kill)
-(evil-global-set-key 'normal (kbd "SPC w r") 'persp-rename)
+;; (setq persp-suppress-no-prefix-key-warning t)
+;; (persp-mode)
+;; (persp-rename "code")
+;; (evil-global-set-key 'normal (kbd "SPC w o") 'persp-switch)
+;; (evil-global-set-key 'normal (kbd "SPC w d") 'persp-kill)
+;; (evil-global-set-key 'normal (kbd "SPC w r") 'persp-rename)
 
 ;; Rust
 (setq rust-format-on-save t)
