@@ -14,8 +14,12 @@
   (cl-delete-duplicates file-name-handler-alist :test 'equal))
 (add-hook 'after-init-hook #'ambrevar/reset-file-name-handler-alist)
 
-;; Load guix plugins
-(let ((default-directory "~/.guix-home/profile/share/emacs/site-lisp/")) (normal-top-level-add-subdirs-to-load-path))
+;; Load guix plugins (initial)
+(defun load-plugins ()
+  (interactive)
+  (let ((default-directory "~/.guix-home/profile/share/emacs/site-lisp/"))
+    (normal-top-level-add-subdirs-to-load-path)))
+(load-plugins)
 
 ;; No startup
 (setq inhibit-startup-screen t 
@@ -28,6 +32,9 @@
 (setq evil-want-minibuffer 1)
 (evil-mode 1)
 (evil-collection-init)
+
+;; Guix plugins
+;; (evil-global-set-key 'normal (kbd "SPC r") 'load-plugins)
 
 ;; Undo-tree
 (global-undo-tree-mode)
