@@ -277,7 +277,6 @@ exec swayidle -w \\
 
 	    ;; Web
 	    qutebrowser
-	    vimb
 
 	    ;; Media
 	    beets
