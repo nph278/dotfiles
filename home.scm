@@ -330,6 +330,7 @@ exec swayidle -w \\
 	    ;; emacs-perspective
 	    emacs-rust-mode
 	    emacs-ligature
+	    emacs-consult
 
 	    ;; Containers
 	    ;; podman
