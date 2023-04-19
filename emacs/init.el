@@ -80,6 +80,7 @@
 
 ;; Org
 (setq org-hide-emphasis-markers t)
+(setq org-startup-with-inline-images t)
 (setq org-agenda-files (list "~/Roam"))
 (defun evil-org-settings () (evil-org-set-key-theme '(textobjects insert navigation additional shift)))
 (add-hook 'evil-org-mode-hook         #'evil-org-settings nil 'local)
