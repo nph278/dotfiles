@@ -35,6 +35,7 @@
 	     (gnu packages libreoffice)
 	     (gnu packages audio)
 	     (gnu packages package-management)
+	     (gnu packages virtualization)
 	     (guix gexp)
 	     (guix store)
 	     (guix packages)
@@ -143,8 +144,8 @@ exec swayidle -w \\
 	    ("e" . "exec emacsclient -c")
 	    ("x" . "exec bemenu-run")
 	    ("y" . "exec emacs --eval '(eww \"ddg.gg\")'")
-	    ("Alt+s" . "exec grimshot save screen ~/Pictures")
-	    ("Shift+s" . "exec grimshot save area ~/Pictures")
+	    ("Alt+s" . "exec grimshot save screen")
+	    ("Shift+s" . "exec grimshot save area")
 
 	    ;; Music
 	    ("m" . "exec mpv \"$(beet ls -f '$path' \"$(beet ls -f '$title' | bemenu -i)\")\"")
@@ -310,6 +311,9 @@ exec swayidle -w \\
 
 	    ;; Flatpak
 	    flatpak
+
+	    ;; Vitrualization
+	    qemu
 
 	    ;; Emacs
 	    emacs
