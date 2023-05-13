@@ -335,6 +335,7 @@ exec swayidle -w \\
 	    emacs-ligature
 	    emacs-consult
 	    emacs-lua-mode
+	    emacs-nov-el
 
 	    ;; Containers
 	    ;; podman

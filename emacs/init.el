@@ -166,3 +166,6 @@
 (ligature-set-ligatures '(html-mode nxml-mode web-mode) '("<!--" "-->" "</>" "</" "/>" "://"))
 (ligature-set-ligatures '(org-mode) '("::" "->" "<-" "<->" "-->" "<--" "=>" "<=" "<=>" "==>" "<=="))
 (global-ligature-mode)
+
+;; Ebooks
+(add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
