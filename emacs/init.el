@@ -138,6 +138,7 @@
 (evil-global-set-key 'normal (kbd "SPC p f") 'project-find-file)
 (evil-global-set-key 'normal (kbd "SPC p r") 'project-find-regexp)
 (evil-global-set-key 'normal (kbd "SPC p p") 'project-switch-project)
+(evil-global-set-key 'normal (kbd "SPC p d") 'project-dired)
 (defun project-path (name) `(,(concat "~/Projects/" name "/")))
 (setq project--list (mapcar #'project-path (cddr (directory-files "~/Projects"))))
 (defun create-project (l name)
