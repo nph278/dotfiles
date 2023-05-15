@@ -223,10 +223,9 @@ exec swayidle -w \\
 			     (iota 9 1)))))
 
 (define sway-config
-  (string-append
-   (apply string-append (map (lambda (a) (format #f "bindsym ~a+~a ~a\n" sway-mod (car a) (cdr a))) sway-keybinds))
-   (apply string-append (map (lambda (a) (format #f "~a\n" a)) sway-options))
-   sway-extra-config))
+  (string-append (apply string-append (map (lambda (a) (format #f "bindsym ~a+~a ~a\n" sway-mod (car a) (cdr a))) sway-keybinds))
+		 (apply string-append (map (lambda (a) (format #f "~a\n" a)) sway-options))
+		 sway-extra-config))
 
 (define git-config "
 [user]
@@ -237,36 +236,41 @@ exec swayidle -w \\
 ")
 
 (define minidlna-config
-  (apply string-append (map (lambda (x) (string-append (car x) "=" (cdr x) "\n"))
-			    '(("media_dir" . "A,/home/carl/Music")
-			      ("db_dir" . "/home/carl/.config/minidlna/db")
-			      ("log_dir" . "/home/carl/.config/minidlna/log")
-			      ("friendly_name" . "Vargomax V. Vargomax's Insane Collection")
-			      ("inotify" . "yes")
-			      ("presentation_url" . "http://192.168.1.5")))))
+  (apply string-append
+	 (map (lambda (x) (string-append (car x) "=" (cdr x) "\n"))
+	      '(("media_dir" . "A,/home/carl/Music")
+		("db_dir" . "/home/carl/.config/minidlna/db")
+		("log_dir" . "/home/carl/.config/minidlna/log")
+		("friendly_name" . "Vargomax V. Vargomax's Insane Collection")
+		("inotify" . "yes")
+		("presentation_url" . "http://192.168.1.5")))))
 
 (define (equals-line a)
   (format #f "~a=~a\n" (car a) (cdr a)))
 
 (define abcde-config
-  (apply string-append (map equals-line '(("OUTPUTTYPE" . "flac")))))
+  (apply string-append
+	 (map equals-line
+	      '(("OUTPUTTYPE" . "flac")))))
 
 (define mpv-config
-  (apply string-append (map equals-line '(("osc" . "no")
-					  ("volume" . "50")))))
+  (apply string-append
+	 (map equals-line
+	      '(("osc" . "no")
+		("volume" . "50")))))
 
 (define mpv-input-config
-  (apply string-append (map (lambda (a) (string-append (string-join a " ") "\n"))
-			    '(("h" "seek" "-2")
-			      ("l" "seek" "2")
-			      ("j" "add" "volume" "-2")
-			      ("k" "add" "volume" "2")
-			      ("J" "add" "speed" "-0.05")
-			      ("K" "add" "speed" "0.05")))))
+  (apply string-append
+	 (map (lambda (a) (string-append (string-join a " ") "\n"))
+	      '(("h" "seek" "-2")
+		("l" "seek" "2")
+		("j" "add" "volume" "-2")
+		("k" "add" "volume" "2")
+		("J" "add" "speed" "-0.05")
+		("K" "add" "speed" "0.05")))))
 
 (define config-files
   `(
-
     ;; mpv
     (".config/mpv/mpv.conf" . ,mpv-config)
     (".config/mpv/input.conf" . ,mpv-input-config)
@@ -397,7 +401,6 @@ exec swayidle -w \\
   (list
    (simple-service 'configuration-files
 		   home-files-service-type
-
 		   (map (lambda (x)
 			  (define filename (car x))
 			  (define contents (cdr x))
