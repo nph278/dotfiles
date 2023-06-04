@@ -36,6 +36,7 @@
 	     (gnu packages audio)
 	     (gnu packages package-management)
 	     (gnu packages virtualization)
+	     (gnu packages graphics)
 	     (guix gexp)
 	     (guix store)
 	     (guix packages)
@@ -333,6 +334,8 @@ exec swayidle -w \\
 	    imv
 	    glyr
 	    audacity
+	    yt-dlp
+	    blender
 
 	    ;; Editing/Creation
 	    gimp
@@ -381,6 +384,8 @@ exec swayidle -w \\
 	    emacs-consult
 	    emacs-lua-mode
 	    emacs-nov-el
+	    emacs-auctex
+	    emacs-pdf-tools
 
 	    ;; Containers
 	    ;; podman

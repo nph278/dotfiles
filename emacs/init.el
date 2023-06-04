@@ -170,3 +170,15 @@
 
 ;; Ebooks
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
+
+;; Pdf-tools
+(pdf-tools-install)
+(setq-default pdf-view-display-size 'fit-page)
+(setq pdf-view-resize-factor 1.1)
+(setq pdf-annot-activate-created-annotations t))
+
+;; Tex
+(setq tex-auto-save t)
+(setq tex-parse-self t)
+(setq tex-master nil)
+(setq tex-view-program-selection '((output-pdf "pdf-tools")))
