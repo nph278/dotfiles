@@ -167,7 +167,7 @@
 ;; Ligatures
 (ligature-set-ligatures 't '("www"))
 (ligature-set-ligatures '(rust-mode) '("<=" ">=" "==" "!=" "::" "&&" "++"))
-(ligature-set-ligatures '(scheme-mode emacs-lisp-mode lisp-mode) '("->" ";;"))
+(ligature-set-ligatures '(scheme-mode emacs-lisp-mode lisp-mode racket-mode) '("->" ";;"))
 (ligature-set-ligatures '(html-mode nxml-mode web-mode) '("<!--" "-->" "</>" "</" "/>" "://"))
 (ligature-set-ligatures '(org-mode) '("::" "->" "<-" "<->" "-->" "<--" "=>" "<=" "<=>" "==>" "<=="))
 (global-ligature-mode)
