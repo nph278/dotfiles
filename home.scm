@@ -37,6 +37,7 @@
 	     (gnu packages package-management)
 	     (gnu packages virtualization)
 	     (gnu packages graphics)
+	     (gnu packages racket)
 	     (guix gexp)
 	     (guix store)
 	     (guix packages)
@@ -356,6 +357,9 @@ exec swayidle -w \\
 
 	    ;; Assembly
 	    fasm
+
+	    ;; Racket
+	    racket
 
 	    ;; Flatpak
 	    flatpak
