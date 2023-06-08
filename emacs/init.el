@@ -72,6 +72,7 @@
 (add-hook 'lisp-mode-hook             #'enable-paredit-mode)
 (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+(add-hook 'racket-mode-hook           #'enable-paredit-mode)
 
 ;; Show Parens
 (setq show-paren-delay 0)
@@ -122,6 +123,9 @@
 
 ;; Vterm
 (evil-global-set-key 'normal (kbd "SPC v") 'vterm)
+
+;; Racket
+(evil-global-set-key 'normal (kbd "SPC r r") 'racket-run)
 
 ;; Elisp
 (evil-global-set-key 'normal (kbd "SPC x b") 'eval-buffer)

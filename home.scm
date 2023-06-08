@@ -372,6 +372,7 @@ exec swayidle -w \\
 	    emacs-evil
 	    emacs-geiser
 	    emacs-geiser-guile
+	    emacs-racket-mode
 	    emacs-autothemer
 	    emacs-paredit
 	    emacs-org
