@@ -1,0 +1,6 @@
+* TODO Sway styling
+* TODO Better system stuff
+* TODO Fix music search
+* TODO Live USB
+* TODO Declarative package versions?
+* TODO Backups
