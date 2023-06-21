@@ -138,7 +138,7 @@
 (define sway-mod "Mod4")
 
 (define sway-extra-config "
-exec emacs --daemon
+exec emacs --bg-daemon
 exec swayidle -w \\
     timeout 300 'swaylock -f -c 000000' \\
     timeout 600 'swaymsg \"output * dpms off\"' resume 'swaymsg \"output * dpms on\"' \\
