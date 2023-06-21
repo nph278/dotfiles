@@ -12,3 +12,5 @@ Serialize the buffers or smth (( meaningless ))
 * TODO Figure out crashing
 * TODO Kill vterms with C-S-Q rather than just orphaning them
 * TODO Clean up home.scm
+* TODO Flatpak launch menu
+* TODO Generic color names
