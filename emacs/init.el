@@ -184,4 +184,8 @@
 (setq tex-view-program-selection '((output-pdf "pdf-tools")))
 
 ;; Guix
-(evil-global-set-key 'normal (kbd "SPC g") 'guix)
+(evil-global-set-key 'normal (kbd "SPC g s") 'guix)
+(defun guix-home-reconfigure ()
+  (interactive)
+  (shell-command "guix home reconfigure home.scm"))
+(evil-global-set-key 'normal (kbd "SPC g r") 'guix-home-reconfigure)
