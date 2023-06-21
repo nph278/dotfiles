@@ -14,12 +14,8 @@
   (cl-delete-duplicates file-name-handler-alist :test 'equal))
 (add-hook 'after-init-hook #'ambrevar/reset-file-name-handler-alist)
 
-;; Load guix plugins (initial)
-(defun load-plugins ()
-  (interactive)
-  (let ((default-directory "~/.guix-home/profile/share/emacs/site-lisp/"))
-    (normal-top-level-add-subdirs-to-load-path)))
-(load-plugins)
+;; Load guix plugins
+(guix-emacs-autoload-packages)
 
 ;; No startup
 (setq inhibit-startup-screen t 
