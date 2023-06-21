@@ -8,3 +8,4 @@
 * TODO Better emacs + sway integration
 * TODO Emacs reloading
 Serialize the buffers or smth (( meaningless ))
+* TODO Make more modular
