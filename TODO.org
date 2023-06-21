@@ -4,3 +4,7 @@
 * TODO Live USB
 * TODO Declarative package versions?
 * TODO Backups
+* TODO Better emacs + guix integration
+* TODO Better emacs + sway integration
+* TODO Emacs reloading
+Serialize the buffers or smth (( meaningless ))
