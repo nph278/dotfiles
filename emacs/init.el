@@ -107,8 +107,8 @@
 ;; Geiser
 ;; (add-hook 'scheme-mode-hook           #'geiser-mode 1)
 ;; (add-hook 'emacs-lisp-mode-hook       #'geiser-mode 1)
-(evil-global-set-key 'normal (kbd "SPC g s") 'geiser)
-(evil-global-set-key 'normal (kbd "SPC g b") 'geiser-eval-buffer)
+(evil-global-set-key 'normal (kbd "SPC s s") 'geiser)
+(evil-global-set-key 'normal (kbd "SPC s b") 'geiser-eval-buffer)
 
 ;; Eww
 (evil-global-set-key 'normal (kbd "SPC e o") 'eww)
@@ -182,3 +182,6 @@
 (setq tex-parse-self t)
 (setq tex-master nil)
 (setq tex-view-program-selection '((output-pdf "pdf-tools")))
+
+;; Guix
+(evil-global-set-key 'normal (kbd "SPC g") 'guix)
