@@ -201,6 +201,7 @@ exec swayidle -w \\
 	    ("e" . "exec emacsclient -c")
 	    ("Alt+e" . "exec kill $(ps -A | grep 'emacs-' | awk '{print $1;}') && emacs --bg-daemon")
 	    ("x" . "exec bemenu-run")
+	    ("Shift+x" . "exec flatpak run $(flatpak list --columns=application | bemenu)")
 	    ("Alt+s" . "exec grimshot save screen")
 	    ("Shift+s" . "exec grimshot save area")
 

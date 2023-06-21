@@ -6,11 +6,11 @@
 * TODO Backups
 * TODO Better emacs + guix integration
 * TODO Better emacs + sway integration
-* TODO Emacs reloading
+* DONE Emacs reloading
 Serialize the buffers or smth (( meaningless ))
 * TODO Make more modular (Manifests?)
 * TODO Figure out crashing
 * TODO Kill vterms with C-S-Q rather than just orphaning them
 * TODO Clean up home.scm
-* TODO Flatpak launch menu
+* DONE Flatpak launch menu
 * TODO Generic color names
