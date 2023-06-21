@@ -14,3 +14,4 @@ Serialize the buffers or smth (( meaningless ))
 * TODO Clean up home.scm
 * DONE Flatpak launch menu
 * TODO Generic color names
+* TODO mpv fallback image
