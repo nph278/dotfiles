@@ -381,7 +381,7 @@ exec swayidle -w \\
 	    emacs-undo-tree
 	    emacs-evil-org
 	    emacs-evil-collection
-	    emacs-vterm
+	    emacs-multi-vterm
 	    emacs-git-gutter-fringe
 	    ;; emacs-perspective
 	    emacs-rust-mode

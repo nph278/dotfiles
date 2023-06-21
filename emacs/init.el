@@ -118,7 +118,7 @@
 (evil-global-set-key 'normal (kbd "SPC e y") 'eww-copy-page-url)
 
 ;; Vterm
-(evil-global-set-key 'normal (kbd "SPC v") 'vterm)
+(evil-global-set-key 'normal (kbd "SPC v") 'multi-vterm)
 
 ;; Racket
 (evil-global-set-key 'normal (kbd "SPC r r") 'racket-run)
