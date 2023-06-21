@@ -404,10 +404,7 @@ exec swayidle -w \\
 	    font-victor-mono
 
 	    ;; Libreoffice
-	    libreoffice
-
-	    ;; Other
-	    espeak))
+	    libreoffice))
  (services
   (list
    (simple-service 'configuration-files
