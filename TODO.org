@@ -10,3 +10,4 @@
 Serialize the buffers or smth (( meaningless ))
 * TODO Make more modular (Manifests?)
 * TODO Figure out crashing
+* TODO Kill vterms with C-S-Q rather than just orphaning them
