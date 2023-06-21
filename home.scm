@@ -49,45 +49,47 @@
 (define (store-path package) (with-store store (package-output store package)))
 
 ;; Colors
-;; (define fujiWhite     "#DCD7BA")
-;; (define old-white     "#C8C093")
-;; (define sumiInk-0     "#16161D")
-;; (define sumiInk-1b    "#181820")
-;; (define sumiInk-1     "#1F1F28")
-;; (define sumiInk-2     "#2A2A37")
-;; (define sumiInk-3     "#363646")
-;; (define sumiInk-4     "#54546D")
-;; (define waveBlue-1    "#223249")
-;; (define waveBlue-2    "#2D4F67")
-;; (define waveAqua1     "#6A9589")
-;; (define waveAqua2     "#7AA89F")
-;; (define winterGreen   "#2B3328")
-;; (define winterYellow  "#49443C")
-;; (define winterRed     "#43242B")
-;; (define winterBlue    "#252535")
-;; (define autumnGreen   "#76946A")
-;; (define autumnRed     "#C34043")
-;; (define autumnYellow  "#DCA561")
-;; (define samuraiRed    "#E82424")
-;; (define roninYellow   "#FF9E3B")
-;; (define dragonBlue    "#658594")
-;; (define fujiGray      "#727169")
-;; (define springViolet1 "#938AA9")
-;; (define oniViolet     "#957FB8")
-;; (define crystalBlue   "#7E9CD8")
-;; (define springViolet2 "#9CABCA")
-;; (define springBlue    "#7FB4CA")
-;; (define lightBlue     "#A3D4D5")
-;; (define springGreen   "#98BB6C")
-;; (define boatYellow1   "#938056")
-;; (define boatYellow2   "#C0A36E")
-;; (define carpYellow    "#E6C384")
-;; (define sakuraPink    "#D27E99")
-;; (define waveRed       "#E46876")
-;; (define peachRed      "#FF5D62")
-;; (define surimiOrange  "#FFA066")
-;; (define katanaGray    "#717C7C")
-;; (define comet         "#54536D")
+(define fujiWhite     "#DCD7BA")
+(define old-white     "#C8C093")
+(define sumiInk-0     "#16161D")
+(define sumiInk-1b    "#181820")
+(define sumiInk-1     "#1F1F28")
+(define sumiInk-2     "#2A2A37")
+(define sumiInk-3     "#363646")
+(define sumiInk-4     "#54546D")
+(define waveBlue-1    "#223249")
+(define waveBlue-2    "#2D4F67")
+(define waveAqua1     "#6A9589")
+(define waveAqua2     "#7AA89F")
+(define winterGreen   "#2B3328")
+(define winterYellow  "#49443C")
+(define winterRed     "#43242B")
+(define winterBlue    "#252535")
+(define autumnGreen   "#76946A")
+(define autumnRed     "#C34043")
+(define autumnYellow  "#DCA561")
+(define samuraiRed    "#E82424")
+(define roninYellow   "#FF9E3B")
+(define dragonBlue    "#658594")
+(define fujiGray      "#727169")
+(define springViolet1 "#938AA9")
+(define oniViolet     "#957FB8")
+(define crystalBlue   "#7E9CD8")
+(define springViolet2 "#9CABCA")
+(define springBlue    "#7FB4CA")
+(define lightBlue     "#A3D4D5")
+(define springGreen   "#98BB6C")
+(define boatYellow1   "#938056")
+(define boatYellow2   "#C0A36E")
+(define carpYellow    "#E6C384")
+(define sakuraPink    "#D27E99")
+(define waveRed       "#E46876")
+(define peachRed      "#FF5D62")
+(define surimiOrange  "#FFA066")
+(define katanaGray    "#717C7C")
+(define comet         "#54536D")
+
+(define font "Victor Mono Medium 12px")
 
 (define shell-aliases
   '(
@@ -146,42 +148,52 @@ exec swayidle -w \\
 ")
 
 (define sway-options
-  `(
-    ,(format #f "floating_modifier ~a normal" sway-mod)
+  `(("floating_modifier" ,sway-mod "normal")
                        
     ;; Output
-    "output * bg #1f1f28 solid_color"
+    ("output * bg" ,sumiInk-0 "solid_color")
 
     ;; Input
-    "input * natural_scroll enabled"
-    "input * middle_emulation enabled"
-    "input * xkb_options caps:escape"
-    "input * repeat_delay 200"
-    "input * repeat_rate 70"
+    ("input * natural_scroll enabled")
+    ("input * middle_emulation enabled")
+    ("input * xkb_options caps:escape")
+    ("input * repeat_delay 200")
+    ("input * repeat_rate 70")
+
+    ;; Font
+    ("font" ,font)
                        
     ;; Border
     ;; "border pixel"
                        
     ;; Resize
-    "mode resize bindsym h resize shrink width 10px"
-    "mode resize bindsym j resize grow height 10px"
-    "mode resize bindsym k resize shrink height 10px"
-    "mode resize bindsym l resize grow width 10px"
-    "mode resize bindsym Return mode \"default\""
-    "mode resize bindsym Escape mode \"default\""
+    ("mode resize bindsym h resize shrink width 10px")
+    ("mode resize bindsym j resize grow height 10px")
+    ("mode resize bindsym k resize shrink height 10px")
+    ("mode resize bindsym l resize grow width 10px")
+    ("mode resize bindsym Return mode \"default\"")
+    ("mode resize bindsym Escape mode \"default\"")
+
+    ;; Client
+    ("client.focused" ,crystalBlue ,crystalBlue ,sumiInk-0 ,springBlue ,crystalBlue)
+    ("client.focused_inactive" ,sumiInk-0 ,sumiInk-0 ,fujiWhite ,springBlue ,sumiInk-0)
+    ("client.unfocused" ,sumiInk-0 ,sumiInk-0 ,fujiWhite ,springBlue ,sumiInk-0)
+    ("client.urgent" ,peachRed ,peachRed ,sumiInk-0 ,springBlue ,peachRed)
                        
     ;; Bar
-    "bar position top"
-    "bar status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done"
-    "bar colors statusline #ffffff"
-    "bar colors background #323232"
-    "bar colors inactive_workspace #32323200 #32323200 #5c5c5c"))
+    ("bar position top")
+    ("bar font" ,font)
+    ("bar status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done")
+    ("bar colors background" ,sumiInk-0)
+    ("bar colors statusline" ,fujiWhite)
+    ("bar colors separator" ,sumiInk-0)
+    ("bar colors focused_workspace" ,crystalBlue ,crystalBlue ,sumiInk-0)
+    ("bar colors active_workspace" ,sumiInk-0 ,sumiInk-0 ,fujiWhite)
+    ("bar colors inactive_workspace" ,sumiInk-0 ,sumiInk-0 ,fujiWhite)
+    ("bar colors urgent_workspace" ,peachRed ,peachRed ,sumiInk-0)))
 
 (define sway-keybinds
-  (append '(
-	    ;; mod+a keybinds
-
-	    ;; Applications
+  (append '(;; Applications
 	    ("Return" . "exec emacs --eval '(eshell)'")
 	    ("q" . "exec qutebrowser --qt-flag disable-seccomp-filter-sandbox")
 	    ("e" . "exec emacsclient -c")
@@ -224,9 +236,14 @@ exec swayidle -w \\
 					       (cons (format #f "Shift+~a" n) (format #f "move container to workspace number ~a" n))))
 			     (iota 9 1)))))
 
+(define (sway-option->string o)
+  (apply string-append
+	 (map (lambda (a)
+		(string-append a " ")) o)))
+
 (define sway-config
   (string-append (apply string-append (map (lambda (a) (format #f "bindsym ~a+~a ~a\n" sway-mod (car a) (cdr a))) sway-keybinds))
-		 (apply string-append (map (lambda (a) (format #f "~a\n" a)) sway-options))
+		 (apply string-append (map (lambda (a) (format #f "~a\n" (sway-option->string a))) sway-options))
 		 sway-extra-config))
 
 (define git-config "
