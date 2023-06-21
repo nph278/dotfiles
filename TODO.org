@@ -1,4 +1,4 @@
-* TODO Sway styling
+* TODO Sway styling (or dwl/dwl-guile)
 * TODO Better system stuff
 * TODO Fix music search
 * TODO Live USB
