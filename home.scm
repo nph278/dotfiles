@@ -392,6 +392,7 @@ exec swayidle -w \\
 	    emacs-auctex
 	    emacs-pdf-tools
 	    emacs-yaml-mode
+	    emacs-guix
 
 	    ;; Containers
 	    ;; podman
