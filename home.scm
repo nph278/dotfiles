@@ -185,8 +185,8 @@ exec swayidle -w \\
 	    ("Return" . "exec emacs --eval '(eshell)'")
 	    ("q" . "exec qutebrowser --qt-flag disable-seccomp-filter-sandbox")
 	    ("e" . "exec emacsclient -c")
+	    ("Alt+e" . "exec kill $(ps -A | grep 'emacs-' | awk '{print $1;}') && emacs --bg-daemon")
 	    ("x" . "exec bemenu-run")
-	    ("y" . "exec emacs --eval '(eww \"ddg.gg\")'")
 	    ("Alt+s" . "exec grimshot save screen")
 	    ("Shift+s" . "exec grimshot save area")
 
