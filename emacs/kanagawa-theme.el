@@ -27,6 +27,7 @@
 (unless (>= emacs-major-version 24)
   (error "Requires Emacs 24 or later"))
 
+;; (setq shared-data (read (with-temp-buffer (insert-file-contents "~/.emacs.d/shared.el") (buffer-string))))
 
 (autothemer-deftheme
 	kanagawa "A theme inspired by the colors of the famous painting by Katsushika Hokusa"
