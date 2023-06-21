@@ -89,7 +89,7 @@
 (define katanaGray    "#717C7C")
 (define comet         "#54536D")
 
-(define font "Victor Mono Medium 12px")
+(define font-family "Victor Mono")
 
 (define shell-aliases
   '(
@@ -147,6 +147,8 @@ exec swayidle -w \\
     before-sleep 'swaylock -f -c 000000'
 ")
 
+(define sway-font (string-append font-family " Medium 12px"))
+
 (define sway-options
   `(("floating_modifier" ,sway-mod "normal")
                        
@@ -161,7 +163,7 @@ exec swayidle -w \\
     ("input * repeat_rate 70")
 
     ;; Font
-    ("font" ,font)
+    ("font" ,sway-font)
                        
     ;; Border
     ;; "border pixel"
@@ -176,13 +178,13 @@ exec swayidle -w \\
 
     ;; Client
     ("client.focused" ,crystalBlue ,crystalBlue ,sumiInk-0 ,springBlue ,crystalBlue)
-    ("client.focused_inactive" ,sumiInk-0 ,sumiInk-0 ,fujiWhite ,springBlue ,sumiInk-0)
-    ("client.unfocused" ,sumiInk-0 ,sumiInk-0 ,fujiWhite ,springBlue ,sumiInk-0)
+    ("client.focused_inactive" ,sumiInk-1b ,sumiInk-1b ,fujiWhite ,springBlue ,sumiInk-1b)
+    ("client.unfocused" ,sumiInk-1b ,sumiInk-1b ,fujiWhite ,springBlue ,sumiInk-1b)
     ("client.urgent" ,peachRed ,peachRed ,sumiInk-0 ,springBlue ,peachRed)
                        
     ;; Bar
     ("bar position top")
-    ("bar font" ,font)
+    ("bar font" ,sway-font)
     ("bar status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done")
     ("bar colors background" ,sumiInk-0)
     ("bar colors statusline" ,fujiWhite)
@@ -288,9 +290,140 @@ exec swayidle -w \\
 		("J" "add" "speed" "-0.05")
 		("K" "add" "speed" "0.05")))))
 
+(define qutebrowser-options
+  `(("url.default_page" . "about:blank")
+    ("fonts.default_family" . ,font-family)
+    ("fonts.web.family.fixed" . ,font-family)
+    ("colors.completion.category.bg" . ,sumiInk-1b)
+    ("colors.completion.category.fg" . ,fujiWhite)
+    ("colors.completion.category.border.top" . ,sumiInk-1b)
+    ("colors.completion.category.border.bottom" . ,sumiInk-1b)
+    ("colors.completion.item.selected.bg" . ,crystalBlue)
+    ("colors.completion.item.selected.fg" . ,sumiInk-0)
+    ("colors.completion.item.selected.border.top" . ,crystalBlue)
+    ("colors.completion.item.selected.border.bottom" . ,crystalBlue)
+    ("colors.completion.match.fg" . ,fujiWhite)
+    ("colors.completion.even.bg" . ,sumiInk-1b)
+    ("colors.completion.odd.bg" . ,sumiInk-1b)
+    ("colors.completion.fg" . ,fujiWhite)
+    ("colors.completion.scrollbar.bg" . ,sumiInk-1b)
+    ("colors.completion.scrollbar.fg" . ,fujiWhite)
+    ("colors.contextmenu.disabled.bg" . ,sumiInk-1b)
+    ("colors.contextmenu.disabled.fg" . ,peachRed)
+    ("colors.contextmenu.menu.bg" . ,sumiInk-1b)
+    ("colors.contextmenu.menu.fg" . ,fujiWhite)
+    ("colors.contextmenu.selected.bg" . ,crystalBlue)
+    ("colors.contextmenu.selected.fg" . ,fujiWhite)
+    ("colors.downloads.bar.bg" . ,sumiInk-1b)
+    ("colors.downloads.error.bg" . ,peachRed)
+    ("colors.downloads.error.fg" . ,sumiInk-1b)
+    ("colors.downloads.start.bg" . ,sumiInk-1b)
+    ("colors.downloads.start.fg" . ,fujiWhite)
+    ("colors.downloads.stop.bg" . ,sumiInk-1b)
+    ("colors.downloads.stop.fg" . ,fujiWhite)
+    ("colors.downloads.system.bg" . "rgb")
+    ("colors.downloads.system.fg" . "rgb")
+    ("colors.hints.bg" . ,surimiOrange)
+    ("colors.hints.fg" . ,sumiInk-1b)
+    ("colors.hints.match.fg" . ,sumiInk-2)
+    ("colors.keyhint.bg" . ,surimiOrange)
+    ("colors.keyhint.fg" . ,sumiInk-1b)
+    ("colors.keyhint.suffix.fg" . ,sumiInk-1b)
+    ("colors.messages.error.bg" . ,peachRed)
+    ("colors.messages.error.border" . ,sumiInk-1b)
+    ("colors.messages.error.fg" . ,sumiInk-1b)
+    ("colors.messages.info.bg" . ,crystalBlue)
+    ("colors.messages.info.border" . ,sumiInk-1b)
+    ("colors.messages.info.fg" . ,sumiInk-1b)
+    ("colors.messages.warning.bg" . ,surimiOrange)
+    ("colors.messages.warning.border" . ,sumiInk-1b)
+    ("colors.messages.warning.fg" . ,sumiInk-1b)
+    ("colors.prompts.bg" . ,springGreen)
+    ("colors.prompts.border" . ,sumiInk-1b)
+    ("colors.prompts.fg" . ,sumiInk-1b)
+    ("colors.prompts.selected.fg" . ,sumiInk-0)
+    ("colors.prompts.selected.bg" . ,crystalBlue)
+    ("colors.statusbar.caret.bg" . ,crystalBlue)
+    ("colors.statusbar.caret.fg" . ,sumiInk-0)
+    ("colors.statusbar.caret.selection.bg" . ,crystalBlue)
+    ("colors.statusbar.caret.selection.fg" . ,sumiInk-0)
+    ("colors.statusbar.command.bg" . ,sumiInk-1b)
+    ("colors.statusbar.command.fg" . ,fujiWhite)
+    ("colors.statusbar.command.private.bg" . ,sumiInk-1b)
+    ("colors.statusbar.command.private.fg" . ,fujiWhite)
+    ("colors.statusbar.insert.bg" . ,sumiInk-1b)
+    ("colors.statusbar.insert.fg" . ,fujiWhite)
+    ("colors.statusbar.normal.bg" . ,sumiInk-1b)
+    ("colors.statusbar.normal.fg" . ,fujiWhite)
+    ("colors.statusbar.passthrough.bg" . ,sumiInk-1b)
+    ("colors.statusbar.passthrough.fg" . ,fujiWhite)
+    ("colors.statusbar.private.bg" . ,sumiInk-1b)
+    ("colors.statusbar.private.fg" . ,fujiWhite)
+    ("colors.statusbar.progress.bg" . ,fujiWhite)
+    ("colors.statusbar.url.error.fg" . ,peachRed)
+    ("colors.statusbar.url.fg" . ,fujiWhite)
+    ("colors.statusbar.url.hover.fg" . ,fujiWhite)
+    ("colors.statusbar.url.success.http.fg" . ,peachRed)
+    ("colors.statusbar.url.success.https.fg" . ,fujiWhite)
+    ("colors.statusbar.url.warn.fg" . ,surimiOrange)
+    ("colors.tabs.bar.bg" . ,crystalBlue)
+    ("colors.tabs.even.bg" . ,sumiInk-1b)
+    ("colors.tabs.even.fg" . ,fujiWhite)
+    ("colors.tabs.indicator.error" . ,peachRed)
+    ("colors.tabs.indicator.start" . ,crystalBlue)
+    ("colors.tabs.indicator.stop" . ,springGreen)
+    ("colors.tabs.indicator.system" . "rgb")
+    ("colors.tabs.odd.bg" . ,sumiInk-1b)
+    ("colors.tabs.odd.fg" . ,fujiWhite)
+    ("colors.tabs.pinned.even.bg" . ,sumiInk-1b)
+    ("colors.tabs.pinned.even.fg" . ,fujiWhite)
+    ("colors.tabs.pinned.odd.bg" . ,sumiInk-1b)
+    ("colors.tabs.pinned.odd.fg" . ,fujiWhite)
+    ("colors.tabs.pinned.selected.even.bg" . ,crystalBlue)
+    ("colors.tabs.pinned.selected.even.fg" . ,sumiInk-0)
+    ("colors.tabs.pinned.selected.odd.bg" . ,crystalBlue)
+    ("colors.tabs.pinned.selected.odd.fg" . ,sumiInk-0)
+    ("colors.tabs.selected.even.bg" . ,crystalBlue)
+    ("colors.tabs.selected.even.fg" . ,sumiInk-0)
+    ("colors.tabs.selected.odd.bg" . ,crystalBlue)
+    ("colors.tabs.selected.odd.fg" . ,sumiInk-0)
+    ("colors.webpage.bg" . ,sumiInk-1b)
+    ("colors.webpage.preferred_color_scheme" . "dark")
+    ("content.blocking.enabled" . #t)
+    ("content.blocking.adblock.lists" .
+     ("https://easylist.to/easylist/easylist.txt"
+      "https://easylist.to/easylist/easyprivacy.txt"
+      "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters.txt"
+      "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters-2020.txt"
+      "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/legacy.txt"
+      "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt"
+      "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/privacy.txt"
+      "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/resource-abuse.txt"
+      "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=1&mimetype=plaintext&_=223428 "
+      "https://raw.githubusercontent.com/brave/adblock-lists/master/brave-lists/brave-social.txt"
+      "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/unbreak.txt"
+      "https://raw.githubusercontent.com/brave/adblock-lists/master/brave-unbreak.txt"))
+    ("content.blocking.hosts.lists" . ("https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"))
+    ("content.blocking.method" . "auto")
+    ("auto_save.session" . #t)))
+
+(define (expr->python e)
+  (cond 
+   [(string? e) (string-append "\"" e "\"")]
+   [(boolean? e) (if e "True" "False")]
+   [(number? e) (number->string e)]
+   [(list? e) (apply string-append `("[" ,@(map (lambda (x) (string-append (expr->python x) ",")) e) "]"))]))
+
+(define (qutebrowser-option->string o)
+  (string-append "c." (car o) " = " (expr->python (cdr o)) "\n"))
+
+(define qutebrowser-config
+  (string-append (apply string-append
+			(map qutebrowser-option->string qutebrowser-options))
+		 "config.load_autoconfig(False)\n"))
+
 (define config-files
-  `(
-    ;; mpv
+  `( ;; mpv
     (".config/mpv/mpv.conf" . ,mpv-config)
     (".config/mpv/input.conf" . ,mpv-input-config)
 
@@ -312,7 +445,10 @@ exec swayidle -w \\
     (".config/minidlna/minidlna.conf" . ,minidlna-config)
 
     ;; ABCDE
-    (".abcde.conf" . ,abcde-config)))
+    (".abcde.conf" . ,abcde-config)
+
+    ;; Qutebrowser
+    (".config/qutebrowser/config.py" . ,qutebrowser-config)))
 
 (home-environment
  (packages (list
