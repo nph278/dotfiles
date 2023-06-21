@@ -1,4 +1,4 @@
-* TODO Sway styling (or dwl/dwl-guile)
+* DONE Sway styling (or dwl/dwl-guile)
 * TODO Better system stuff
 * TODO Fix music search
 * TODO Live USB
@@ -11,3 +11,4 @@ Serialize the buffers or smth (( meaningless ))
 * TODO Make more modular (Manifests?)
 * TODO Figure out crashing
 * TODO Kill vterms with C-S-Q rather than just orphaning them
+* TODO Clean up home.scm
