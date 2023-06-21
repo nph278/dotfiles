@@ -4,8 +4,10 @@
 * TODO Live USB
 * TODO Declarative package versions?
 * TODO Backups
-* TODO Better emacs + guix integration
-* TODO Better emacs + sway integration
+* STOP Better emacs + guix integration
+idk
+* STOP Better emacs + sway integration
+?
 * DONE Emacs reloading
 Serialize the buffers or smth (( meaningless ))
 * TODO Make more modular (Manifests?)
@@ -15,3 +17,4 @@ Serialize the buffers or smth (( meaningless ))
 * DONE Flatpak launch menu
 * TODO Generic color names
 * TODO mpv fallback image
+* TODO Treesitter?
