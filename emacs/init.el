@@ -102,7 +102,7 @@
 ;; Theme
 (setq custom-safe-themes t)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(load-theme 'kanagawa)
+(load-theme 'custom)
 
 ;; Geiser
 ;; (add-hook 'scheme-mode-hook           #'geiser-mode 1)

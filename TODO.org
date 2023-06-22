@@ -19,3 +19,6 @@ Serialize the buffers or smth (( meaningless ))
 * TODO mpv fallback image
 * TODO Treesitter?
 * TODO Integrate emacs into theme
+* TODO Bemenu config
+* TODO RSS stuff (elfeed?)
+* TODO README.org
