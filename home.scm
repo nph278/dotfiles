@@ -287,6 +287,7 @@ exec swayidle -w \\
     ("colors.completion.category.border.bottom" . ,(d 'dark-bg))
     ("colors.completion.item.selected.bg" . ,(d 'accent))
     ("colors.completion.item.selected.fg" . ,(d 'light-fg))
+    ("colors.completion.item.selected.match.fg" . ,(d 'light-fg))
     ("colors.completion.item.selected.border.top" . ,(d 'accent))
     ("colors.completion.item.selected.border.bottom" . ,(d 'accent))
     ("colors.completion.match.fg" . ,(d 'dark-fg))
