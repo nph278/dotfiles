@@ -47,7 +47,7 @@
 	    (light-bg-2  . ,oldWhite)
 	    (light-bg-3  . ,carpYellow)
 
-	    (accent . ,sakuraPink)
+	    (accent . ,springGreen)
 
 	    (keyword . ,sakuraPink)
 	    (preprocessor . ,boatYellow2)
@@ -64,14 +64,14 @@
 
 	    (finished . ,dragonBlue)
 
-            (green .  ,springGreen)
-            (black .  ,sumiInk-0)
-            (cyan .  ,waveAqua2)
-            (magenta .  ,sakuraPink)
-            (blue .  ,crystalBlue)
-            (red .  ,peachRed)
-            (white .  ,fujiWhite)
-            (yellow .  ,autumnYellow)
-            (bright-white .  ,oldWhite)
-            (orange .  ,surimiOrange)))
+	    (green .  ,springGreen)
+	    (black .  ,sumiInk-0)
+	    (cyan .  ,waveAqua2)
+	    (magenta .  ,sakuraPink)
+	    (blue .  ,crystalBlue)
+	    (red .  ,peachRed)
+	    (white .  ,fujiWhite)
+	    (yellow .  ,autumnYellow)
+	    (bright-white .  ,oldWhite)
+	    (orange .  ,surimiOrange)))
 	'((font-family . "Victor Mono")))
