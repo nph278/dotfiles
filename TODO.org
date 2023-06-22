@@ -18,7 +18,7 @@ Serialize the buffers or smth (( meaningless ))
 * DONE mpv fallback image
 * TODO Treesitter?
 * DONE Integrate emacs into theme
-* TODO Bemenu config
+* DONE Bemenu config
 * TODO RSS stuff (elfeed?)
 * TODO README.org
 * PLAN Make home.scm generic on username, ip, etc.

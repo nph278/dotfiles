@@ -95,6 +95,31 @@
 		"set -o vi\n" ; VI mode
 		(apply string-append (map (lambda (a) (format #f "alias ~a='~a'\n" (car a) (string-replace-substring (cdr a) "'" "'\\''"))) shell-aliases))))
 
+(define bemenu-options
+  (apply string-append
+	 (map (lambda (x)
+		(string-append "--" (car x) " '" (cdr x) "' "))
+	      `(("fn" . ,(string-append (d 'font-family) " 13"))
+		("tb" . ,(d 'dark-bg))
+		("tf" . ,(d 'accent))
+		("fb" . ,(d 'dark-bg))
+		("ff" . ,(d 'dark-fg))
+		("nb" . ,(d 'dark-bg))
+		("nf" . ,(d 'dark-fg))
+		("hb" . ,(d 'dark-bg))
+		("hf" . ,(d 'accent))
+		("sb" . ,(d 'dark-bg))
+		("sf" . ,(d 'accent))
+		("fbb" . ,(d 'dark-bg))
+		("fbf" . ,(d 'dark-fg))
+		("ab" . ,(d 'dark-bg))
+		("af" . ,(d 'dark-fg))
+		("ab" . ,(d 'dark-bg))
+		("af" . ,(d 'dark-fg))
+		("scb" . ,(d 'dark-bg))
+		("scf" . ,(d 'dark-fg))
+		("bdr" . ,(d 'dark-bg))))))
+
 (define sway-mod "Mod4")
 
 (define sway-extra-config "
@@ -153,19 +178,19 @@ exec swayidle -w \\
     ("bar colors urgent_workspace" ,(d 'red) ,(d 'red) ,(d 'light-fg))))
 
 (define sway-keybinds
-  (append '(;; Applications
+  (append `(;; Applications
 	    ("Return" . "exec emacs --eval '(eshell)'")
 	    ("q" . "exec qutebrowser --qt-flag disable-seccomp-filter-sandbox")
 	    ("e" . "exec emacsclient -c")
 	    ("Alt+e" . "exec kill $(ps -A | grep 'emacs-' | awk '{print $1;}') && emacs --bg-daemon")
-	    ("x" . "exec bemenu-run")
-	    ("Shift+x" . "exec flatpak run $(flatpak list --columns=application | bemenu)")
+	    ("x" . ,(string-append  "exec bemenu-run " bemenu-options))
+	    ("Shift+x" . ,(string-append "exec flatpak run $(flatpak list --columns=application | bemenu " bemenu-options ")"))
 	    ("Alt+s" . "exec grimshot save screen")
 	    ("Shift+s" . "exec grimshot save area")
 
 	    ;; Music
-	    ("m" . "exec mpv \"$(beet ls -f '$path' \"$(beet ls -f '$title' | bemenu -i)\")\"")
-	    ("Shift+m" . "exec mpv \"$(beet ls -a -f '$path' \"$(beet ls -a -f '$album' | bemenu -i)\")\"")
+	    ("m" . ,(string-append "exec mpv \"$(beet ls -f '$path' \"$(beet ls -f '$title' | bemenu -i " bemenu-options ")\")\""))
+	    ("Shift+m" . ,(string-append "exec mpv \"$(beet ls -a -f '$path' \"$(beet ls -a -f '$album' | bemenu -i " bemenu-options ")\")\""))
 	    ("Alt+m" . "exec mpv --shuffle ~/Music")
 
 	    ;; Windows

@@ -17,10 +17,19 @@
 ;; Load guix plugins
 (guix-emacs-autoload-packages)
 
+;; Shared data
+(setq shared-data
+      (print (eval (read (with-temp-buffer
+			   (insert-file-contents "~/.emacs.d/shared.el")
+			   (buffer-string))))))
+
+(defun d (key)
+  (cdr (assoc key shared-data)))
+
 ;; No startup
 (setq inhibit-startup-screen t 
-    inhibit-startup-message t
-    inhibit-startup-echo-area-message t)
+      inhibit-startup-message t
+      inhibit-startup-echo-area-message t)
 
 ;; evil
 (setq evil-want-keybinding nil)
@@ -59,7 +68,7 @@
 
 ;; Fonts
 (add-to-list 'default-frame-alist
-             '(font . "Victor Mono Medium-10"))
+             `(font . ,(concat (d 'font-family) " Medium-10")))
 
 ;; Paredit
 (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
