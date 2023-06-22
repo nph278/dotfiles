@@ -53,7 +53,6 @@
 
 ;; Shared data
 (define (d key)
-  (display key)
   (cdr (assoc key shared-data)))
 
 (define shell-aliases
@@ -87,12 +86,6 @@
     ("ghdg" . "guix home delete-generations")
     ("gsdg" . "guix system delete-generations")
     ("ggc" . "guix gc")
-
-    ;; Music
-    ("muspath" . "beet ls -f '$path'")
-    ("musa" . "mpva \"$(muspath -a \"$(beet ls -f '$album' -a | fzf)\")\"")
-    ("muss" . "mpva \"$(muspath \"$(beet ls -f '$title' | fzf)\")\"")
-    ("muscrazy" . "mpva --shuffle ~/Music/")
 
     ;; Other
     ("rm" . "trash")))
@@ -244,7 +237,10 @@ exec swayidle -w \\
   (apply string-append
 	 (map equals-line
 	      '(("osc" . "no")
-		("volume" . "50")))))
+		("volume" . "50")
+		("cover-art-files" . "/home/carl/.config/blank.png")
+		("background" . "'#00000000'")
+		("alpha" . "yes")))))
 
 (define mpv-input-config
   (apply string-append
@@ -529,8 +525,9 @@ exec swayidle -w \\
   (list
    (simple-service 'configuration-files
 		   home-files-service-type
-		   (map (lambda (x)
-			  (define filename (car x))
-			  (define contents (cdr x))
-			  (list filename (plain-file "config-file" contents)))
-			config-files)))))
+		   (append (map (lambda (x)
+				  (define filename (car x))
+				  (define contents (cdr x))
+				  (list filename (plain-file "config-file" contents)))
+				config-files)
+			   `((".config/blank.png" ,(local-file "images/blank.png"))))))))

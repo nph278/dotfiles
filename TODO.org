@@ -16,10 +16,11 @@ Serialize the buffers or smth (( meaningless ))
 * TODO Clean up home.scm
 * DONE Flatpak launch menu
 * DONE Generic color names
-* TODO mpv fallback image
+* DONE mpv fallback image
 * TODO Treesitter?
-* TODO Integrate emacs into theme
+* DONE Integrate emacs into theme
 * TODO Bemenu config
 * TODO RSS stuff (elfeed?)
 * TODO README.org
-* TODO Work on emacs theme
+* PLAN Make home.scm generic on username, ip, etc.
+* Work on emacs theme
