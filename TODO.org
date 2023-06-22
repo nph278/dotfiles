@@ -1,18 +1,17 @@
 * DONE Sway styling (or dwl/dwl-guile)
-* TODO Better system stuff
+* PLAN Better system stuff
 * TODO Fix music search
-* TODO Live USB
-* TODO Declarative package versions?
-* TODO Backups
+* PLAN Live USB
+* PLAN Declarative package versions? (manifests?)
+* PLAN Backups
 * STOP Better emacs + guix integration
 idk
 * STOP Better emacs + sway integration
 ?
 * DONE Emacs reloading
 Serialize the buffers or smth (( meaningless ))
-* TODO Make more modular (Manifests?)
-* TODO Figure out crashing
-* TODO Kill vterms with C-S-Q rather than just orphaning them
+* PLAN Figure out crashing
+* PLAN Kill vterms with C-S-Q rather than just orphaning them
 * TODO Clean up home.scm
 * DONE Flatpak launch menu
 * DONE Generic color names
