@@ -15,6 +15,7 @@ Serialize the buffers or smth (( meaningless ))
 * TODO Kill vterms with C-S-Q rather than just orphaning them
 * TODO Clean up home.scm
 * DONE Flatpak launch menu
-* TODO Generic color names
+* DONE Generic color names
 * TODO mpv fallback image
 * TODO Treesitter?
+* TODO Integrate emacs into theme

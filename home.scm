@@ -158,8 +158,8 @@ exec swayidle -w \\
     ("bar colors statusline" ,(c 'dark-fg))
     ("bar colors separator" ,(c 'dark-bg))
     ("bar colors focused_workspace" ,(c 'accent) ,(c 'accent) ,(c 'light-fg))
-    ("bar colors active_workspace" ,(c 'dark-bg) ,(c 'dark-bg) ,(c 'light-fg))
-    ("bar colors inactive_workspace" ,(c 'dark-bg) ,(c 'dark-bg) ,(c 'light-fg))
+    ("bar colors active_workspace" ,(c 'dark-bg) ,(c 'dark-bg) ,(c 'dark-fg))
+    ("bar colors inactive_workspace" ,(c 'dark-bg) ,(c 'dark-bg) ,(c 'dark-fg))
     ("bar colors urgent_workspace" ,(c 'error) ,(c 'error) ,(c 'light-fg))))
 
 (define sway-keybinds
