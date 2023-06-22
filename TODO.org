@@ -22,3 +22,4 @@ Serialize the buffers or smth (( meaningless ))
 * TODO Bemenu config
 * TODO RSS stuff (elfeed?)
 * TODO README.org
+* TODO Work on emacs theme
