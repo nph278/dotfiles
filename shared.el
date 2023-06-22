@@ -40,20 +40,14 @@
 	  `((dark-fg . ,fujiWhite)
 	    (dark-bg  . ,sumiInk-1b)
 	    (dark-bg-2  . ,sumiInk-2)
+	    (dark-bg-3  . ,sumiInk-4)
 
 	    (light-fg . ,sumiInk-0)
 	    (light-bg . ,fujiWhite)
 	    (light-bg-2  . ,oldWhite)
+	    (light-bg-3  . ,carpYellow)
 
 	    (accent . ,sakuraPink)
-	    (soft-accent . ,oniViolet)
-
-	    (error . ,peachRed)
-	    (soft-error . ,winterRed)
-	    (warning . ,surimiOrange)
-	    (soft-warning . ,boatYellow1)
-	    (success . ,springGreen)
-	    (soft-success . ,winterGreen)
 
 	    (keyword . ,sakuraPink)
 	    (preprocessor . ,boatYellow2)
