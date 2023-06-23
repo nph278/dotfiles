@@ -198,3 +198,16 @@
   (interactive)
   (shell-command "guix home reconfigure home.scm"))
 (evil-global-set-key 'normal (kbd "SPC g r") 'guix-home-reconfigure)
+
+;; Elfeed
+(evil-global-set-key 'normal (kbd "SPC f v") 'elfeed)
+(evil-global-set-key 'normal (kbd "SPC f u") 'elfeed-update)
+(setq elfeed-feeds
+      '("http://radar.spacebar.org/f/a/weblog/rss/1"
+	"http://funcall.blogspot.com/feeds/posts/default"
+	"https://astralcodexten.substack.com/feed"
+	"https://cp4space.hatsya.com/feed/"
+	"https://eukaryotewritesblog.com/feed/"
+	"https://www.subanima.org/rss/"
+	"http://wingolog.org/feed/atom"
+	"https://scottaaronson.blog/?feed=rss2"))

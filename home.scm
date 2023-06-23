@@ -308,7 +308,7 @@ exec swayidle -w \\
     ("colors.downloads.start.bg" . ,(d 'dark-bg))
     ("colors.downloads.start.fg" . ,(d 'dark-fg))
     ("colors.downloads.stop.bg" . ,(d 'green))
-    ("colors.downloads.stop.fg" . ,(d 'dark-fg))
+    ("colors.downloads.stop.fg" . ,(d 'light-fg))
     ("colors.downloads.system.bg" . "hsl")
     ("colors.downloads.system.fg" . "hsl")
     ("colors.hints.bg" . ,(d 'yellow))
@@ -534,6 +534,7 @@ exec swayidle -w \\
 	    emacs-pdf-tools
 	    emacs-yaml-mode
 	    emacs-guix
+	    emacs-elfeed
 
 	    ;; Containers
 	    ;; podman
