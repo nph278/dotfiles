@@ -1,8 +1,8 @@
 (list (channel
         (name 'guix)
         (url "https://git.savannah.gnu.org/git/guix.git")
-        (commit "b04ee227a47419291391a2b6e857e41ed1c32155"))
+        (commit "a033c0cf992d1b35b8dfe3424451ca96bee7c5d4"))
       (channel
         (name 'nonguix)
         (url "https://gitlab.com/nonguix/nonguix")
-        (commit "110f914f81d0d2c67a45f9b2f87a5dc7ec54dfd0")))
+        (commit "15e5924de8696cc4a19a8f508501d07f799650e1")))
