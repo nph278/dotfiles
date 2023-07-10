@@ -43,3 +43,5 @@ Check if this is still an issue
 * PLAN Per-projects config (guix.scm)
 * TODO Better dev environments (guile, rust, racket)
 Stop using vterm
+
+* PLAN lsp?
