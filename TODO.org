@@ -1,7 +1,8 @@
 * DONE Sway styling (or dwl/dwl-guile)
 * DONE Better system stuff
 * TODO Fix music search
-* PLAN Live USB
+* STOP Live USB
+just arch one
 * STOP Declarative package versions? (manifests?)
 * PLAN Backups
 * STOP Better emacs + guix integration
