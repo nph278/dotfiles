@@ -237,3 +237,6 @@
 	mode-line-modes
 	mode-line-misc-info
 	mode-line-end-spaces))
+
+;; rainbow-mode
+(add-hook 'prog-mode-hook #'rainbow-turn-on)

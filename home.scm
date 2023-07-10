@@ -546,6 +546,7 @@ library: ~/.musiclibrary.db")
 	    emacs-yaml-mode
 	    emacs-guix
 	    emacs-elfeed
+	    emacs-rainbow-mode
 
 	    ;; Containers
 	    ;; podman
