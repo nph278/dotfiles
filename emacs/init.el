@@ -215,7 +215,8 @@
 	"https://eukaryotewritesblog.com/feed/"
 	"https://www.subanima.org/rss/"
 	"http://wingolog.org/feed/atom"
-	"https://scottaaronson.blog/?feed=rss2"))
+	"https://scottaaronson.blog/?feed=rss2"
+	"https://aliquote.org/index.xml"))
 
 ;; Dired
 (defun dired-root () (interactive) (dired "~"))
