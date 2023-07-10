@@ -189,9 +189,9 @@ exec swayidle -w \\
 	    ("Shift+s" . "exec grimshot save area")
 
 	    ;; Music
-	    ("m" . ,(string-append "exec mpv \"$(beet ls -f '$path' \"$(beet ls -f '$title' | bemenu -i " bemenu-options ")\")\""))
-	    ("Shift+m" . ,(string-append "exec mpv \"$(beet ls -a -f '$path' \"$(beet ls -a -f '$album' | bemenu -i " bemenu-options ")\")\""))
-	    ("Alt+m" . "exec mpv --shuffle ~/Music")
+	    ("m" . ,(string-append "exec mpv --cover-art-files=/home/carl/.config/blank.png \"$(beet ls -f '$path' \"$(beet ls -f '$title' | bemenu -i " bemenu-options ")\")\""))
+	    ("Shift+m" . ,(string-append "exec mpv --cover-art-files=/home/carl/.config/blank.png \"$(beet ls -a -f '$path' \"$(beet ls -a -f '$album' | bemenu -i " bemenu-options ")\")\""))
+	    ("Alt+m" . "exec mpv --cover-art-files=/home/carl/.config/blank.png --shuffle ~/Music")
 
 	    ;; Windows
 	    ("h" . "focus left")
@@ -263,7 +263,6 @@ exec swayidle -w \\
 	 (map equals-line
 	      '(("osc" . "no")
 		("volume" . "50")
-		("cover-art-files" . "/home/carl/.config/blank.png")
 		("background" . "'#00000000'")
 		("alpha" . "yes")))))
 

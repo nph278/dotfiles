@@ -24,10 +24,9 @@ Serialize the buffers or smth (( meaningless ))
 * TODO Open links correctly in Emacs
 * TODO Makefile
 * TODO Org todo types per-file
-* PLAN Figure out crashing
+* STOP Figure out crashing
 Check if this is still an issue
-
 * TODO vterm colors???
 * TODO bash prompt
-* TODO mpv image not workings???
+* DONE mpv image not workings???
 * TODO /gnu/store not getting mounted?
