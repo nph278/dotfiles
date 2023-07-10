@@ -410,6 +410,10 @@ exec swayidle -w \\
 			(map qutebrowser-option->string qutebrowser-options))
 		 "config.load_autoconfig(False)\n"))
 
+(define beets-config
+  "directory: ~/Music
+library: ~/.musiclibrary.db")
+
 (define config-files
   `( ;; mpv
     (".config/mpv/mpv.conf" . ,mpv-config)
@@ -437,7 +441,10 @@ exec swayidle -w \\
     (".abcde.conf" . ,abcde-config)
 
     ;; Qutebrowser
-    (".config/qutebrowser/config.py" . ,qutebrowser-config)))
+    (".config/qutebrowser/config.py" . ,qutebrowser-config)
+
+    ;; Beets
+    (".config/beets/config.yaml" . ,beets-config)))
 
 (home-environment
  (packages (list
