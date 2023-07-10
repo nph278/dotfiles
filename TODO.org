@@ -28,3 +28,4 @@ Serialize the buffers or smth (( meaningless ))
 Check if this is still an issue
 
 * TODO vterm colors???
+* TODO bash prompt
