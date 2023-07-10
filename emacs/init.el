@@ -19,9 +19,9 @@
 
 ;; Shared data
 (setq shared-data
-      (print (eval (read (with-temp-buffer
-			   (insert-file-contents "~/.emacs.d/shared.el")
-			   (buffer-string))))))
+      (eval (read (with-temp-buffer
+		    (insert-file-contents "~/.emacs.d/shared.el")
+		    (buffer-string)))))
 
 (defun d (key)
   (cdr (assoc key shared-data)))
@@ -211,3 +211,9 @@
 	"https://www.subanima.org/rss/"
 	"http://wingolog.org/feed/atom"
 	"https://scottaaronson.blog/?feed=rss2"))
+
+;; Dired
+(defun dired-root () (interactive) (dired "~"))
+(evil-global-set-key 'normal (kbd "SPC d") 'dired-root)
+(setq dired-listing-switches "-aBhl  --group-directories-first")
+(evil-define-key 'normal dired-mode-map (kbd "SPC") nil)
