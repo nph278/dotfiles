@@ -37,6 +37,6 @@ Check if this is still an issue
 * TODO Dark mode qt/gtk
 * TODO Mailcap
 * TODO Organize past+future screenshots into folder
-* TODO Dired+?
+* PLAN Dired+?
 * TODO Dired fuzzy find
 * TODO Emacs(Dired) beets
