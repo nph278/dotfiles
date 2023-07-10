@@ -12,19 +12,19 @@ idk
 * DONE Emacs reloading
 Serialize the buffers or smth (( meaningless ))
 * STOP Kill vterms with C-S-Q rather than just orphaning them
-* TODO Clean up home.scm
+* PLAN Clean up home.scm
 * DONE Flatpak launch menu
 * DONE Generic color names
 * DONE mpv fallback image
-* TODO Treesitter?
+* PLAN Treesitter?
 * DONE Integrate emacs into theme
 * DONE Bemenu config
 * DONE RSS stuff (elfeed?)
-* TODO README.org
+* DONE README.org
 * PLAN Make home.scm generic on username, ip, etc.
 * DONE Open links correctly in Emacs
 did for dired, do later for other things
-* TODO Makefile
+* PLAN Makefile?
 * TODO Org todo types per-file
 * STOP Figure out crashing
 Check if this is still an issue
@@ -38,5 +38,8 @@ Check if this is still an issue
 * TODO Mailcap
 * TODO Organize past+future screenshots into folder
 * PLAN Dired+?
-* TODO Dired fuzzy find
+* PLAN Dired fuzzy find
 * TODO Emacs(Dired) beets
+* PLAN Per-projects config (guix.scm)
+* TODO Better dev environments (guile, rust, racket)
+Stop using vterm
