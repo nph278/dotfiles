@@ -1,8 +1,8 @@
 * DONE Sway styling (or dwl/dwl-guile)
-* PLAN Better system stuff
+* DONE Better system stuff
 * TODO Fix music search
 * PLAN Live USB
-* PLAN Declarative package versions? (manifests?)
+* STOP Declarative package versions? (manifests?)
 * PLAN Backups
 * STOP Better emacs + guix integration
 idk
@@ -10,8 +10,7 @@ idk
 ?
 * DONE Emacs reloading
 Serialize the buffers or smth (( meaningless ))
-* PLAN Figure out crashing
-* PLAN Kill vterms with C-S-Q rather than just orphaning them
+* STOP Kill vterms with C-S-Q rather than just orphaning them
 * TODO Clean up home.scm
 * DONE Flatpak launch menu
 * DONE Generic color names
@@ -19,8 +18,11 @@ Serialize the buffers or smth (( meaningless ))
 * TODO Treesitter?
 * DONE Integrate emacs into theme
 * DONE Bemenu config
-* TODO RSS stuff (elfeed?)
+* DONE RSS stuff (elfeed?)
 * TODO README.org
 * PLAN Make home.scm generic on username, ip, etc.
-* Work on emacs theme
 * TODO Open links correctly in Emacs
+* TODO Makefile
+* TODO Org todo types per-file
+* PLAN Figure out crashing
+Check if this is still an issue
