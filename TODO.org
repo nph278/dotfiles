@@ -31,3 +31,5 @@ Check if this is still an issue
 * TODO bash prompt
 * DONE mpv image not workings???
 * TODO /gnu/store not getting mounted?
+* TODO Info mode spacebar (no mode map?)
+* TODO Guix-daemon isn't real
