@@ -38,3 +38,5 @@ Check if this is still an issue
 * TODO Mailcap
 * TODO Organize past+future screenshots into folder
 * TODO Dired+?
+* TODO Dired fuzzy find
+* TODO Emacs(Dired) beets
