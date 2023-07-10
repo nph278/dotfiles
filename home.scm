@@ -38,6 +38,7 @@
 	     (gnu packages virtualization)
 	     (gnu packages graphics)
 	     (gnu packages racket)
+	     (gnu packages engineering)
 	     (guix gexp)
 	     (guix store)
 	     (guix packages)
@@ -553,7 +554,10 @@ library: ~/.musiclibrary.db")
 	    font-victor-mono
 
 	    ;; Libreoffice
-	    libreoffice))
+	    libreoffice
+
+	    ;; kicad
+	    kicad))
  (services
   (list
    (simple-service 'configuration-files
