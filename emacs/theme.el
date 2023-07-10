@@ -57,9 +57,12 @@
  `(minibuffer-prompt-end                         ((t (:foreground ,(d 'red) :background ,(d 'dark-bg)))))
  `(minibuffer-prompt                             ((t (:foreground ,(d 'yellow) :background ,(d 'dark-bg)))))
  `(epa-mark                                      ((t (:foreground ,(d 'red)))))
- `(dired-mark                                    ((t (:foreground ,(d 'red)))))
  `(trailing-whitespace                           ((t (:background ,(d 'dark-bg-2)))))
  `(mode-line                                     ((t (:bold t))))
+
+ ;; dired
+ `(dired-mark                                    ((t (:foreground ,(d 'red)))))
+ `(dired-header                                  ((t (:foreground ,(d 'variable)))))
   
  ;; elfeed
  `(elfeed-search-tag-face                        ((t (:foreground ,(d 'function)))))
