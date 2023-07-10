@@ -30,3 +30,4 @@ Check if this is still an issue
 * TODO vterm colors???
 * TODO bash prompt
 * TODO mpv image not workings???
+* TODO /gnu/store not getting mounted?
