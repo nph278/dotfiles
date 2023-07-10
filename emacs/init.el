@@ -44,6 +44,7 @@
 ;; Undo-tree
 (global-undo-tree-mode)
 (evil-set-undo-system 'undo-tree)
+(evil-global-set-key 'normal (kbd "U") 'undo-tree-visualize)
 
 ;; Buffers
 (evil-global-set-key 'normal (kbd "SPC w h") 'windmove-left)
@@ -200,7 +201,7 @@
   (shell-command "guix home reconfigure home.scm"))
 (evil-global-set-key 'normal (kbd "SPC g r") 'guix-home-reconfigure)
 
-;; Elfeed
+;https://raw.githubusercontent.com/emacs-tw/awesome-emacs/master/README.org; Elfeed
 (defun elfeed-update-view ()
   (interactive)
   (elfeed-update)
