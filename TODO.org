@@ -26,3 +26,5 @@ Serialize the buffers or smth (( meaningless ))
 * TODO Org todo types per-file
 * PLAN Figure out crashing
 Check if this is still an issue
+
+* TODO vterm colors???
