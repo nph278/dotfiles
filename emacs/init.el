@@ -201,12 +201,14 @@
 (evil-global-set-key 'normal (kbd "SPC g r") 'guix-home-reconfigure)
 
 ;; Elfeed
-(evil-global-set-key 'normal (kbd "SPC f v") 'elfeed)
-(evil-global-set-key 'normal (kbd "SPC f u") 'elfeed-update)
+(defun elfeed-update-view ()
+  (interactive)
+  (elfeed-update)
+  (elfeed))
+(evil-global-set-key 'normal (kbd "SPC f") 'elfeed-update-view)
 (setq elfeed-feeds
       '("http://radar.spacebar.org/f/a/weblog/rss/1"
 	"http://funcall.blogspot.com/feeds/posts/default"
-	"https://astralcodexten.substack.com/feed"
 	"https://cp4space.hatsya.com/feed/"
 	"https://eukaryotewritesblog.com/feed/"
 	"https://www.subanima.org/rss/"
