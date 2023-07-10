@@ -225,3 +225,14 @@
   (interactive)
   (start-process "" nil "xdg-open" (file-name-nondirectory (dired-file-name-at-point))))
 (evil-define-key 'normal dired-mode-map (kbd "TAB") 'dired-open-external)
+
+;; mode-line
+(setq mode-line-format
+      '("%e"
+	mode-line-front-space
+	"%b:%l "
+	(vc-mode vc-mode)
+	"  "
+	mode-line-modes
+	mode-line-misc-info
+	mode-line-end-spaces))
