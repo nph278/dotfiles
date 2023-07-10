@@ -39,6 +39,7 @@
 	     (gnu packages graphics)
 	     (gnu packages racket)
 	     (gnu packages engineering)
+	     (gnu packages freedesktop)
 	     (guix gexp)
 	     (guix store)
 	     (guix packages)
@@ -462,6 +463,7 @@ library: ~/.musiclibrary.db")
 	    zip
 	    unzip
 	    cryptsetup
+	    xdg-utils
 
 	    ;; Sway
 	    sway

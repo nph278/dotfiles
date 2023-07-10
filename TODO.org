@@ -22,7 +22,8 @@ Serialize the buffers or smth (( meaningless ))
 * DONE RSS stuff (elfeed?)
 * TODO README.org
 * PLAN Make home.scm generic on username, ip, etc.
-* TODO Open links correctly in Emacs
+* DONE Open links correctly in Emacs
+did for dired, do later for other things
 * TODO Makefile
 * TODO Org todo types per-file
 * STOP Figure out crashing
@@ -34,3 +35,4 @@ Check if this is still an issue
 * TODO Info mode spacebar (no mode map?)
 * TODO Guix-daemon isn't being started by systemd
 * TODO Dark mode qt/gtk
+* TODO Mailcap

@@ -220,3 +220,7 @@
 (evil-global-set-key 'normal (kbd "SPC d") 'dired-root)
 (setq dired-listing-switches "-aBhl  --group-directories-first")
 (evil-define-key 'normal dired-mode-map (kbd "SPC") nil)
+(defun dired-open-external ()
+  (interactive)
+  (start-process "" nil "xdg-open" (file-name-nondirectory (dired-file-name-at-point))))
+(evil-define-key 'normal dired-mode-map (kbd "TAB") 'dired-open-external)
