@@ -45,3 +45,4 @@ Check if this is still an issue
 Stop using vterm
 * PLAN lsp?
 * PLAN Make packages more connected to their configs and deps
+* TODO Keepass emacs
