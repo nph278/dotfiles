@@ -144,6 +144,7 @@
 
 ;; Magit
 (evil-global-set-key 'normal (kbd "SPC m s") 'magit-status)
+(evil-global-set-key 'normal (kbd "SPC m c") 'magit-clone)
 
 ;; Project
 (evil-global-set-key 'normal (kbd "SPC p f") 'project-find-file)

@@ -240,6 +240,8 @@ exec swayidle -w \\
   name = nph278
 [core]
   excludesfile = ~/.global.gitignore   
+[http]
+  sslVerify = false
 ")
 
 (define minidlna-config
