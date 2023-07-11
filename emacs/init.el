@@ -241,4 +241,4 @@
 	mode-line-end-spaces))
 
 ;; rainbow-mode
-(add-hook 'prog-mode-hook #'rainbow-turn-on)
+(add-hook 'prog-mode-hook #'rainbow-mode)
