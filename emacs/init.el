@@ -217,6 +217,7 @@
 	"http://wingolog.org/feed/atom"
 	"https://scottaaronson.blog/?feed=rss2"
 	"https://aliquote.org/index.xml"))
+(evil-define-key 'normal elfeed-show-mode-map (kbd "TAB") 'dired-open-external)
 
 ;; Dired
 (defun dired-root () (interactive) (dired "~"))
