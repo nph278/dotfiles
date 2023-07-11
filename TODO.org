@@ -28,7 +28,7 @@ did for dired, do later for other things
 * TODO Org todo types per-file
 * STOP Figure out crashing
 Check if this is still an issue
-* TODO vterm colors???
+* DONE vterm colors???
 * TODO bash prompt
 * DONE mpv image not workings???
 * TODO /gnu/store not getting mounted?
