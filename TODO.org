@@ -36,7 +36,7 @@ Check if this is still an issue
 * TODO Guix-daemon isn't being started by systemd
 * TODO Dark mode qt/gtk
 * TODO Mailcap
-* TODO Organize past+future screenshots into folder
+* DONE Organize past+future screenshots into folder
 * PLAN Dired+?
 * PLAN Dired fuzzy find
 * TODO Emacs(Dired) beets
@@ -47,3 +47,4 @@ Stop using vterm
 * PLAN Make packages more connected to their configs and deps
 * TODO Keepass emacs
 * TODO Make guix home reconfigure not dependent on current buffer
+* TODO Dired: reload new files
