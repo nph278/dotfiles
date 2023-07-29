@@ -378,7 +378,6 @@ exec swayidle -w \\
     ("colors.tabs.selected.even.fg" . ,(d 'light-fg))
     ("colors.tabs.selected.odd.bg" . ,(d 'accent))
     ("colors.tabs.selected.odd.fg" . ,(d 'light-fg))
-    ("colors.webpage.bg" . ,(d 'dark-bg))
     ("colors.webpage.preferred_color_scheme" . "dark")
     ("content.blocking.enabled" . #t)
     ("content.blocking.adblock.lists" .
