@@ -561,7 +561,8 @@ library: ~/.musiclibrary.db")
 	    libreoffice
 
 	    ;; kicad
-	    kicad))
+	    kicad
+	    kicad-symbols))
  (services
   (list
    (simple-service 'configuration-files
