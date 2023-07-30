@@ -562,7 +562,8 @@ library: ~/.musiclibrary.db")
 
 	    ;; kicad
 	    kicad
-	    kicad-symbols))
+	    kicad-symbols
+	    kicad-templates))
  (services
   (list
    (simple-service 'configuration-files
