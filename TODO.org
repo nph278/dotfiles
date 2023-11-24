@@ -44,7 +44,7 @@ Check if this is still an issue
 Stop using vterm
 * PLAN lsp?
 * PLAN Make packages more connected to their configs and deps
-* TODO Keepass emacs
+* DONE Keepass emacs
 * TODO Make guix home reconfigure not dependent on current buffer
 * TODO Dired: reload new files
 * TODO https certificate things (flatpak affected)
