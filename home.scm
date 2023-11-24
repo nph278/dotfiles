@@ -501,7 +501,7 @@ library: ~/.musiclibrary.db")
 	    ;; Rust
 	    rust
 	    (list rust "cargo")
-	    (list rust "rustfmt")
+	    (list rust "tools")
 
 	    ;; Python
 	    python
