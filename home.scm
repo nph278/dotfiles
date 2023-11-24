@@ -43,6 +43,9 @@
 	     (guix gexp)
 	     (guix store)
 	     (guix packages)
+	     (guix git-download)
+	     (guix build-system emacs)
+	     (guix licenses)
 	     (ice-9 textual-ports)
 	     (ice-9 string-fun)
 	     (ice-9 eval-string)
@@ -448,6 +451,28 @@ library: ~/.musiclibrary.db")
     ;; Beets
     (".config/beets/config.yaml" . ,beets-config)))
 
+(define-public emacs-keepass-mode
+  (package
+    (name "emacs-keepass-mode")
+    (version "0.0.5")
+    (source (origin
+              (method git-fetch)
+              (uri (git-reference
+                    (url "https://github.com/ifosch/keepass-mode")
+                    (commit (string-append "v" version))))
+              (file-name (git-file-name name version))
+              (sha256
+               (base32
+                "0wrzbcd070l8yjqxg7mmglc3kfgy420y3wnykky198y83xsv3qy2"))))
+    (build-system emacs-build-system)
+    (propagated-inputs (list emacs-dash emacs-with-editor emacs-magit))
+    (home-page "https://github.com/ifosch/keepass-mode")
+    (synopsis "Emacs mode to open KeePass DB")
+    (description
+     "This provides an Emacs major mode to open KeePass DB files, navigate 
+through them, show their entries, and copy the passwords to the clipboard. ")
+    (license gpl3)))
+
 (home-environment
  (packages (list
 
@@ -549,6 +574,7 @@ library: ~/.musiclibrary.db")
 	    emacs-guix
 	    emacs-elfeed
 	    emacs-rainbow-mode
+	    emacs-keepass-mode
 
 	    ;; Containers
 	    ;; podman

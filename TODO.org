@@ -4,7 +4,7 @@
 * STOP Live USB
 just arch one
 * STOP Declarative package versions? (manifests?)
-* PLAN Backups
+* TODO Backups
 * STOP Better emacs + guix integration
 idk
 * STOP Better emacs + sway integration
@@ -33,7 +33,6 @@ Check if this is still an issue
 * DONE mpv image not workings???
 * TODO /gnu/store not getting mounted?
 * TODO Info mode spacebar (no mode map?)
-* TODO Guix-daemon isn't being started by systemd
 * TODO Dark mode qt/gtk
 * TODO Mailcap
 * DONE Organize past+future screenshots into folder
@@ -49,6 +48,8 @@ Stop using vterm
 * TODO Make guix home reconfigure not dependent on current buffer
 * TODO Dired: reload new files
 * TODO https certificate things (flatpak affected)
+#+begin_src
+error: Can't load uri https://dl.flathub.org/repo/flathub.flatpakrepo: While fetching https://dl.flathub.org/repo/flathub.flatpakrepo: [60] SSL peer certificate or SSH remote key was not OK
+#+end_src
 * TODO inline $TeX$
-* TODO Auto Mount
 * TODO Local guix repo
