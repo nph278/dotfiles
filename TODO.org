@@ -12,7 +12,7 @@ idk
 * DONE Emacs reloading
 Serialize the buffers or smth (( meaningless ))
 * STOP Kill vterms with C-S-Q rather than just orphaning them
-* PLAN Clean up home.scm
+* TODO Clean up home.scm
 * DONE Flatpak launch menu
 * DONE Generic color names
 * DONE mpv fallback image
@@ -48,4 +48,7 @@ Stop using vterm
 * TODO Keepass emacs
 * TODO Make guix home reconfigure not dependent on current buffer
 * TODO Dired: reload new files
-* TODO Fix https certificate things (flatpak affected)
+* TODO https certificate things (flatpak affected)
+* TODO inline $TeX$
+* TODO Auto Mount
+* TODO Local guix repo

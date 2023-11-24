@@ -490,9 +490,12 @@ library: ~/.musiclibrary.db")
 	    yt-dlp
 	    blender
 
-	    ;; Editing/Creation
+	    ;; Images
 	    gimp
+
+	    ;; TeX
 	    texlive-tex
+	    texlive-latex
 
 	    ;; Development
 	    git
