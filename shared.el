@@ -47,7 +47,7 @@
 	    (light-bg-2  . ,oldWhite)
 	    (light-bg-3  . ,carpYellow)
 
-	    (accent . ,surimiOrange)
+	    (accent . ,waveRed)
 
 	    (keyword . ,sakuraPink)
 	    (preprocessor . ,boatYellow2)
