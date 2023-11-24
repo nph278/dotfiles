@@ -53,4 +53,4 @@ error: Can't load uri https://dl.flathub.org/repo/flathub.flatpakrepo: While fet
 #+end_src
 * TODO inline $TeX$
 * TODO Local guix repo
-* DONE Custom CSS
+* TODO Custom CSS
