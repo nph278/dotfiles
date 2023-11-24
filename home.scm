@@ -492,7 +492,7 @@ library: ~/.musiclibrary.db")
 
 	    ;; Editing/Creation
 	    gimp
-	    texlive
+	    texlive-tex
 
 	    ;; Development
 	    git

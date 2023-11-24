@@ -1,5 +1,6 @@
 * dotfiles
 This configuration contains most of the software and configurations I use.
+
 ** Installation
 1. Make sure guix is installed.
    + Use the installer here: https://git.savannah.gnu.org/cgit/guix.git/plain/etc/guix-install.sh.

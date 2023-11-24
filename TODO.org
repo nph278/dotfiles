@@ -48,3 +48,4 @@ Stop using vterm
 * TODO Keepass emacs
 * TODO Make guix home reconfigure not dependent on current buffer
 * TODO Dired: reload new files
+* TODO Fix https certificate things (flatpak affected)
