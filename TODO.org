@@ -12,7 +12,7 @@ idk
 * DONE Emacs reloading
 Serialize the buffers or smth (( meaningless ))
 * STOP Kill vterms with C-S-Q rather than just orphaning them
-* TODO Clean up home.scm
+* STOP Clean up home.scm
 * DONE Flatpak launch menu
 * DONE Generic color names
 * DONE mpv fallback image

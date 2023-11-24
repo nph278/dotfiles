@@ -184,7 +184,6 @@ exec swayidle -w \\
 
 (define sway-keybinds
   (append `(;; Applications
-	    ("Return" . "exec emacs --eval '(eshell)'")
 	    ("q" . "exec qutebrowser --qt-flag disable-seccomp-filter-sandbox")
 	    ("e" . "exec emacsclient -c")
 	    ("Alt+e" . "exec kill $(ps -A | grep 'emacs-' | awk '{print $1;}') && emacs --bg-daemon")
