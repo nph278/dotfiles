@@ -189,7 +189,7 @@ exec swayidle -w \\
 	    ("Alt+e" "exec kill $(ps -A | grep 'emacs-' | awk '{print $1;}') && emacs --bg-daemon")
 	    ("x" ,(string-append  "exec bemenu-run " bemenu-options))
 	    ("Shift+x" ,(string-append "exec flatpak run $(flatpak list --columns=application | bemenu " bemenu-options ")"))
-	    ("Alt+s" "exec grimshot save scree20230711095930.pngn ~/Pictures/screenshots/$(date +'%Y%m%d%I%M%S').png")
+	    ("Alt+s" "exec grimshot save screen ~/Pictures/screenshots/$(date +'%Y%m%d%I%M%S').png")
 	    ("Shift+s" "exec grimshot save area ~/Pictures/screenshots/$(date +'%Y%m%d%I%M%S').png")
 
 	    ;; Music
