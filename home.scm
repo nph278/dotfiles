@@ -643,6 +643,7 @@ More manager support can easily be added.")
 	    emacs-elfeed
 	    emacs-rainbow-mode
 	    emacs-pass
+	    emacs-magit
 
 	    ;; Containers
 	    ;; podman
