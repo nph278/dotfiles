@@ -46,6 +46,7 @@
 	     (gnu packages xml)
 	     (gnu packages haskell-xyz)
 	     (gnu packages check)
+	     (gnu packages aspell)
 	     (guix gexp)
 	     (guix store)
 	     (guix packages)
@@ -558,6 +559,7 @@ More manager support can easily be added.")
 	    unzip
 	    cryptsetup
 	    xdg-utils
+	    ispell
 
 	    ;; Sway
 	    sway
