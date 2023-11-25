@@ -56,3 +56,6 @@ error: Can't load uri https://dl.flathub.org/repo/flathub.flatpakrepo: While fet
 * TODO inline $TeX$
 * TODO Local guix repo
 * TODO Custom CSS
+* TODO Pass
+https://www.passwordstore.org/
+https://github.com/NicolasPetton/pass
