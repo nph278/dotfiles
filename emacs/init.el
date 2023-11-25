@@ -46,14 +46,6 @@
 (evil-set-undo-system 'undo-tree)
 (evil-global-set-key 'normal (kbd "U") 'undo-tree-visualize)
 
-;; Buffers
-(evil-global-set-key 'normal (kbd "SPC w h") 'windmove-left)
-(evil-global-set-key 'normal (kbd "SPC w l") 'windmove-right)
-(evil-global-set-key 'normal (kbd "SPC w k") 'windmove-up)
-(evil-global-set-key 'normal (kbd "SPC w j") 'windmove-down)
-(evil-global-set-key 'normal (kbd "SPC w J") 'split-window-below)
-(evil-global-set-key 'normal (kbd "SPC w L") 'split-window-right)
-
 ;; GUI
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
