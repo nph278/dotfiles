@@ -221,7 +221,6 @@
 
 ;; Dired
 (defun dired-root () (interactive) (dired "~"))
-(evil-global-set-key 'normal (kbd "SPC d") 'dired-root)
 (setq dired-listing-switches "-aBhl  --group-directories-first")
 (evil-define-key 'normal dired-mode-map (kbd "SPC") nil)
 
