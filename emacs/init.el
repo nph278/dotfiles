@@ -242,5 +242,5 @@
 ;; rainbow-mode
 (add-hook 'prog-mode-hook #'rainbow-mode)
 
-;; keepass-mode
-(evil-global-set-key 'normal (kbd "SPC k") 'keepass-mode)
+;; pass
+(evil-global-set-key 'normal (kbd "SPC k") 'pass)

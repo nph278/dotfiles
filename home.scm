@@ -25,6 +25,9 @@
 	     (gnu packages tex)
 	     (gnu packages python)
 	     (gnu packages python-xyz)
+	     (gnu packages python-crypto)
+	     (gnu packages python-build)
+	     (gnu packages python-web)
 	     (gnu packages speech)
 	     (gnu packages upnp)
 	     (gnu packages cdrom)
@@ -40,11 +43,14 @@
 	     (gnu packages racket)
 	     (gnu packages engineering)
 	     (gnu packages freedesktop)
+	     (gnu packages xml)
+	     (gnu packages haskell-xyz)
+	     (gnu packages check)
 	     (guix gexp)
 	     (guix store)
 	     (guix packages)
 	     (guix git-download)
-	     (guix build-system emacs)
+	     (guix build-system python)
 	     (guix licenses)
 	     (ice-9 textual-ports)
 	     (ice-9 string-fun)
@@ -452,26 +458,90 @@ library: ~/.musiclibrary.db")
     ;; Beets
     (".config/beets/config.yaml" ,beets-config)))
 
-(define-public emacs-keepass-mode
+(define-public python-dominate
   (package
-    (name "emacs-keepass-mode")
-    (version "0.0.5")
-    (source (origin
-              (method git-fetch)
-              (uri (git-reference
-                    (url "https://github.com/ifosch/keepass-mode")
-                    (commit (string-append "v" version))))
-              (file-name (git-file-name name version))
-              (sha256
-               (base32
-                "0wrzbcd070l8yjqxg7mmglc3kfgy420y3wnykky198y83xsv3qy2"))))
-    (build-system emacs-build-system)
-    (propagated-inputs (list emacs-dash emacs-with-editor emacs-magit))
-    (home-page "https://github.com/ifosch/keepass-mode")
-    (synopsis "Emacs mode to open KeePass DB")
-    (description
-     "This provides an Emacs major mode to open KeePass DB files, navigate 
-through them, show their entries, and copy the passwords to the clipboard. ")
+    (name "python-dominate")
+    (version "2.9.0")
+    (source
+      (origin
+        (method git-fetch)
+        (uri (git-reference
+               (url "https://github.com/Knio/dominate")
+               (commit version)))
+        (file-name (git-file-name name version))
+        (sha256
+         (base32
+          "1pkdf94r4slvk81px2347z538zfbmi0p4xbq2ijjpfkv77q9jlg6"))))
+    (build-system python-build-system)
+    (arguments
+     '(#:phases
+       (modify-phases %standard-phases
+	 (add-before 'build 'copy-setuppy
+           (lambda _
+             (copy-file "setup/setup.py" "setup.py")))
+	 (replace 'check
+           (lambda _
+	     (invoke "make" "test"))))))
+    (native-inputs (list python-setuptools python-pytest))
+    (home-page "https://github.com/Knio/dominate")
+    (synopsis "A Python library for creating and manipulating HTML documents using an elegant DOM API.")
+    (description "Dominate is a Python library for creating and manipulating
+ HTML documents using an elegant DOM API. It allows you to write HTML pages 
+in pure Python very concisely, which eliminate the need to learn another 
+template language, and to take advantage of the more powerful features of Python.")
+    (license lgpl3)))
+
+(define-public pass-import
+  (package
+    (name "pass-import")
+    (version "3.4")
+    (source
+     (origin
+       (method git-fetch)
+       (uri (git-reference
+             (url "https://github.com/roddhjav/pass-import")
+             (commit (string-append "v" version))))
+       (file-name (git-file-name name version))
+       (sha256
+        (base32
+         "031rcl67vqraq2rfwiaiydjrzr8rl8a1z89mdhwm2s30i9cn1j1l"))))
+    (build-system python-build-system)
+    (arguments
+     '(#:tests?
+       #f ; Some tests require packages which will not be added
+       #:phases
+       (modify-phases %standard-phases
+	 (add-before 'build 'patch-setup-cfg
+	   (lambda _
+	     (substitute* "setup.cfg"
+	       (("attr: pass_import.__version__") (version)))))
+	 (add-before 'install 'manpage
+           (lambda _
+             (invoke "make" "docs")))
+	 (replace 'install
+           (lambda* (#:key outputs #:allow-other-keys)
+	     (let ((out (assoc-ref outputs "out")))
+               (copy-recursively "build/lib" (string-append out "/lib/password-store/extensions"))
+               (copy-recursively "share" (string-append out "/share"))))))))
+    (native-inputs
+     (list python-setuptools
+	   python-dominate
+	   pandoc))
+    (propagated-inputs
+     (list python-pykeepass
+	   python-defusedxml
+	   python-secretstorage
+	   python-cryptography
+	   python-requests
+	   python-zxcvbn
+	   python-pyyaml
+	   python-pyaml))
+    (home-page "https://github.com/roddhjav/pass-import")
+    (synopsis "A pass extension for importing data from most existing password managers")
+    (description "Pass import is a password store extension allowing you to 
+import your password database to a password store repository conveniently. 
+It natively supports import from 62 different password managers. 
+More manager support can easily be added.")
     (license gpl3)))
 
 (home-environment
@@ -498,8 +568,9 @@ through them, show their entries, and copy the passwords to the clipboard. ")
 	    grimshot
 	    wl-clipboard
 	    
-	    ;; Passwords
-	    keepassxc
+	    ;; pass
+	    password-store
+	    pass-import
 
 	    ;; Web
 	    qutebrowser
@@ -575,7 +646,7 @@ through them, show their entries, and copy the passwords to the clipboard. ")
 	    emacs-guix
 	    emacs-elfeed
 	    emacs-rainbow-mode
-	    emacs-keepass-mode
+	    emacs-pass
 
 	    ;; Containers
 	    ;; podman
