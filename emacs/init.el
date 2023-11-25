@@ -227,7 +227,7 @@
 (defun dired-open-external ()
   (interactive)
   (start-process "" nil "xdg-open" (file-name-nondirectory (dired-file-name-at-point))))
-(evil-define-key 'normal dired-mode-map (kbd "TAB") 'dired-open-external)
+(evil-define-key 'normal dired-mode-map (kbd "?") 'dired-do-async-shell-command)
 
 ;; mode-line
 (setq mode-line-format
