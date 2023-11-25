@@ -84,9 +84,6 @@
     ("gs" "git status")
     ("gd" "git diff")
 
-    ;; Passwords
-    ("kee" "keepassxc-cli open ~/.KeePass.kdbx")
-
     ;; mpv
     ("mpva" "mpv --no-video")
     ("mpvterm" "DISPLAY= mpv -vo caca")
