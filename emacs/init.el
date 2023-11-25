@@ -115,10 +115,6 @@
 ;; git gutter
 (global-git-gutter-mode)
 
-;; Magit
-(evil-global-set-key 'normal (kbd "SPC m s") 'magit-status)
-(evil-global-set-key 'normal (kbd "SPC m c") 'magit-clone)
-
 ;; Project
 (defun project-path (name) `(,(concat "~/Projects/" name "/")))
 (setq project--list (mapcar #'project-path (cddr (directory-files "~/Projects"))))
