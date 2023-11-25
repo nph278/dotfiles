@@ -112,11 +112,6 @@
 ;; Racket
 (evil-global-set-key 'normal (kbd "SPC r r") 'racket-run)
 
-;; Elisp
-(evil-global-set-key 'normal (kbd "SPC x b") 'eval-buffer)
-(evil-global-set-key 'normal (kbd "SPC x s") 'eval-last-sexp)
-(evil-global-set-key 'normal (kbd "SPC x e") 'eval-expression)
-
 ;; git gutter
 (global-git-gutter-mode)
 
