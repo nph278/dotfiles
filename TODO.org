@@ -1,6 +1,7 @@
 * DONE Sway styling (or dwl/dwl-guile)
 * DONE Better system stuff
-* TODO Fix music search
+* STOP Fix music search
+just dired and & ;3
 * STOP Live USB
 just arch one
 * STOP Declarative package versions? (manifests?)

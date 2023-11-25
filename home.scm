@@ -192,11 +192,6 @@ exec swayidle -w \\
 	    ("Alt+s" "exec grimshot save screen ~/Pictures/screenshots/$(date +'%Y%m%d%I%M%S').png")
 	    ("Shift+s" "exec grimshot save area ~/Pictures/screenshots/$(date +'%Y%m%d%I%M%S').png")
 
-	    ;; Music
-	    ("m" ,(string-append "exec mpv --cover-art-files=/home/carl/.config/blank.png \"$(beet ls -f '$path' \"$(beet ls -f '$title' | bemenu -i " bemenu-options ")\")\""))
-	    ("Shift+m" ,(string-append "exec mpv --cover-art-files=/home/carl/.config/blank.png \"$(beet ls -a -f '$path' \"$(beet ls -a -f '$album' | bemenu -i " bemenu-options ")\")\""))
-	    ("Alt+m" "exec mpv --cover-art-files=/home/carl/.config/blank.png --shuffle ~/Music")
-
 	    ;; Windows
 	    ("h" "focus left")
 	    ("j" "focus down")
