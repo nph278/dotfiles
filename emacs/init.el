@@ -215,6 +215,7 @@
 ;; Dired
 (defun dired-root () (interactive) (dired "~"))
 (setq dired-listing-switches "-ABhl  --group-directories-first")
+(setq delete-by-moving-to-trash t)
 (evil-define-key 'normal dired-mode-map (kbd "SPC") nil)
 
 ;; mode-line
