@@ -38,8 +38,8 @@ gOD I hate systemd
 * TODO Dark mode qt/gtk
 * TODO Mailcap
 * DONE Organize past+future screenshots into folder
-* PLAN Dired+?
-* PLAN Dired fuzzy find
+* STOP Dired+?
+* STOP Dired fuzzy find
 * TODO Emacs(Dired) beets
 * PLAN Per-projects config (guix.scm)
 * TODO Better dev environments (guile, rust, racket)
@@ -60,3 +60,5 @@ error: Can't load uri https://dl.flathub.org/repo/flathub.flatpakrepo: While fet
 https://www.passwordstore.org/
 https://github.com/NicolasPetton/pass
 * PLAN Emacs wm???
+* TODO Figure out the minidlna usage
+* TODO dired-do-async maybe don't open silly buffer?
