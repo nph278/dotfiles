@@ -624,7 +624,6 @@ More manager support can easily be added.")
 	    emacs-racket-mode
 	    emacs-paredit
 	    emacs-org
-	    emacs-org-roam
 	    emacs-org-fragtog
 	    emacs-undo-tree
 	    emacs-evil-org

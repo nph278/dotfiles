@@ -100,13 +100,6 @@
 (evil-global-set-key 'normal (kbd "SPC o s") 'org-schedule)
 (evil-global-set-key 'normal (kbd "SPC o d") 'org-deadline)
 (evil-define-key 'normal org-mode-map (kbd "RET") 'org-open-at-point)
-
-;; Org-roam
-(setq org-roam-directory "~/Roam")
-(org-roam-db-autosync-mode)
-(evil-global-set-key 'normal (kbd "SPC n l") 'org-roam-buffer-toggle)
-(evil-global-set-key 'normal (kbd "SPC n f") 'org-roam-node-find)
-(evil-global-set-key 'normal (kbd "SPC n i") 'org-roam-node-insert)
 (setq org-todo-keywords '((sequence "TODO(t)" "WAIT(w)" "PLAN(p)" "|" "DONE(d)" "STOP(s)")))
 
 ;; Theme
