@@ -84,12 +84,6 @@
 (add-hook 'evil-org-mode-hook         #'evil-org-settings nil 'local)
 (add-hook 'org-mode-hook              #'evil-org-mode)
 (add-hook 'org-mode-hook              #'org-fragtog-mode)
-(evil-global-set-key 'normal (kbd "SPC o t") 'org-todo)
-(evil-global-set-key 'normal (kbd "SPC o a") 'org-agenda)
-(evil-global-set-key 'normal (kbd "SPC o b") 'org-insert-structure-template)
-(evil-global-set-key 'normal (kbd "SPC o .") 'org-time-stamp)
-(evil-global-set-key 'normal (kbd "SPC o s") 'org-schedule)
-(evil-global-set-key 'normal (kbd "SPC o d") 'org-deadline)
 (evil-define-key 'normal org-mode-map (kbd "RET") 'org-open-at-point)
 (setq org-todo-keywords '((sequence "TODO(t)" "WAIT(w)" "PLAN(p)" "|" "DONE(d)" "STOP(s)")))
 
