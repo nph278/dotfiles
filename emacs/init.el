@@ -44,7 +44,6 @@
 ;; Undo-tree
 (global-undo-tree-mode)
 (evil-set-undo-system 'undo-tree)
-(evil-global-set-key 'normal (kbd "U") 'undo-tree-visualize)
 
 ;; GUI
 (menu-bar-mode -1)
