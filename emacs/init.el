@@ -96,7 +96,7 @@
 
 ;; Undo tree
 (global-undo-tree-mode)
-(evil-set-undo-system 'undo-tree)
+(evil-set-undo-system #'undo-tree)
 
 
 ;; == Files ==
@@ -118,13 +118,14 @@
 
 ;; Org
 (setq org-hide-emphasis-markers t
-      org-startup-with-inline-images t)
-(defun evil-org-settings () (evil-org-set-key-theme '(textobjects insert navigation additional shift)))
-(add-hook 'evil-org-mode-hook         #'evil-org-settings nil 'local)
-(add-hook 'org-mode-hook              #'evil-org-mode)
-(add-hook 'org-mode-hook              #'org-fragtog-mode)
-(evil-define-key 'normal org-mode-map (kbd "RET") 'org-open-at-point)
-(setq org-todo-keywords '((sequence "TODO(t)" "WAIT(w)" "PLAN(p)" "|" "DONE(d)" "STOP(s)")))
+      org-startup-with-inline-images t
+      org-todo-keywords '((sequence "TODO(t)" "WAIT(w)" "PLAN(p)" "|" "DONE(d)" "STOP(s)")))
+(defun evil-org-settings ()
+  (evil-org-set-key-theme '(textobjects insert navigation additional shift)))
+(add-hook 'evil-org-mode-hook                     #'evil-org-settings nil 'local)
+(add-hook 'org-mode-hook                          #'evil-org-mode)
+(add-hook 'org-mode-hook                          #'org-fragtog-mode)
+(evil-define-key 'normal org-mode-map (kbd "RET") #'org-open-at-point)
 
 ;; Ebooks
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
@@ -145,11 +146,6 @@
 ;; == Web ==
 
 ;; Elfeed
-(defun elfeed-update-view ()
-  (interactive)
-  (elfeed-update)
-  (elfeed))
-(evil-global-set-key 'normal (kbd "SPC f") 'elfeed-update-view)
 (setq elfeed-feeds
       '("http://radar.spacebar.org/f/a/weblog/rss/1"
 	"http://funcall.blogspot.com/feeds/posts/default"
@@ -159,11 +155,16 @@
 	"http://wingolog.org/feed/atom"
 	"https://scottaaronson.blog/?feed=rss2"
 	"https://aliquote.org/index.xml"))
-(evil-define-key 'normal elfeed-show-mode-map (kbd "TAB") 'dired-open-external)
+(defun elfeed-update-view ()
+  (interactive)
+  (elfeed-update)
+  (elfeed))
+(evil-global-set-key 'normal (kbd "SPC f") #'elfeed-update-view)
+(evil-define-key 'normal elfeed-show-mode-map (kbd "TAB") #'dired-open-external)
 
 ;; Eww
-(evil-global-set-key 'normal (kbd "SPC e o") 'eww)
-(evil-define-key 'normal eww-mode-map (kbd "g y") 'eww-copy-page-url)
+(evil-global-set-key 'normal (kbd "SPC e o") #'eww)
+(evil-define-key 'normal eww-mode-map (kbd "g y") #'eww-copy-page-url)
 (evil-define-key 'normal eww-mode-map (kbd "SPC") nil)
 
 
@@ -186,30 +187,24 @@
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
 (add-hook 'racket-mode-hook           #'enable-paredit-mode)
 
-;; Geiser
-;; (add-hook 'scheme-mode-hook           #'geiser-mode 1)
-;; (add-hook 'emacs-lisp-mode-hook       #'geiser-mode 1)
-(evil-global-set-key 'normal (kbd "SPC s s") 'geiser)
-(evil-global-set-key 'normal (kbd "SPC s b") 'geiser-eval-buffer)
-
 ;; Racket
-(evil-global-set-key 'normal (kbd "SPC r r") 'racket-run)
+(evil-global-set-key 'normal (kbd "SPC r r") #'racket-run)
 
 ;; Rust
 (setq rust-format-on-save t)
 (add-hook 'rust-mode-hook #'prettify-symbols-mode)
 
 ;; Guix
-(evil-global-set-key 'normal (kbd "SPC g s") 'guix)
+(evil-global-set-key 'normal (kbd "SPC g s") #'guix)
 (defun guix-home-reconfigure ()
   (interactive)
   (shell-command "guix home reconfigure home.scm"))
-(evil-global-set-key 'normal (kbd "SPC g r") 'guix-home-reconfigure)
+(evil-global-set-key 'normal (kbd "SPC g r") #'guix-home-reconfigure)
 
 ;; == Tools ==
 
 ;; Vterm
-(evil-global-set-key 'normal (kbd "SPC v") 'multi-vterm)
+(evil-global-set-key 'normal (kbd "SPC v") #'multi-vterm)
 
 ;; Password store
-(evil-global-set-key 'normal (kbd "SPC k") 'pass)
+(evil-global-set-key 'normal (kbd "SPC k") #'pass)
