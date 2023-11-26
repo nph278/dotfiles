@@ -118,11 +118,6 @@
 ;; Project
 (defun project-path (name) `(,(concat "~/Projects/" name "/")))
 (setq project--list (mapcar #'project-path (cddr (directory-files "~/Projects"))))
-(defun create-project (l name)
-  (interactive "P\nsProject name: ")
-  (let ((path (project-path name)))
-    (mkdir path)
-    (project-switch-project path)))
 
 ;; Persepective
 ;; (setq persp-suppress-no-prefix-key-warning t)
