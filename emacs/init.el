@@ -100,10 +100,7 @@
 
 ;; Eww
 (evil-global-set-key 'normal (kbd "SPC e o") 'eww)
-(evil-global-set-key 'normal (kbd "SPC e h") 'eww-back-url)
-(evil-global-set-key 'normal (kbd "SPC e l") 'eww-forward-url)
-(evil-global-set-key 'normal (kbd "SPC e r") 'eww-reload)
-(evil-global-set-key 'normal (kbd "SPC e y") 'eww-copy-page-url)
+(evil-define-key 'normal eww-mode-map (kbd "g y") 'eww-copy-page-url)
 (evil-define-key 'normal eww-mode-map (kbd "SPC") nil)
 
 ;; Vterm
