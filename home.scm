@@ -58,18 +58,26 @@
 	     (ice-9 eval-string)
 	     (system base compile))
 
+;; Utilities
+
 (define (read-file filename) (call-with-input-file filename get-string-all))
+
 (define (store-path package) (with-store store (package-output store package)))
+
+(define (equals-line a)
+  (format #f "~a=~a\n" (car a) (cadr a)))
+
+;; Shared data
 
 (define shared-data (eval-string (read-file "./shared.el") #:lang 'elisp))
 
-;; Shared data
 (define (d key)
   (cdr (assoc key shared-data)))
 
+;; Bash
+
 (define shell-aliases
   '(
-
     ;; ls
     ("ls" "ls --color")
     ("l" "ls -la")
@@ -104,6 +112,7 @@
 		"set -o vi\n" ; VI mode
 		(apply string-append (map (lambda (a) (format #f "alias ~a='~a'\n" (car a) (string-replace-substring (cadr a) "'" "'\\''"))) shell-aliases))))
 
+;; Bemenu
 (define bemenu-options
   (apply string-append
 	 (map (lambda (x)
@@ -128,6 +137,8 @@
 		("scb" ,(d 'dark-bg))
 		("scf" ,(d 'dark-fg))
 		("bdr" ,(d 'dark-bg))))))
+
+;; Sway
 
 (define sway-mod "Mod4")
 
@@ -235,6 +246,8 @@ exec swayidle -w \\
 		 (apply string-append (map (lambda (a) (format #f "~a\n" (sway-option->string a))) sway-options))
 		 sway-extra-config))
 
+;; Git
+
 (define git-config "
 [user]
   email = carllegrone@protonmail.com
@@ -244,6 +257,8 @@ exec swayidle -w \\
 [http]
   sslVerify = false
 ")
+
+;; Minidlna
 
 (define minidlna-config
   (apply string-append
@@ -255,13 +270,14 @@ exec swayidle -w \\
 		("inotify" "yes")
 		("presentation_url" "http://192.168.1.5")))))
 
-(define (equals-line a)
-  (format #f "~a=~a\n" (car a) (cadr a)))
+;; Abcde
 
 (define abcde-config
   (apply string-append
 	 (map equals-line
 	      '(("OUTPUTTYPE" "flac")))))
+
+;; Mpv
 
 (define mpv-config
   (apply string-append
@@ -281,104 +297,106 @@ exec swayidle -w \\
 		("J" "add" "speed" "-0.05")
 		("K" "add" "speed" "0.05")))))
 
+;; Qutebrwoser
+
 (define qutebrowser-options
   `(("url.default_page" "about:blank")
-    ("fonts.default_family" ,(d 'font-family))
-    ("fonts.web.family.fixed" ,(d 'font-family))
-    ("colors.completion.category.bg" ,(d 'dark-bg))
-    ("colors.completion.category.fg" ,(d 'dark-fg))
-    ("colors.completion.category.border.top" ,(d 'dark-bg))
-    ("colors.completion.category.border.bottom" ,(d 'dark-bg))
-    ("colors.completion.item.selected.bg" ,(d 'accent))
-    ("colors.completion.item.selected.fg" ,(d 'light-fg))
-    ("colors.completion.item.selected.match.fg" ,(d 'light-fg))
-    ("colors.completion.item.selected.border.top" ,(d 'accent))
-    ("colors.completion.item.selected.border.bottom" ,(d 'accent))
-    ("colors.completion.match.fg" ,(d 'dark-fg))
-    ("colors.completion.even.bg" ,(d 'dark-bg))
-    ("colors.completion.odd.bg" ,(d 'dark-bg))
-    ("colors.completion.fg" ,(d 'dark-fg))
-    ("colors.completion.scrollbar.bg" ,(d 'dark-bg))
-    ("colors.completion.scrollbar.fg" ,(d 'dark-fg))
-    ("colors.contextmenu.disabled.bg" ,(d 'dark-bg))
-    ("colors.contextmenu.disabled.fg" ,(d 'red))
-    ("colors.contextmenu.menu.bg" ,(d 'dark-bg))
-    ("colors.contextmenu.menu.fg" ,(d 'dark-fg))
-    ("colors.contextmenu.selected.bg" ,(d 'accent))
-    ("colors.contextmenu.selected.fg" ,(d 'light-fg))
-    ("colors.downloads.bar.bg" ,(d 'dark-bg))
-    ("colors.downloads.error.bg" ,(d 'red))
-    ("colors.downloads.error.fg" ,(d 'light-fg))
-    ("colors.downloads.start.bg" ,(d 'dark-bg))
-    ("colors.downloads.start.fg" ,(d 'dark-fg))
-    ("colors.downloads.stop.bg" ,(d 'green))
-    ("colors.downloads.stop.fg" ,(d 'light-fg))
+    ("fonts.default_family" font-family)
+    ("fonts.web.family.fixed" font-family)
+    ("colors.completion.category.bg" dark-bg)
+    ("colors.completion.category.fg" dark-fg)
+    ("colors.completion.category.border.top" dark-bg)
+    ("colors.completion.category.border.bottom" dark-bg)
+    ("colors.completion.item.selected.bg" accent)
+    ("colors.completion.item.selected.fg" light-fg)
+    ("colors.completion.item.selected.match.fg" light-fg)
+    ("colors.completion.item.selected.border.top" accent)
+    ("colors.completion.item.selected.border.bottom" accent)
+    ("colors.completion.match.fg" dark-fg)
+    ("colors.completion.even.bg" dark-bg)
+    ("colors.completion.odd.bg" dark-bg)
+    ("colors.completion.fg" dark-fg)
+    ("colors.completion.scrollbar.bg" dark-bg)
+    ("colors.completion.scrollbar.fg" dark-fg)
+    ("colors.contextmenu.disabled.bg" dark-bg)
+    ("colors.contextmenu.disabled.fg" red)
+    ("colors.contextmenu.menu.bg" dark-bg)
+    ("colors.contextmenu.menu.fg" dark-fg)
+    ("colors.contextmenu.selected.bg" accent)
+    ("colors.contextmenu.selected.fg" light-fg)
+    ("colors.downloads.bar.bg" dark-bg)
+    ("colors.downloads.error.bg" red)
+    ("colors.downloads.error.fg" light-fg)
+    ("colors.downloads.start.bg" dark-bg)
+    ("colors.downloads.start.fg" dark-fg)
+    ("colors.downloads.stop.bg" green)
+    ("colors.downloads.stop.fg" light-fg)
     ("colors.downloads.system.bg" "hsl")
     ("colors.downloads.system.fg" "hsl")
-    ("colors.hints.bg" ,(d 'yellow))
-    ("colors.hints.fg" ,(d 'light-fg))
-    ("colors.hints.match.fg" ,(d 'light-fg))
-    ("colors.keyhint.bg" ,(d 'yellow))
-    ("colors.keyhint.fg" ,(d 'light-fg))
-    ("colors.keyhint.suffix.fg" ,(d 'light-fg))
-    ("colors.messages.error.bg" ,(d 'red))
-    ("colors.messages.error.border" ,(d 'red))
-    ("colors.messages.error.fg" ,(d 'light-fg))
-    ("colors.messages.info.bg" ,(d 'accent))
-    ("colors.messages.info.border" ,(d 'accent))
-    ("colors.messages.info.fg" ,(d 'light-fg))
-    ("colors.messages.warning.bg" ,(d 'yellow))
-    ("colors.messages.warning.border" ,(d 'yellow))
-    ("colors.messages.warning.fg" ,(d 'light-fg))
-    ("colors.prompts.bg" ,(d 'accent))
-    ("colors.prompts.border" ,(d 'accent))
-    ("colors.prompts.fg" ,(d 'light-fg))
-    ("colors.prompts.selected.fg" ,(d 'light-fg))
-    ("colors.prompts.selected.bg" ,(d 'accent))
-    ("colors.statusbar.caret.bg" ,(d 'accent))
-    ("colors.statusbar.caret.fg" ,(d 'light-fg))
-    ("colors.statusbar.caret.selection.bg" ,(d 'accent))
-    ("colors.statusbar.caret.selection.fg" ,(d 'light-fg))
-    ("colors.statusbar.command.bg" ,(d 'dark-bg))
-    ("colors.statusbar.command.fg" ,(d 'dark-fg))
-    ("colors.statusbar.command.private.bg" ,(d 'dark-bg))
-    ("colors.statusbar.command.private.fg" ,(d 'dark-fg))
-    ("colors.statusbar.insert.bg" ,(d 'dark-bg))
-    ("colors.statusbar.insert.fg" ,(d 'dark-fg))
-    ("colors.statusbar.normal.bg" ,(d 'dark-bg))
-    ("colors.statusbar.normal.fg" ,(d 'dark-fg))
-    ("colors.statusbar.passthrough.bg" ,(d 'dark-bg))
-    ("colors.statusbar.passthrough.fg" ,(d 'dark-fg))
-    ("colors.statusbar.private.bg" ,(d 'dark-bg))
-    ("colors.statusbar.private.fg" ,(d 'dark-fg))
-    ("colors.statusbar.progress.bg" ,(d 'dark-fg))
-    ("colors.statusbar.url.error.fg" ,(d 'red))
-    ("colors.statusbar.url.fg" ,(d 'dark-fg))
-    ("colors.statusbar.url.hover.fg" ,(d 'dark-fg))
-    ("colors.statusbar.url.success.http.fg" ,(d 'red))
-    ("colors.statusbar.url.success.https.fg" ,(d 'dark-fg))
-    ("colors.statusbar.url.warn.fg" ,(d 'yellow))
-    ("colors.tabs.bar.bg" ,(d 'dark-bg))
-    ("colors.tabs.even.bg" ,(d 'dark-bg))
-    ("colors.tabs.even.fg" ,(d 'dark-fg))
-    ("colors.tabs.indicator.error" ,(d 'red))
-    ("colors.tabs.indicator.start" ,(d 'accent))
-    ("colors.tabs.indicator.stop" ,(d 'accent))
+    ("colors.hints.bg" yellow)
+    ("colors.hints.fg" light-fg)
+    ("colors.hints.match.fg" light-fg)
+    ("colors.keyhint.bg" yellow)
+    ("colors.keyhint.fg" light-fg)
+    ("colors.keyhint.suffix.fg" light-fg)
+    ("colors.messages.error.bg" red)
+    ("colors.messages.error.border" red)
+    ("colors.messages.error.fg" light-fg)
+    ("colors.messages.info.bg" accent)
+    ("colors.messages.info.border" accent)
+    ("colors.messages.info.fg" light-fg)
+    ("colors.messages.warning.bg" yellow)
+    ("colors.messages.warning.border" yellow)
+    ("colors.messages.warning.fg" light-fg)
+    ("colors.prompts.bg" accent)
+    ("colors.prompts.border" accent)
+    ("colors.prompts.fg" light-fg)
+    ("colors.prompts.selected.fg" light-fg)
+    ("colors.prompts.selected.bg" accent)
+    ("colors.statusbar.caret.bg" accent)
+    ("colors.statusbar.caret.fg" light-fg)
+    ("colors.statusbar.caret.selection.bg" accent)
+    ("colors.statusbar.caret.selection.fg" light-fg)
+    ("colors.statusbar.command.bg" dark-bg)
+    ("colors.statusbar.command.fg" dark-fg)
+    ("colors.statusbar.command.private.bg" dark-bg)
+    ("colors.statusbar.command.private.fg" dark-fg)
+    ("colors.statusbar.insert.bg" dark-bg)
+    ("colors.statusbar.insert.fg" dark-fg)
+    ("colors.statusbar.normal.bg" dark-bg)
+    ("colors.statusbar.normal.fg" dark-fg)
+    ("colors.statusbar.passthrough.bg" dark-bg)
+    ("colors.statusbar.passthrough.fg" dark-fg)
+    ("colors.statusbar.private.bg" dark-bg)
+    ("colors.statusbar.private.fg" dark-fg)
+    ("colors.statusbar.progress.bg" dark-fg)
+    ("colors.statusbar.url.error.fg" red)
+    ("colors.statusbar.url.fg" dark-fg)
+    ("colors.statusbar.url.hover.fg" dark-fg)
+    ("colors.statusbar.url.success.http.fg" red)
+    ("colors.statusbar.url.success.https.fg" dark-fg)
+    ("colors.statusbar.url.warn.fg" yellow)
+    ("colors.tabs.bar.bg" dark-bg)
+    ("colors.tabs.even.bg" dark-bg)
+    ("colors.tabs.even.fg" dark-fg)
+    ("colors.tabs.indicator.error" red)
+    ("colors.tabs.indicator.start" accent)
+    ("colors.tabs.indicator.stop" accent)
     ("colors.tabs.indicator.system" "none")
-    ("colors.tabs.odd.bg" ,(d 'dark-bg))
-    ("colors.tabs.odd.fg" ,(d 'dark-fg))
-    ("colors.tabs.pinned.even.bg" ,(d 'dark-bg))
-    ("colors.tabs.pinned.even.fg" ,(d 'dark-fg))
-    ("colors.tabs.pinned.odd.bg" ,(d 'dark-bg))
-    ("colors.tabs.pinned.odd.fg" ,(d 'dark-fg))
-    ("colors.tabs.pinned.selected.even.bg" ,(d 'accent))
-    ("colors.tabs.pinned.selected.even.fg" ,(d 'light-fg))
-    ("colors.tabs.pinned.selected.odd.bg" ,(d 'accent))
-    ("colors.tabs.pinned.selected.odd.fg" ,(d 'light-fg))
-    ("colors.tabs.selected.even.bg" ,(d 'accent))
-    ("colors.tabs.selected.even.fg" ,(d 'light-fg))
-    ("colors.tabs.selected.odd.bg" ,(d 'accent))
-    ("colors.tabs.selected.odd.fg" ,(d 'light-fg))
+    ("colors.tabs.odd.bg" dark-bg)
+    ("colors.tabs.odd.fg" dark-fg)
+    ("colors.tabs.pinned.even.bg" dark-bg)
+    ("colors.tabs.pinned.even.fg" dark-fg)
+    ("colors.tabs.pinned.odd.bg" dark-bg)
+    ("colors.tabs.pinned.odd.fg" dark-fg)
+    ("colors.tabs.pinned.selected.even.bg" accent)
+    ("colors.tabs.pinned.selected.even.fg" light-fg)
+    ("colors.tabs.pinned.selected.odd.bg" accent)
+    ("colors.tabs.pinned.selected.odd.fg" light-fg)
+    ("colors.tabs.selected.even.bg" accent)
+    ("colors.tabs.selected.even.fg" light-fg)
+    ("colors.tabs.selected.odd.bg" accent)
+    ("colors.tabs.selected.odd.fg" light-fg)
     ("colors.webpage.preferred_color_scheme" "dark")
     ("content.blocking.enabled" #t)
     ("content.blocking.adblock.lists"
@@ -401,6 +419,7 @@ exec swayidle -w \\
 
 (define (expr->python e)
   (cond 
+   [(symbol? e) (d e)]
    [(string? e) (string-append "\"" e "\"")]
    [(boolean? e) (if e "True" "False")]
    [(number? e) (number->string e)]
@@ -417,9 +436,13 @@ exec swayidle -w \\
 (define web-stylesheet
   "")
 
+;; Beets
+
 (define beets-config
   "directory: ~/Music
 library: ~/.musiclibrary.db")
+
+;; Configuration
 
 (define config-files
   `( ;; mpv
@@ -455,6 +478,8 @@ library: ~/.musiclibrary.db")
 
     ;; Beets
     (".config/beets/config.yaml" ,beets-config)))
+
+;; Custom packages
 
 (define-public python-dominate
   (package
