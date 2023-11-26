@@ -543,9 +543,8 @@ template language, and to take advantage of the more powerful features of Python
              (invoke "make" "docs")))
 	 (replace 'install
            (lambda* (#:key outputs #:allow-other-keys)
-	     (let ((out (assoc-ref outputs "out")))
-               (copy-recursively "build/lib" (string-append out "/lib/password-store/extensions"))
-               (copy-recursively "share" (string-append out "/share"))))))))
+             (setenv "DESTDIR" (assoc-ref outputs "out"))
+             (invoke "make" "install"))))))
     (native-inputs
      (list python-setuptools
 	   python-dominate
