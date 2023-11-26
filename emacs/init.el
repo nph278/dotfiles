@@ -187,6 +187,9 @@
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
 (add-hook 'racket-mode-hook           #'enable-paredit-mode)
 
+;; Scheme
+(setq geiser-mode-smart-tab-p t)
+
 ;; Racket
 (evil-global-set-key 'normal (kbd "SPC r r") #'racket-run)
 
