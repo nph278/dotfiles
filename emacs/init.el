@@ -119,14 +119,6 @@
 (defun project-path (name) `(,(concat "~/Projects/" name "/")))
 (setq project--list (mapcar #'project-path (cddr (directory-files "~/Projects"))))
 
-;; Persepective
-;; (setq persp-suppress-no-prefix-key-warning t)
-;; (persp-mode)
-;; (persp-rename "code")
-;; (evil-global-set-key 'normal (kbd "SPC w o") 'persp-switch)
-;; (evil-global-set-key 'normal (kbd "SPC w d") 'persp-kill)
-;; (evil-global-set-key 'normal (kbd "SPC w r") 'persp-rename)
-
 ;; Rust
 (setq rust-format-on-save t)
 (add-hook 'rust-mode-hook #'prettify-symbols-mode)
