@@ -4,6 +4,12 @@ This configuration contains most of the software and configurations I use.
 ** Installation
 1. Make sure guix is installed.
    + Use the installer here: https://git.savannah.gnu.org/cgit/guix.git/plain/etc/guix-install.sh.
-2. ~ln -sf $(realpath channels.scm) ~~/.config/guix/channels.scm~ (Link the locked channels)
-3. ~guix pull~ (Update packages)
-4. ~guix home reconfigure home.scm~ (Activate the configuration)
+2. ~guix pull -C channels-lock.scm~ (Get the right package versions)
+3. ~guix home reconfigure home.scm~ (Activate the configuration)
+
+** Updating
+1. ~guix pull -C channels.scm~ (Get latest packages)
+2. ~guix home reconfigure home.scm~ (Upgrade)
+3. Fix everything :3
+4. ~guix describe -f channels > channels-lock.scm~ (Lock new package versions)
+5. Add+commit+push ~channels-lock.scm~.
