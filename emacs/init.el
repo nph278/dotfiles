@@ -98,6 +98,9 @@
 (global-undo-tree-mode)
 (evil-set-undo-system #'undo-tree)
 
+;; Prompts
+(setq use-short-answers t)
+
 
 ;; == Files ==
 
@@ -113,8 +116,18 @@
 (defun project-path (name) `(,(concat "~/Projects/" name "/")))
 (setq project--list (mapcar #'project-path (cddr (directory-files "~/Projects"))))
 
+;; Reverting
+(setq global-auto-revert-non-file-buffers t)
+(global-auto-revert-mode +1)
+
+;; Make scripts executable
+(add-hook 'after-save-hook #'executable-make-buffer-file-executable-if-script-p)
+
 
 ;; == Text ==
+
+;; Use spaces
+(setq-default indent-tabs-mode nil)
 
 ;; Org
 (setq org-hide-emphasis-markers t
@@ -203,6 +216,7 @@
   (interactive)
   (shell-command "guix home reconfigure home.scm"))
 (evil-global-set-key 'normal (kbd "SPC g r") #'guix-home-reconfigure)
+
 
 ;; == Tools ==
 
