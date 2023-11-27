@@ -419,7 +419,7 @@ exec swayidle -w \\
 
 (define (expr->python e)
   (cond 
-   [(symbol? e) (d e)]
+   [(symbol? e) (string-append "\"" (d e) "\"")]
    [(string? e) (string-append "\"" e "\"")]
    [(boolean? e) (if e "True" "False")]
    [(number? e) (number->string e)]
