@@ -199,6 +199,7 @@
 (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
 (add-hook 'racket-mode-hook           #'enable-paredit-mode)
+(add-hook 'geiser-repl-mode-hook      #'enable-paredit-mode)
 
 ;; Scheme
 (setq geiser-mode-smart-tab-p t)
