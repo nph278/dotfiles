@@ -167,7 +167,8 @@
 	"https://www.subanima.org/rss/"
 	"http://wingolog.org/feed/atom"
 	"https://scottaaronson.blog/?feed=rss2"
-	"https://aliquote.org/index.xml"))
+	"https://aliquote.org/index.xml"
+	"http://tromp.github.io/blog/atom.xml"))
 (defun elfeed-update-view ()
   (interactive)
   (elfeed-update)
