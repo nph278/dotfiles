@@ -168,7 +168,8 @@
 	"http://wingolog.org/feed/atom"
 	"https://scottaaronson.blog/?feed=rss2"
 	"https://aliquote.org/index.xml"
-	"http://tromp.github.io/blog/atom.xml"))
+	"http://tromp.github.io/blog/atom.xml"
+        "http://www.mnftiu.cc/feed"))
 (defun elfeed-update-view ()
   (interactive)
   (elfeed-update)
