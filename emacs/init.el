@@ -169,7 +169,8 @@
 	"https://scottaaronson.blog/?feed=rss2"
 	"https://aliquote.org/index.xml"
 	"http://tromp.github.io/blog/atom.xml"
-        "http://www.mnftiu.cc/feed"))
+        "http://www.mnftiu.cc/feed"
+        "https://www.math3ma.com/blog/rss.xml"))
 (defun elfeed-update-view ()
   (interactive)
   (elfeed-update)
