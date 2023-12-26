@@ -47,6 +47,9 @@
 	     (gnu packages haskell-xyz)
 	     (gnu packages check)
 	     (gnu packages aspell)
+	     (gnu packages gcc)
+	     (gnu packages cross-base)
+	     (gnu packages flashing-tools)
 	     (guix gexp)
 	     (guix store)
 	     (guix packages)
@@ -642,6 +645,10 @@ More manager support can easily be added.")
 	    ;; Vitrualization
 	    qemu
 
+            ;; C
+            gcc
+            (cross-gcc-toolchain "avr")
+
 	    ;; Emacs
 	    emacs
 	    emacs-evil
@@ -688,7 +695,10 @@ More manager support can easily be added.")
 	    kicad
 	    kicad-symbols
 	    kicad-footprints
-	    kicad-templates))
+	    kicad-templates
+
+            ;; AVR
+            avrdude))
  (services
   (list
    (simple-service 'configuration-files
@@ -699,3 +709,4 @@ More manager support can easily be added.")
 				  (list filename (plain-file "config-file" contents)))
 				config-files)
 			   `((".config/blank.png" ,(local-file "images/blank.png"))))))))
+
