@@ -112,10 +112,6 @@
 ;; Git gutter
 (global-git-gutter-mode +1)
 
-;; Projects
-(defun project-path (name) `(,(concat "~/Projects/" name "/")))
-(setq project--list (mapcar #'project-path (cddr (directory-files "~/Projects"))))
-
 ;; Reverting
 (setq global-auto-revert-non-file-buffers t)
 (global-auto-revert-mode +1)
