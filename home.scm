@@ -50,6 +50,7 @@
 	     (gnu packages gcc)
 	     (gnu packages cross-base)
 	     (gnu packages flashing-tools)
+	     (gnu packages rsync)
 	     (guix gexp)
 	     (guix store)
 	     (guix packages)
@@ -587,6 +588,7 @@ More manager support can easily be added.")
 	    cryptsetup
 	    xdg-utils
 	    ispell
+            rsync
 
 	    ;; Sway
 	    sway
