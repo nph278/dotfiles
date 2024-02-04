@@ -152,7 +152,7 @@ exec swayidle -w \\
     timeout 300 'swaylock -f -c 000000' \\
     timeout 600 'swaymsg \"output * dpms off\"' resume 'swaymsg \"output * dpms on\"' \\
     before-sleep 'swaylock -f -c 000000'
-exec pipewire
+exec wireplumber
 ")
 
 (define sway-font (string-append (d 'font-family) " Medium 12px"))
@@ -615,7 +615,7 @@ More manager support can easily be added.")
 	    audacity
 	    yt-dlp
 	    blender
-            pipewire
+            wireplumber
 
 	    ;; Images
 	    gimp
