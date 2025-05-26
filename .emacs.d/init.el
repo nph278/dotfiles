@@ -125,6 +125,13 @@
 (set-face-attribute 'default t :font font)
 
 ;; Minibuffer
+(setq enable-recursive-minibuffers t)
+
+;; Dired
+(setq dired-listing-switches "-ABhl --group-directories-first"
+      delete-by-moving-to-trash t
+      dired-vc-rename-file t
+      dired-create-destination-dirs 'ask)
 
 ;; Revert files that changed on disk
 (setq global-auto-revert-non-file-buffers t)
