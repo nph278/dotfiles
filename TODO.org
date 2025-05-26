@@ -78,3 +78,10 @@
 * TODO customize lightdm
 * TODO crashing :(
 * TODO ssh-agent
+* TODO should minibuffer bar be default evil behavior? (pr?)
+#+begin_src elisp
+  (defun set-cursor-to-bar ()
+    (setq cursor-type 'bar))
+  (add-hook 'minibuffer-setup-hook #'set-cursor-to-bar)
+#+end_src
+without this, minibuffer opens with cursor that looks like normal mode rather than insert.
