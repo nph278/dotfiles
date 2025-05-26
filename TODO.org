@@ -16,6 +16,8 @@
 - [ ] folding?
 - [ ] inline errors/warnings
 - [ ] debugging
+- flycheck
+- eglot
 *** languages
 - [ ] elisp
 - [ ] scheme
@@ -50,7 +52,7 @@
 ** TODO dired open files in apps
 ** TODO emacs as terminal/shell?
 - possibly eshell
-- ((multi-)v)term with evil mode disabled for terminal apps?
+- ((multi-)v)term or "EAT" with evil mode disabled for terminal apps?
 ** TODO project/projectile
 ** TODO use-package/more organized package install
 ** TODO setopt?
@@ -60,6 +62,14 @@
 ** DONE emacs buffer management
 - C-x b
 ** TODO dired move backup files along with file
+** TODO minad stack
+- [ ] vertico
+- [ ] consult
+- [ ] orderless
+- [ ] marginalia
+- [ ] corfu
+- [ ] cape
+- [ ] embark
 * DONE git+stow
 * TODO rsync
 * TODO vlc upnp/dlna
