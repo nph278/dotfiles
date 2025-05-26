@@ -150,6 +150,11 @@
   (package-install 'git-gutter-fringe))
 (global-git-gutter-mode)
 
+;; Ignore case in completion
+(setq completion-ignore-case t
+      read-file-name-completion-ignore-case t
+      read-buffer-completion-ignore-case t)
+
 ;; Theme
 (unless (package-installed-p 'kanagawa-themes)
   (package-install 'kanagawa-themes))
