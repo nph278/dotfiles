@@ -1,0 +1,10 @@
+* Dotfiles
+fedora sway atomic + arch toolbx + emacs + evil-mode
+** Install
+#+begin_src sh
+  stow -vt ~ .
+#+end_src
+Dry-run:
+#+begin_src sh
+  stow -vnt ~ .
+#+end_src

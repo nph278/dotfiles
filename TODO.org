@@ -1,0 +1,75 @@
+* Emacs
+** Elfeed
+*** TODO elfeed tagging
+- more tags
+- tag faces
+*** TODO all elfeed youtube channels
+*** TODO elfeed show software update announcements
+- fedora
+- emacs
+*** TODO supress elfeed-tube startup window
+** TODO latex
+- org-fragtog
+** TODO good programming support
+- [ ] completion
+- [ ] highlighting
+- [ ] folding?
+- [ ] inline errors/warnings
+- [ ] debugging
+*** languages
+- [ ] elisp
+- [ ] scheme
+- [ ] rust
+- [ ] lua
+- [ ] python
+- [ ] c
+- [ ] asm
+** TODO auto emacs font install?
+** TODO theme tweaks
+- org "todo"
+- org heading sizes
+- paren highlights
+** TODO relative nums?
+** TODO magit
+- git-gutter(-fringe?)
+** TODO org agenda?
+- maybe https://github.com/Somelauw/evil-org-mode/tree/master
+- from old:
+  #+begin_src elisp
+    (add-hook 'evil-org-mode-hook                     #'evil-org-settings nil 'local)
+    (add-hook 'org-mode-hook                          #'evil-org-mode)
+    (add-hook 'org-mode-hook                          #'org-fragtog-mode)
+    (evil-define-key 'normal org-mode-map (kbd "RET") #'org-open-at-point)
+  #+end_src
+** TODO emacs keepassxc/password-store?
+** TODO auto open elfeed?
+** TODO fast file navigation
+** TODO working config reloading
+** TODO lispy(ville)/paredit/smth
+** TODO dired open files in apps
+** TODO emacs as terminal/shell?
+- possibly eshell
+- ((multi-)v)term with evil mode disabled for terminal apps?
+** TODO project/projectile
+** TODO use-package/more organized package install
+** TODO setopt?
+** DONE remove delay for semantic tooltip at bottom
+** TODO org capture/roam/smth
+** TODO emacs buffer management
+* TODO git+stow
+* TODO rsync
+* TODO vlc upnp/dlna
+* TODO beets?
+* TODO abcde
+* TODO media codecs
+- https://www.reddit.com/r/Fedora/comments/shecz7/how_do_i_install_these_codecs_on_fedora/
+* TODO fix music errors
+- album art etc.
+- non-downloading songs
+* TODO install scripts?
+* TODO auto updates?
+* TODO virtualization
+- qemu?
+- virt-manager?
+* TODO customize swaylock
+* TODO customize lightdm

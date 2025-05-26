@@ -1,0 +1,7 @@
+fastfetch
+emacs
+yt-dlp
+ffmpeg
+ispell
+glibc-locales
+stow

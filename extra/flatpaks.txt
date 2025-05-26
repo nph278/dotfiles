@@ -1,0 +1,6 @@
+flatseal
+vlc
+gimp
+blender
+audacity
+keepassxc
