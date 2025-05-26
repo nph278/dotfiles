@@ -1,0 +1,7 @@
+[user]
+  email = carllegrone@protonmail.com
+  name = nph278
+[core]
+  excludesfile = ~/.global.gitignore   
+[http]
+  sslVerify = false

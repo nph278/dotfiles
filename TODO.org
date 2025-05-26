@@ -55,8 +55,9 @@
 ** TODO setopt?
 ** DONE remove delay for semantic tooltip at bottom
 ** TODO org capture/roam/smth
-** TODO emacs buffer management
-* TODO git+stow
+** DONE emacs buffer management
+- C-x b
+* DONE git+stow
 * TODO rsync
 * TODO vlc upnp/dlna
 * TODO beets?
