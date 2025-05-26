@@ -149,7 +149,6 @@
 
 ;; Org
 (setq org-startup-with-inline-images t)
-(set-face-foreground 'org-todo "#e46876") ;; not working
 
 ;; No delay for docs at bottom
 (setq eldoc-idle-delay 0)
@@ -162,7 +161,7 @@
 (unless (package-installed-p 'git-gutter-fringe)
   (package-install 'git-gutter-fringe))
 (global-git-gutter-mode)
-(set-face-foreground 'git-gutter:deleted "#e82424") ;; not working
+(set-face-foreground 'git-gutter:deleted "#e82424")
 (set-face-foreground 'git-gutter:modified "#e98a00")
 
 ;; Ignore case in completion

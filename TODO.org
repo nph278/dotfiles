@@ -26,7 +26,7 @@
 - [ ] asm
 ** TODO auto emacs font install?
 ** TODO theme tweaks
-- [ ] org "todo"
+- [X] org "todo"
 - [X] org heading sizes
 - [ ] paren highlights
 - [ ] git gutter faces
