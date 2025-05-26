@@ -29,6 +29,7 @@
 - org "todo"
 - org heading sizes
 - paren highlights
+- git gutter faces
 ** TODO relative nums?
 ** DONE magit
 - git-gutter(-fringe?)
