@@ -26,10 +26,10 @@
 - [ ] asm
 ** TODO auto emacs font install?
 ** TODO theme tweaks
-- org "todo"
-- org heading sizes
-- paren highlights
-- git gutter faces
+- [ ] org "todo"
+- [X] org heading sizes
+- [ ] paren highlights
+- [X] git gutter faces
 ** TODO relative nums?
 ** DONE magit
 - git-gutter(-fringe?)

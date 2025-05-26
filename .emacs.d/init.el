@@ -41,11 +41,6 @@
 ;; Allow all commands
 (setq disabled-command-function nil)
 
-;; Theme
-(unless (package-installed-p 'kanagawa-themes)
-  (package-install 'kanagawa-themes))
-(load-theme 'kanagawa-wave t)
-
 ;; Line numbers
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 
@@ -155,3 +150,17 @@
   (package-install 'git-gutter-fringe))
 (global-git-gutter-mode)
 
+;; Theme
+(unless (package-installed-p 'kanagawa-themes)
+  (package-install 'kanagawa-themes))
+(setq kanagawa-themes-comment-italic t
+      kanagawa-themes-keyword-italic t
+      kanagawa-themes-org-agenda-height t
+      kanagawa-themes-org-bold t
+      kanagawa-themes-org-height t
+      kanagawa-themes-org-highlight t
+      kanagawa-themes-org-priority-bold t)
+(load-theme 'kanagawa-wave t)
+(set-face-foreground 'git-gutter:deleted "#e82424")
+(set-face-foreground 'git-gutter:modified "#e98a00")
+(set-face-foreground 'org-todo "#e46876")
