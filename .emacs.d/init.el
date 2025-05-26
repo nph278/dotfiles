@@ -133,6 +133,9 @@
 
 ;; Minibuffer
 (setq enable-recursive-minibuffers t)
+(defun set-cursor-to-bar ()
+  (setq cursor-type 'bar))
+(add-hook 'minibuffer-setup-hook #'set-cursor-to-bar)
 
 ;; Dired
 (setq dired-listing-switches "-ABhl --group-directories-first"
