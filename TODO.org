@@ -76,3 +76,5 @@
 - virt-manager?
 * TODO customize swaylock
 * TODO customize lightdm
+* TODO crashing :(
+* TODO ssh-agent
