@@ -44,7 +44,7 @@
     (add-hook 'org-mode-hook                          #'org-fragtog-mode)
     (evil-define-key 'normal org-mode-map (kbd "RET") #'org-open-at-point)
   #+end_src
-** TODO emacs keepassxc/password-store?
+** DONE emacs keepassxc/password-store?
 ** TODO auto open elfeed?
 ** TODO fast file navigation
 ** TODO working config reloading

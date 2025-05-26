@@ -179,3 +179,22 @@
 (unless (package-installed-p 'keepass-mode)
   (package-install 'keepass-mode))
 (require 'keepass-mode)
+(defun my-keepass-mode-command (group command)
+  "Generate KeePass COMMAND to run, on GROUP."
+  (format "echo %s | \
+           keepassxc-cli %s %s %s 2>&1 | \
+           grep -Ev '[Insert|Enter] password to unlock %s'"
+          (shell-quote-argument keepass-mode-password)
+          command
+          keepass-mode-db
+          group
+          keepass-mode-db))
+(advice-add 'keepass-mode-command :override #'my-keepass-mode-command)
+(add-hook 'keepass-mode-hook
+          (lambda ()
+            (define-key evil-normal-state-local-map
+                        (kbd "RET") #'keepass-mode-select)
+            (define-key evil-normal-state-local-map
+                        (kbd "y") #'keepass-mode-copy-password)
+            (define-key evil-normal-state-local-map
+                        (kbd "q") #'keepass-mode-back)))
