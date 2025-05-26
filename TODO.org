@@ -30,7 +30,7 @@
 - org heading sizes
 - paren highlights
 ** TODO relative nums?
-** TODO magit
+** DONE magit
 - git-gutter(-fringe?)
 ** TODO org agenda?
 - maybe https://github.com/Somelauw/evil-org-mode/tree/master
