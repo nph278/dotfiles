@@ -59,6 +59,7 @@
 ** TODO org capture/roam/smth
 ** DONE emacs buffer management
 - C-x b
+** TODO dired move backup files along with file
 * DONE git+stow
 * TODO rsync
 * TODO vlc upnp/dlna
