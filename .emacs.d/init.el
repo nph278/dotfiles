@@ -38,6 +38,18 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 
+;; Theme
+(unless (package-installed-p 'kanagawa-themes)
+  (package-install 'kanagawa-themes))
+(setq kanagawa-themes-comment-italic t
+      kanagawa-themes-keyword-italic t
+      kanagawa-themes-org-agenda-height t
+      kanagawa-themes-org-bold t
+      kanagawa-themes-org-height t
+      kanagawa-themes-org-highlight t
+      kanagawa-themes-org-priority-bold t)
+(load-theme 'kanagawa-wave t)
+
 ;; Allow all commands
 (setq disabled-command-function nil)
 
@@ -137,6 +149,7 @@
 
 ;; Org
 (setq org-startup-with-inline-images t)
+(set-face-foreground 'org-todo "#e46876") ;; not working
 
 ;; No delay for docs at bottom
 (setq eldoc-idle-delay 0)
@@ -149,23 +162,10 @@
 (unless (package-installed-p 'git-gutter-fringe)
   (package-install 'git-gutter-fringe))
 (global-git-gutter-mode)
+(set-face-foreground 'git-gutter:deleted "#e82424") ;; not working
+(set-face-foreground 'git-gutter:modified "#e98a00")
 
 ;; Ignore case in completion
 (setq completion-ignore-case t
       read-file-name-completion-ignore-case t
       read-buffer-completion-ignore-case t)
-
-;; Theme
-(unless (package-installed-p 'kanagawa-themes)
-  (package-install 'kanagawa-themes))
-(setq kanagawa-themes-comment-italic t
-      kanagawa-themes-keyword-italic t
-      kanagawa-themes-org-agenda-height t
-      kanagawa-themes-org-bold t
-      kanagawa-themes-org-height t
-      kanagawa-themes-org-highlight t
-      kanagawa-themes-org-priority-bold t)
-(load-theme 'kanagawa-wave t)
-(set-face-foreground 'git-gutter:deleted "#e82424")
-(set-face-foreground 'git-gutter:modified "#e98a00")
-(set-face-foreground 'org-todo "#e46876")
