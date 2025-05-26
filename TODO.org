@@ -72,6 +72,8 @@
 - [ ] embark
 * DONE git+stow
 * TODO rsync
+- backup elfeed archives
+- streamline backup 2
 * TODO vlc upnp/dlna
 * TODO beets?
 * TODO abcde
