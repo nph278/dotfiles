@@ -174,3 +174,8 @@
       completion-auto-select 'second-tab
       tab-always-indent 'complete
       completion-styles '(basic initials substring))
+
+;; Keepass-mode
+(unless (package-installed-p 'keepass-mode)
+  (package-install 'keepass-mode))
+(require 'keepass-mode)

@@ -5,3 +5,4 @@ ffmpeg
 ispell
 glibc-locales
 stow
+keepassxc
