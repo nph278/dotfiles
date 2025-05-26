@@ -145,3 +145,7 @@
 
 ;; No delay for docs at bottom
 (setq eldoc-idle-delay 0)
+
+;; Magit
+(unless (package-installed-p 'magit)
+  (package-install 'magit))
