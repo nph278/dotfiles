@@ -120,7 +120,7 @@
                               :add '(video)))
 
 ;; Browser
-(if (equal (getenv "HOSTNAME") "toolbx")
+(if (string= (getenv "HOSTNAME") "toolbx")
   (setq browse-url-browser-function 'browse-url-generic
         browse-url-generic-program "flatpak-spawn"
         browse-url-generic-args '("--host" "xdg-open"))
@@ -175,7 +175,7 @@
       tab-always-indent 'complete
       completion-styles '(basic initials substring))
 
-;; Keepass-mode
+;; Keepass-mode (with hacks bc it is unmaintained)
 (unless (package-installed-p 'keepass-mode)
   (package-install 'keepass-mode))
 (require 'keepass-mode)
@@ -190,6 +190,11 @@
           group
           keepass-mode-db))
 (advice-add 'keepass-mode-command :override #'my-keepass-mode-command)
+(defun my-keepass-quit ()
+  (interactive)
+  (if (string= keepass-mode-group-path "")
+      (quit-window)
+      (keepass-mode-back)))
 (add-hook 'keepass-mode-hook
           (lambda ()
             (define-key evil-normal-state-local-map
@@ -197,4 +202,6 @@
             (define-key evil-normal-state-local-map
                         (kbd "y") #'keepass-mode-copy-password)
             (define-key evil-normal-state-local-map
-                        (kbd "q") #'keepass-mode-back)))
+                        (kbd "Y") #'keepass-mode-copy-username)
+            (define-key evil-normal-state-local-map
+                        (kbd "q") #'my-keepass-quit)))
