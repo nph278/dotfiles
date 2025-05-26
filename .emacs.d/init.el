@@ -167,7 +167,10 @@
 (set-face-foreground 'git-gutter:deleted "#e82424")
 (set-face-foreground 'git-gutter:modified "#e98a00")
 
-;; Ignore case in completion
+;; Completion
 (setq completion-ignore-case t
       read-file-name-completion-ignore-case t
-      read-buffer-completion-ignore-case t)
+      read-buffer-completion-ignore-case t
+      completion-auto-select 'second-tab
+      tab-always-indent 'complete
+      completion-styles '(basic initials substring))
