@@ -141,7 +141,8 @@
 (setq dired-listing-switches "-ABhl --group-directories-first"
       delete-by-moving-to-trash t
       dired-vc-rename-file t
-      dired-create-destination-dirs 'ask)
+      dired-create-destination-dirs 'ask
+      dired-dwim-target t)
 
 ;; Revert files that changed on disk
 (setq global-auto-revert-non-file-buffers t)
