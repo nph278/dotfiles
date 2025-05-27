@@ -13,7 +13,7 @@
 ** TODO good programming support
 - [ ] completion
 - [ ] highlighting
-- [ ] folding?
+- [ ] folding
 - [ ] inline errors/warnings
 - [ ] debugging
 - [ ] formatting
@@ -56,8 +56,7 @@
 - ((multi-)v)term or "EAT" with evil mode disabled for terminal apps?
 ** TODO project/projectile
 ** TODO use-package/more organized package install
-** TODO setopt?
-- Also: many things likely should be setq-default
+** TODO setopt or customize or setq or setq-default?
 ** DONE remove delay for semantic tooltip at bottom
 ** TODO org capture/roam/smth
 ** DONE emacs buffer management
@@ -71,6 +70,7 @@
 - [ ] corfu
 - [ ] cape
 - [ ] embark
+** TODO automatic code commenting
 * DONE git+stow
 * TODO rsync
 - backup elfeed archives
