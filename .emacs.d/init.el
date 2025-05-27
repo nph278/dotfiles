@@ -230,3 +230,6 @@
 (setq whitespace-style '(face trailing tabs)
       require-final-newline t)
 (add-hook 'prog-mode-hook #'whitespace-mode)
+
+;; Editorconfig
+(editorconfig-mode)
