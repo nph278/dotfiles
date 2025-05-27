@@ -17,6 +17,7 @@
 - [ ] inline errors/warnings
 - [ ] debugging
 - [ ] formatting
+- [ ] renaming
 - flycheck
 - eglot
 *** languages
