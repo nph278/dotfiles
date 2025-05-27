@@ -217,3 +217,10 @@
                         (kbd "Y") #'keepass-mode-copy-username)
             (define-key evil-normal-state-local-map
                         (kbd "q") #'my-keepass-quit)))
+
+;; Keybind hints
+(setq which-key-show-early-on-C-h t
+      which-key-idle-delay 0.5
+      which-key-idle-secondary-delay 0
+      which-key-allow-evil-operators t)
+(which-key-mode)
