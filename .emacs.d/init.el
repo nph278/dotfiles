@@ -95,11 +95,11 @@
   (package-install 'elfeed-tube))
 (setq elfeed-feeds
       '("http://radar.spacebar.org/f/a/weblog/rss/1"
-	"https://cp4space.hatsya.com/feed/"
-	"https://eukaryotewritesblog.com/feed/"
-	"https://www.subanima.org/rss/"
-	"http://wingolog.org/feed/atom"
-	"http://tromp.github.io/blog/atom.xml"
+        "https://cp4space.hatsya.com/feed/"
+        "https://eukaryotewritesblog.com/feed/"
+        "https://www.subanima.org/rss/"
+        "http://wingolog.org/feed/atom"
+        "http://tromp.github.io/blog/atom.xml"
         "http://www.mnftiu.cc/feed/"
         "https://www.math3ma.com/blog/rss.xml"
         "https://johncarlosbaez.wordpress.com/feed/"
