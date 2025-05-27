@@ -184,6 +184,7 @@
 (unless (package-installed-p 'keepass-mode)
   (package-install 'keepass-mode))
 (require 'keepass-mode)
+;; Fix Egrep warning
 (defun my-keepass-mode-command (group command)
   "Generate KeePass COMMAND to run, on GROUP."
   (format "echo %s | \
@@ -195,6 +196,12 @@
           group
           keepass-mode-db))
 (advice-add 'keepass-mode-command :override #'my-keepass-mode-command)
+;; Show recursive view
+;; (defun my-keepass-mode-get-entries (group)
+;;   "Get entry list for GROUP."
+;;   (nbutlast (split-string (shell-command-to-string (keepass-mode-command (keepass-mode-quote-unless-empty group) "ls -R")) "\n") 1))
+;; (advice-add 'keepass-mode-get-entries :override #'my-keepass-mode-get-entries)
+;; Quit with q
 (defun my-keepass-quit ()
   (interactive)
   (if (string= keepass-mode-group-path "")
