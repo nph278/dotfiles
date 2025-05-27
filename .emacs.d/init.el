@@ -175,6 +175,11 @@
       tab-always-indent 'complete
       completion-styles '(basic initials substring))
 
+;; Vertico
+;; (unless (package-installed-p 'vertico)
+;;   (package-install 'vertico))
+;; (vertico-mode)
+
 ;; Keepass-mode (with hacks bc it is unmaintained)
 (unless (package-installed-p 'keepass-mode)
   (package-install 'keepass-mode))

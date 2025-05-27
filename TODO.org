@@ -16,6 +16,7 @@
 - [ ] folding?
 - [ ] inline errors/warnings
 - [ ] debugging
+- [ ] formatting
 - flycheck
 - eglot
 *** languages
@@ -92,6 +93,9 @@
 * TODO crashing :(
 * TODO ssh-agent
 * TODO makefile
+- install
+- update
+- cleanup unused
 * TODO should minibuffer bar be default evil behavior? (pr?)
 #+begin_src elisp
   (defun set-cursor-to-bar ()
