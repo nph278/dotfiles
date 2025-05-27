@@ -9,8 +9,8 @@
       file-name-handler-alist nil)
 (defun reset-file-name-handler-alist ()
   (setq file-name-handler-alist
-	(append default-file-name-handler-alist
-		file-name-handler-alist))
+        (append default-file-name-handler-alist
+                file-name-handler-alist))
   (cl-delete-duplicates file-name-handler-alist :test 'equal))
 (add-hook 'after-init-hook #'reset-file-name-handler-alist)
 
@@ -27,7 +27,7 @@
 (load custom-file 'noerror)
 
 ;; Startup to scratch
-(setq inhibit-startup-screen t 
+(setq inhibit-startup-screen t
       inhibit-startup-message t
       inhibit-startup-echo-area-message t)
 
@@ -225,3 +225,8 @@
       which-key-idle-secondary-delay 0
       which-key-allow-evil-operators t)
 (which-key-mode)
+
+;; Whitespace
+(setq whitespace-style '(face trailing tabs)
+      require-final-newline t)
+(add-hook 'prog-mode-hook #'whitespace-mode)
