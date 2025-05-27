@@ -6,3 +6,4 @@ ispell
 glibc-locales
 stow
 keepassxc
+rust

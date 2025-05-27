@@ -233,3 +233,7 @@
 
 ;; Editorconfig
 (editorconfig-mode)
+
+;; Rust
+(unless (package-installed-p 'rust-mode)
+  (package-install 'rust-mode))
