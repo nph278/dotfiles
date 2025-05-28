@@ -61,7 +61,7 @@
 
 ;; Show Parens
 (setq show-paren-delay 0
-      show-paren-style 'expression) ;; Expression or parenthesis
+      show-paren-style 'parens) ;; Expression or parenthesis
 (show-paren-mode +1)
 
 ;; Evil
