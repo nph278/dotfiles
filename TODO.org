@@ -79,12 +79,21 @@
 * TODO vlc upnp/dlna
 * TODO beets?
 * TODO abcde
-* TODO media codecs
-- https://www.reddit.com/r/Fedora/comments/shecz7/how_do_i_install_these_codecs_on_fedora/
+* DONE media codecs
+#+begin_src sh
+  sudo rpm-ostree install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+  reboot
+  sudo rpm-ostree install libavcodec-freeworld
+  reboot
+#+end_src
 * TODO fix music errors
 - album art etc.
 - non-downloading songs
 * TODO install scripts?
+- layer
+  - codecs
+- toolbox
+- flatpaks
 * TODO auto updates?
 * TODO virtualization
 - qemu?
