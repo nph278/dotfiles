@@ -102,7 +102,6 @@
 * TODO customize swaylock
 * TODO customize lightdm
 * TODO crashing :(
-- MAY have been fixed by updating firmware with ~fwupdmgr`
 * TODO ssh-agent
 * TODO makefile
 - install
