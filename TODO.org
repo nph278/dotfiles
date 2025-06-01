@@ -79,7 +79,10 @@
 - streamline backup 2
 * TODO vlc upnp/dlna
 * TODO beets?
-* TODO abcde
+* TODO horrific abcde aur installation & running
+- Deps: glyr & follow aur dependency chain
+- Separate toolbox? Yaogurt etc.??
+- ~abcde -o flac -B -Q musicbrainz~
 * DONE media codecs
 #+begin_src sh
   sudo rpm-ostree install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
