@@ -80,7 +80,7 @@
 * TODO vlc upnp/dlna
 * TODO beets?
 * TODO horrific abcde aur installation & running
-- Deps: glyr & follow aur dependency chain from abcde & abcde-musicbrainz-meta
+- Deps: glyr & cdparanoia & follow aur dependency chain from abcde & abcde-musicbrainz-meta
   - Look in Downloads/aur folder
 - Separate toolbox? Yaogurt etc.??
 - ~abcde -o flac -B -Q musicbrainz~
