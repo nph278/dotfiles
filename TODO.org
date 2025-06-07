@@ -1,5 +1,6 @@
 * Emacs
 ** Elfeed
+*** TODO gnus?
 *** TODO elfeed tagging
 - more tags
 - tag faces
@@ -8,6 +9,7 @@
 - fedora
 - emacs
 *** TODO supress elfeed-tube startup window
+** TODO org mode sync with iphone
 ** TODO latex
 - org-fragtog
 ** TODO good programming support
@@ -73,6 +75,13 @@
 - [ ] cape
 - [ ] embark
 ** TODO automatic code commenting
+** TODO ido?
+** TODO icomplete?
+** TODO more completion
+- Completion on emacs wiki
+- completion for symbol names emacs docs
+** TODO treesitter
+** TODO karthinks emacs
 * DONE git+stow
 * TODO rsync
 - backup elfeed archives
