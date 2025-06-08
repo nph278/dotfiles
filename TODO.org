@@ -81,7 +81,7 @@
 - Completion on emacs wiki
 - completion for symbol names emacs docs
 ** TODO treesitter
-** TODO karthinks emacs
+** DONE karthinks emacs
 * DONE git+stow
 * TODO rsync
 - backup elfeed archives
