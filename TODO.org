@@ -75,7 +75,7 @@
 - [ ] cape
 - [ ] embark
 ** TODO automatic code commenting
-** TODO ido?
+** TODO (f)ido?
 ** TODO icomplete?
 ** TODO more completion
 - Completion on emacs wiki
