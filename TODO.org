@@ -82,6 +82,12 @@
 - completion for symbol names emacs docs
 ** TODO treesitter
 ** DONE karthinks emacs
+** TODO random emacs things [0/6]
+- [ ] https://sqrtminusone.xyz/posts/2021-10-04-emacs-i3/
+- [ ] https://karthinks.com/software/persistent-project-switching-in-emacs/
+- [ ] https://karthinks.com/software/fifteen-ways-to-use-embark/
+- [ ] https://karthinks.com/software/jumping-directories-in-eshell/
+- [ ] https://karthinks.com/software/lazy-elfeed/
 * DONE git+stow
 * TODO rsync
 - backup elfeed archives
