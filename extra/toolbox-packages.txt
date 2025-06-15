@@ -7,3 +7,4 @@ glibc-locales
 stow
 keepassxc
 rust
+guile
