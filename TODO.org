@@ -119,7 +119,7 @@
 * TODO virtualization
 - qemu?
 - virt-manager?
-* TODO customize swaylock
+* DONE customize swaylock
 * TODO customize lightdm
 * TODO crashing :(
 * TODO ssh-agent
