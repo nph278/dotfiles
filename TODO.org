@@ -9,6 +9,7 @@
 - fedora
 - emacs
 *** TODO supress elfeed-tube startup window
+** TODO emacs opens in not the home folder if sway config is reloaded
 ** TODO org mode sync with iphone
 ** TODO latex
 - org-fragtog
