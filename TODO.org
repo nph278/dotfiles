@@ -89,11 +89,12 @@ appropriate for the file(s) according to the system conventions."
 - [ ] cape
 - [ ] embark
 ** TODO automatic code commenting
-** TODO (f)ido?
-** TODO icomplete?
-** TODO more completion
+** TODO completion
 - Completion on emacs wiki
 - completion for symbol names emacs docs
+- (f)ido
+  - fido-vertical-mode
+- icomplete
 ** TODO treesitter
 ** DONE karthinks emacs
 ** TODO random emacs things [0/6]
