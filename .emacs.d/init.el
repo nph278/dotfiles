@@ -241,3 +241,14 @@
 (unless (package-installed-p 'rust-mode)
   (package-install 'rust-mode))
 (setq rust-format-on-save t)
+
+;; Commenting
+(defun comment-indent-append ()
+  (interactive)
+  (comment-indent)
+  (evil-append-line 1))
+(add-hook 'prog-mode-hook
+          (lambda ()
+            (evil-local-set-key 'normal (kbd "gcc") #'comment-line)
+            (evil-local-set-key 'normal (kbd "gcA") #'comment-indent-append)
+            (evil-local-set-key 'visual (kbd "gc") #'comment-or-uncomment-region)))
