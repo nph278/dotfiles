@@ -1,5 +1,5 @@
 fastfetch
-emacs
+emacs-wayland
 yt-dlp
 ffmpeg
 ispell
