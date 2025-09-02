@@ -119,8 +119,11 @@
           (elfeed-make-tagger :feed-url "youtube\\.com"
                               :add '(video)))
 
+;; Toolbx
+(setq in-toolbox (string= (getenv "HOSTNAME") "toolbx"))
+
 ;; Browser
-(if (string= (getenv "HOSTNAME") "toolbx")
+(if in-toolbox
   (setq browse-url-browser-function 'browse-url-generic
         browse-url-generic-program "flatpak-spawn"
         browse-url-generic-args '("--host" "xdg-open"))
