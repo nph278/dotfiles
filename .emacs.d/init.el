@@ -91,8 +91,6 @@
 ;; Elfeed
 (unless (package-installed-p 'elfeed)
   (package-install 'elfeed))
-(unless (package-installed-p 'elfeed-tube)
-  (package-install 'elfeed-tube))
 (setq elfeed-feeds
       '("http://radar.spacebar.org/f/a/weblog/rss/1"
         "https://cp4space.hatsya.com/feed/"
@@ -110,14 +108,6 @@
         "https://ionathan.ch/feed.xml"
         "https://cameroncounts.wordpress.com/feed/"
         "https://mathenchant.wordpress.com/feed/"))
-(require 'elfeed-tube)
-(elfeed-tube-setup)
-(elfeed-tube-add-feeds '("https://www.youtube.com/channel/UCEOXxzW2vU0P-0THehuIIeg" ;; CD
-                         "https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw" ;; 3b1b
-                         ))
-(add-hook 'elfeed-new-entry-hook
-          (elfeed-make-tagger :feed-url "youtube\\.com"
-                              :add '(video)))
 
 ;; Toolbx
 (setq in-toolbox (string= (getenv "HOSTNAME") "toolbx"))
