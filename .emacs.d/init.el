@@ -122,7 +122,7 @@
 ;; Toolbx
 (setq in-toolbox (string= (getenv "HOSTNAME") "toolbx"))
 
-;; Browser
+;; Open urls
 (if in-toolbox
   (setq browse-url-browser-function 'browse-url-generic
         browse-url-generic-program "flatpak-spawn"
