@@ -46,7 +46,7 @@
     (evil-define-key 'normal org-mode-map (kbd "RET") #'org-open-at-point)
   #+end_src
 ** DONE emacs keepassxc/password-store?
-** TODO auto open elfeed?
+** DONE auto open elfeed?
 ** TODO fast file navigation
 ** TODO working config reloading
 ** TODO lispy(ville)/paredit/smth
