@@ -238,3 +238,6 @@
             (evil-local-set-key 'normal (kbd "gcc") #'comment-line)
             (evil-local-set-key 'normal (kbd "gcA") #'comment-indent-append)
             (evil-local-set-key 'visual (kbd "gc") #'comment-or-uncomment-region)))
+
+;; Native compilation
+(setq native-comp-async-query-on-exit t)
