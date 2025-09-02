@@ -55,7 +55,20 @@
 ** TODO fast file navigation
 ** TODO working config reloading
 ** TODO lispy(ville)/paredit/smth
-** TODO dired open files in apps
+** TODO AFTER emacs 3.3: dired open files in apps
+use this perhaps:
+#+begin_src elisp
+;; Dired open external (from dired-aux.el)
+(defun toolbox-shell-command-do-open (files)
+  "Open each of FILES using an external program.
+This \"opens\" the file(s) using the external command that is most
+appropriate for the file(s) according to the system conventions."
+  (dolist (file files)
+    (message "flapak-spawn --host xdg-open" file)
+    (call-process "flatpak-spawn" nil 0 nil "--host" "xdg-open" file)))
+(when in-toolbox
+  (advice-add 'shell-command-do-open :override #'toolbox-shell-command-do-open))
+#+end_src
 ** TODO emacs as terminal/shell?
 - possibly eshell
 - ((multi-)v)term or "EAT" with evil mode disabled for terminal apps?
