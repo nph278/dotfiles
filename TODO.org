@@ -4,6 +4,7 @@
 *** TODO elfeed tagging
 - more tags
 - tag faces
+** TODO package-upgrade-guard
 ** TODO emacs opens in not the home folder if sway config is reloaded
 ** TODO org mode sync with iphone
 ** TODO latex
@@ -49,6 +50,7 @@
 ** DONE auto open elfeed?
 ** TODO fast file navigation
 ** TODO working config reloading
+- then, switch exec_always to exec in sway-conf/emacs
 ** TODO lispy(ville)/paredit/smth
 ** TODO AFTER emacs 3.3: dired open files in apps
 use this perhaps:
@@ -150,9 +152,11 @@ nah i'm good
 without this, minibuffer opens with cursor that looks like normal mode rather than insert.
 * TODO foot customization?
 * TODO rofi customization
+* TODO dunst customization
+* TODO gtk theme
 * TODO show software update announcements
 in elfeed or as notification?
-- fedora
+- fedora (major + minor)
 - emacs
 - arch
 - flatpak
