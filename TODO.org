@@ -88,7 +88,8 @@ appropriate for the file(s) according to the system conventions."
 - [ ] corfu
 - [ ] cape
 - [ ] embark
-** TODO automatic code commenting
+** TODO more code commenting
+gco, gcO, and gc[motion]
 ** TODO completion
 - Completion on emacs wiki
 - completion for symbol names emacs docs
