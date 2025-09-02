@@ -89,6 +89,9 @@
 - [ ] https://karthinks.com/software/fifteen-ways-to-use-embark/
 - [ ] https://karthinks.com/software/jumping-directories-in-eshell/
 - [ ] https://karthinks.com/software/lazy-elfeed/
+** TODO local emacs source tree for browsing
+- e.g. clicking the ".el" links in describe-function pages
+- /usr/share/emacs/30.1/lisp/ only contains precompiled files and compressed source code.
 * DONE git+stow
 * TODO rsync
 - backup elfeed archives
