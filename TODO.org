@@ -4,11 +4,6 @@
 *** TODO elfeed tagging
 - more tags
 - tag faces
-*** TODO all elfeed youtube channels
-*** TODO elfeed show software update announcements
-- fedora
-- emacs
-*** TODO supress elfeed-tube startup window
 ** TODO emacs opens in not the home folder if sway config is reloaded
 ** TODO org mode sync with iphone
 ** TODO latex
@@ -155,3 +150,9 @@ nah i'm good
 without this, minibuffer opens with cursor that looks like normal mode rather than insert.
 * TODO foot customization?
 * TODO rofi customization
+* TODO show software update announcements
+in elfeed or as notification?
+- fedora
+- emacs
+- arch
+- flatpak
