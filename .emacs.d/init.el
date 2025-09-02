@@ -213,14 +213,10 @@
       (keepass-mode-back)))
 (add-hook 'keepass-mode-hook
           (lambda ()
-            (define-key evil-normal-state-local-map
-                        (kbd "RET") #'keepass-mode-select)
-            (define-key evil-normal-state-local-map
-                        (kbd "y") #'keepass-mode-copy-password)
-            (define-key evil-normal-state-local-map
-                        (kbd "Y") #'keepass-mode-copy-username)
-            (define-key evil-normal-state-local-map
-                        (kbd "q") #'my-keepass-quit)))
+            (evil-local-set-key 'normal (kbd "RET") #'keepass-mode-select)
+            (evil-local-set-key 'normal (kbd "y") #'keepass-mode-copy-password)
+            (evil-local-set-key 'normal (kbd "Y") #'keepass-mode-copy-username)
+            (evil-local-set-key 'normal (kbd "q") #'my-keepass-quit)))
 
 ;; Keybind hints
 (setq which-key-show-early-on-C-h t
