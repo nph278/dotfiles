@@ -153,7 +153,7 @@ without this, minibuffer opens with cursor that looks like normal mode rather th
 * TODO foot customization?
 * TODO rofi customization
 * TODO dunst customization
-* TODO gtk theme
+* TODO gtk&qt theme
 * TODO show software update announcements
 in elfeed or as notification?
 - fedora (major + minor)
