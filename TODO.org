@@ -104,6 +104,13 @@ gco, gcO, and gc[motion]
 ** TODO local emacs source tree for browsing
 - e.g. clicking the ".el" links in describe-function pages
 - /usr/share/emacs/30.1/lisp/ only contains precompiled files and compressed source code.
+** TODO more consistant check if in container
+** TODO cleaner backup files etc.
+- [ ] create-lockfiles
+- [ ] backup-by-copying
+- [ ] folder for auto saves and backup
+** TODO buffer cleanup
+- custom-buffer-done-kill????
 * DONE git+stow
 * TODO rsync
 - backup elfeed archives
@@ -160,3 +167,5 @@ in elfeed or as notification?
 - emacs
 - arch
 - flatpak
+* TODO boot from container image??
+* TODO stow: Make sure too big directorys (e.g. .config) don't get linked
