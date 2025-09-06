@@ -1,4 +1,5 @@
 fastfetch
+hyfetch
 emacs-wayland
 yt-dlp
 ffmpeg
