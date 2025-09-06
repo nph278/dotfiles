@@ -111,6 +111,7 @@ gco, gcO, and gc[motion]
 - [ ] folder for auto saves and backup
 ** TODO buffer cleanup
 - custom-buffer-done-kill????
+** TODO recentf
 * DONE git+stow
 * TODO rsync
 - backup elfeed archives
