@@ -172,3 +172,4 @@ in elfeed or as notification?
 * TODO boot from container image??
 * TODO stow: Make sure too big directorys (e.g. .config) don't get linked
 * TODO allow pacman in toolbox without sudo
+* TODO make music metadata editing less HORIFFIC
