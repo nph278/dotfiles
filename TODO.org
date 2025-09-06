@@ -4,6 +4,8 @@
 *** TODO elfeed tagging
 - more tags
 - tag faces
+*** TODO karthinks elfeed
+https://karthinks.com/software/lazy-elfeed/
 ** TODO package-upgrade-guard
 ** DONE emacs opens in not the home folder if sway config is reloaded
 ** TODO org mode sync with iphone
@@ -68,8 +70,10 @@ appropriate for the file(s) according to the system conventions."
 #+end_src
 ** TODO emacs as terminal/shell?
 - possibly eshell
+  - https://karthinks.com/software/jumping-directories-in-eshell/
 - ((multi-)v)term or "EAT" with evil mode disabled for terminal apps?
 ** TODO project/projectile
+- https://karthinks.com/software/persistent-project-switching-in-emacs/
 ** TODO use-package/more organized package install
 ** TODO setopt or customize or setq or setq-default?
 ** DONE remove delay for semantic tooltip at bottom
@@ -85,6 +89,7 @@ appropriate for the file(s) according to the system conventions."
 - [ ] corfu
 - [ ] cape
 - [ ] embark
+  - https://karthinks.com/software/fifteen-ways-to-use-embark/
 ** TODO more code commenting
 gco, gcO, and gc[motion]
 ** TODO completion
@@ -95,12 +100,8 @@ gco, gcO, and gc[motion]
 - icomplete
 ** TODO treesitter
 ** DONE karthinks emacs
-** TODO random emacs things [0/6]
-- [ ] https://sqrtminusone.xyz/posts/2021-10-04-emacs-i3/
-- [ ] https://karthinks.com/software/persistent-project-switching-in-emacs/
-- [ ] https://karthinks.com/software/fifteen-ways-to-use-embark/
-- [ ] https://karthinks.com/software/jumping-directories-in-eshell/
-- [ ] https://karthinks.com/software/lazy-elfeed/
+** TODO emacs sway integration
+- https://sqrtminusone.xyz/posts/2021-10-04-emacs-i3/
 ** TODO local emacs source tree for browsing
 - e.g. clicking the ".el" links in describe-function pages
 - /usr/share/emacs/30.1/lisp/ only contains precompiled files and compressed source code.
