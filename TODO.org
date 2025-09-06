@@ -5,7 +5,7 @@
 - more tags
 - tag faces
 ** TODO package-upgrade-guard
-** TODO emacs opens in not the home folder if sway config is reloaded
+** DONE emacs opens in not the home folder if sway config is reloaded
 ** TODO org mode sync with iphone
 ** TODO latex
 - org-fragtog

@@ -244,3 +244,6 @@
 
 ;; Ellipsis
 (setq truncate-string-ellipsis "…")
+
+;; Start in home directory
+(setq default-directory "~/")
