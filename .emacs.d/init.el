@@ -241,3 +241,6 @@
 
 ;; Native compilation
 (setq native-comp-async-query-on-exit t)
+
+;; Ellipsis
+(setq truncate-string-ellipsis "…")
