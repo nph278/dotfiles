@@ -41,14 +41,14 @@
 ;; Theme
 (use-package kanagawa-themes
   :ensure t
+  :custom
+  (kanagawa-themes-comment-italic t)
+  (kanagawa-themes-keyword-italic t)
+  (kanagawa-themes-org-bold t)
+  (kanagawa-themes-org-height t)
+  (kanagawa-themes-org-highlight t)
+  (kanagawa-themes-org-priority-bold t)
   :config
-  (setq kanagawa-themes-comment-italic t
-        kanagawa-themes-keyword-italic t
-        kanagawa-themes-org-agenda-height t
-        kanagawa-themes-org-bold t
-        kanagawa-themes-org-height t
-        kanagawa-themes-org-highlight t
-        kanagawa-themes-org-priority-bold t)
   (load-theme 'kanagawa-wave t))
 
 ;; Allow all commands
@@ -68,10 +68,10 @@
 ;; Evil
 (use-package evil
   :ensure t
-  :init
-  (setq evil-want-keybinding nil
-        evil-want-C-u-scroll t
-        evil-want-minibuffer t)
+  :custom
+  (evil-want-keybinding nil)
+  (evil-want-C-u-scroll t)
+  (evil-want-minibuffer t)
   :config
   (evil-mode +1))
 (use-package evil-collection
@@ -97,24 +97,24 @@
 ;; Elfeed
 (use-package elfeed
   :ensure t
-  :config
-  (setq elfeed-feeds
-        '("http://radar.spacebar.org/f/a/weblog/rss/1"
-          "https://cp4space.hatsya.com/feed/"
-          "https://eukaryotewritesblog.com/feed/"
-          "https://www.subanima.org/rss/"
-          "http://wingolog.org/feed/atom"
-          "http://tromp.github.io/blog/atom.xml"
-          "http://www.mnftiu.cc/feed/"
-          "https://www.math3ma.com/blog/rss.xml"
-          "https://johncarlosbaez.wordpress.com/feed/"
-          "https://diagonalargument.com/feed/"
-          "https://qchu.wordpress.com/feed/"
-          "https://golem.ph.utexas.edu/category/atom10.xml"
-          "https://peterkagey.com/feed/"
-          "https://ionathan.ch/feed.xml"
-          "https://cameroncounts.wordpress.com/feed/"
-          "https://mathenchant.wordpress.com/feed/")))
+  :custom
+  (elfeed-feeds
+   '("http://radar.spacebar.org/f/a/weblog/rss/1"
+     "https://cp4space.hatsya.com/feed/"
+     "https://eukaryotewritesblog.com/feed/"
+     "https://www.subanima.org/rss/"
+     "http://wingolog.org/feed/atom"
+     "http://tromp.github.io/blog/atom.xml"
+     "http://www.mnftiu.cc/feed/"
+     "https://www.math3ma.com/blog/rss.xml"
+     "https://johncarlosbaez.wordpress.com/feed/"
+     "https://diagonalargument.com/feed/"
+     "https://qchu.wordpress.com/feed/"
+     "https://golem.ph.utexas.edu/category/atom10.xml"
+     "https://peterkagey.com/feed/"
+     "https://ionathan.ch/feed.xml"
+     "https://cameroncounts.wordpress.com/feed/"
+     "https://mathenchant.wordpress.com/feed/")))
 
 ;; Toolbx
 (setq in-toolbox (string= (getenv "HOSTNAME") "toolbx"))
@@ -228,7 +228,8 @@
 ;; Rust
 (use-package rust-mode
   :ensure t
-  :config (setq rust-format-on-save t))
+  :custom
+  (rust-format-on-save t))
 
 ;; Commenting
 (defun comment-indent-append ()
