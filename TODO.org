@@ -42,12 +42,14 @@ https://karthinks.com/software/lazy-elfeed/
 - [ ] c
 - [ ] asm
 ** TODO auto emacs font install?
-** TODO theme tweaks
+** DONE theme tweaks
 - [X] org "todo"
 - [X] org heading sizes
 - [X] paren highlights
 - [X] git gutter faces
-- [ ] corfu
+- [X] corfu
+** TODO use reference to kanagawa theme for extra faces
+** TODO contribute extra faces to kanagawa
 ** TODO relative nums?
 - Also good for macro repitition
 ** DONE magit
