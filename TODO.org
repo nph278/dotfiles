@@ -24,13 +24,13 @@ https://karthinks.com/software/lazy-elfeed/
 ** TODO latex
 - org-fragtog
 ** TODO good programming support
-- [ ] completion
-- [ ] highlighting
-- [ ] folding
-- [ ] inline errors/warnings
-- [ ] debugging
-- [ ] formatting
-- [ ] renaming
+- completion
+- highlighting
+- folding
+- inline errors/warnings
+- debugging
+- formatting
+- renaming
 - flycheck
 - eglot
 *** languages
