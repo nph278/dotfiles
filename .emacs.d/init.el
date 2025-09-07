@@ -85,7 +85,7 @@
   :ensure t
   :after evil
   :config
-  (global-undo-tree-mode)
+  (global-undo-tree-mode +1)
   (evil-set-undo-system #'undo-tree))
 
 ;; Prompts
@@ -165,7 +165,7 @@
 (use-package git-gutter-fringe
   :ensure t
   :config
-  (global-git-gutter-mode)
+  (global-git-gutter-mode +1)
   (set-face-foreground 'git-gutter:deleted "#e82424")
   (set-face-foreground 'git-gutter:modified "#e98a00"))
 
@@ -215,7 +215,7 @@
       which-key-idle-delay 0.5
       which-key-idle-secondary-delay 0
       which-key-allow-evil-operators t)
-(which-key-mode)
+(which-key-mode +1)
 
 ;; Whitespace
 (setq whitespace-style '(face trailing tabs)
@@ -223,7 +223,7 @@
 (add-hook 'prog-mode-hook #'whitespace-mode)
 
 ;; Editorconfig
-(editorconfig-mode)
+(editorconfig-mode +1)
 
 ;; Rust
 (use-package rust-mode
