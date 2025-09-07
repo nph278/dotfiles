@@ -42,12 +42,7 @@
 (use-package kanagawa-themes
   :ensure t
   :custom
-  (kanagawa-themes-comment-italic t)
-  (kanagawa-themes-keyword-italic t)
-  (kanagawa-themes-org-bold t)
-  (kanagawa-themes-org-height t)
   (kanagawa-themes-org-highlight t)
-  (kanagawa-themes-org-priority-bold t)
   :custom-face
   (git-gutter:added ((t (:foreground "#76946A"))))
   (git-gutter:deleted ((t (:foreground "#C34043"))))
