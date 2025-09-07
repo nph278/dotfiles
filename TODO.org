@@ -1,6 +1,6 @@
 * Emacs
 ** Elfeed
-*** TODO gnus/newsticker?
+*** DONE gnus/newsticker?
 *** TODO elfeed tagging
 - more tags
 - tag faces
