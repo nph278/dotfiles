@@ -93,22 +93,22 @@
   :ensure t
   :custom
   (elfeed-feeds
-   '("http://radar.spacebar.org/f/a/weblog/rss/1"
-     "https://cp4space.hatsya.com/feed/"
+   '(("http://radar.spacebar.org/f/a/weblog/rss/1" cs math)
+     ("https://cp4space.hatsya.com/feed/" math)
      "https://eukaryotewritesblog.com/feed/"
      "https://www.subanima.org/rss/"
-     "http://wingolog.org/feed/atom"
-     "http://tromp.github.io/blog/atom.xml"
+     ("http://wingolog.org/feed/atom" cs)
+     ("http://tromp.github.io/blog/atom.xml" cs)
      "http://www.mnftiu.cc/feed/"
-     "https://www.math3ma.com/blog/rss.xml"
-     "https://johncarlosbaez.wordpress.com/feed/"
-     "https://diagonalargument.com/feed/"
-     "https://qchu.wordpress.com/feed/"
-     "https://golem.ph.utexas.edu/category/atom10.xml"
-     "https://peterkagey.com/feed/"
+     ("https://www.math3ma.com/blog/rss.xml" math)
+     ("https://johncarlosbaez.wordpress.com/feed/" math)
+     ("https://diagonalargument.com/feed/" math)
+     ("https://qchu.wordpress.com/feed/" math)
+     ("https://golem.ph.utexas.edu/category/atom10.xml" math)
+     ("https://peterkagey.com/feed/" math)
      "https://ionathan.ch/feed.xml"
-     "https://cameroncounts.wordpress.com/feed/"
-     "https://mathenchant.wordpress.com/feed/")))
+     ("https://cameroncounts.wordpress.com/feed/" math)
+     ("https://mathenchant.wordpress.com/feed/" math))))
 
 ;; Toolbx
 (setq in-toolbox (string= (getenv "HOSTNAME") "toolbx"))
