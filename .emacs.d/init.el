@@ -250,3 +250,13 @@
   (global-corfu-mode)
   :custom
   (corfu-cycle t))
+
+;; Smartparens
+(use-package smartparens
+  :ensure t
+  :hook ((lisp-mode emacs-lisp-mode scheme-mode) . smartparens-strict-mode)
+  :config
+  (require 'smartparens-config))
+(use-package evil-smartparens
+  :ensure t
+  :hook (smartparens-enabled))
