@@ -175,7 +175,7 @@
       read-buffer-completion-ignore-case t
       completion-auto-select 'second-tab
       tab-always-indent 'complete
-      completion-styles '(basic initials substring))
+      completion-styles '(basic initials substring flex))
 
 ;; Keepass-mode (with hacks bc it is unmaintained)
 (use-package keepass-mode
