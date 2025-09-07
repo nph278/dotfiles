@@ -105,6 +105,7 @@ gco, gcO, and gc[motion]
 ** TODO local emacs source tree for browsing
 - e.g. clicking the ".el" links in describe-function pages
 - /usr/share/emacs/30.1/lisp/ only contains precompiled files and compressed source code.
+  - BUT... the compressed files can be opened. So the links are just broken.
 ** TODO more consistant check if in container
 ** TODO cleaner backup files etc.
 - [ ] create-lockfiles
