@@ -45,8 +45,9 @@ https://karthinks.com/software/lazy-elfeed/
 ** TODO theme tweaks
 - [X] org "todo"
 - [X] org heading sizes
-- [ ] paren highlights
+- [X] paren highlights
 - [ ] git gutter faces
+- [ ] corfu
 ** TODO relative nums?
 - Also good for macro repitition
 ** DONE magit
