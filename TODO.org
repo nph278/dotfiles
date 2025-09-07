@@ -67,6 +67,7 @@ https://karthinks.com/software/lazy-elfeed/
 ** DONE auto open elfeed?
 ** TODO fast file navigation
 ** TODO working config reloading
+- exec'ing init.el causes git gutter to halt on open buffer. Maybe only if theme is altered.
 - then, switch exec_always to exec in sway-conf/emacs
 ** TODO lispy(ville)/paredit/smth
 ** TODO AFTER emacs 3.3: dired open files in apps
