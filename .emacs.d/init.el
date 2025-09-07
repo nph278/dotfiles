@@ -37,9 +37,11 @@
   (git-gutter:added ((t (:foreground "#76946A"))))
   (git-gutter:deleted ((t (:foreground "#C34043"))))
   (git-gutter:modified ((t (:foreground "#DCA561"))))
-  (corfu-default ((t (:foreground "#DCD7BA" :background "#16161D"))))
-  (corfu-current ((t (:foreground "#DCD7BA" :background "#363646"))))
-  (corfu-deprecated ((t (:strikethrough))))
+  (corfu-default ((t (:background "#1A1A22")))) ;; bg-m1
+  (corfu-current ((t (:foreground nil :background "#363646")))) ;; bg-p2
+  (corfu-deprecated ((t (:inherit nil))))
+  (corfu-bar ((t (:background nil :inherit tooltip))))
+  (corfu-border ((t (:background "#1F1F28")))) ;; bg
   :config
   (load-theme 'kanagawa-wave t))
 
