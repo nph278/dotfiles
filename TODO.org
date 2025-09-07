@@ -6,6 +6,18 @@
 - tag faces
 *** TODO karthinks elfeed
 https://karthinks.com/software/lazy-elfeed/
+** completion etc.
+*** TODO read all emacs docs pages with "completion"
+*** TODO icomplete OR vertico
+- icomplete: fido
+*** TODO corfu
+*** TODO marginalia
+*** TODO consult
+*** TODO snippets
+*** TODO cape
+*** TODO embark
+*** TODO ido
+*** TODO abbrev/dabbrev/hippie-expand
 ** TODO package-upgrade-guard
 ** DONE emacs opens in not the home folder if sway config is reloaded
 ** TODO org mode sync with iphone
@@ -81,23 +93,9 @@ appropriate for the file(s) according to the system conventions."
 ** DONE emacs buffer management
 - C-x b
 ** TODO dired move backup files along with file
-** TODO minad stack
-- [ ] vertico
-- [ ] consult
-- [ ] orderless
-- [ ] marginalia
-- [ ] corfu
-- [ ] cape
-- [ ] embark
   - https://karthinks.com/software/fifteen-ways-to-use-embark/
 ** TODO more code commenting
 gco, gcO, and gc[motion]
-** TODO completion
-- Completion on emacs wiki
-- completion for symbol names emacs docs
-- (f)ido
-  - fido-vertical-mode
-- icomplete
 ** TODO treesitter
 ** DONE karthinks emacs
 ** TODO emacs sway integration
