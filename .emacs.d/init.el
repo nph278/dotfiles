@@ -48,6 +48,10 @@
   (kanagawa-themes-org-height t)
   (kanagawa-themes-org-highlight t)
   (kanagawa-themes-org-priority-bold t)
+  :custom-face
+  (git-gutter:added ((t (:foreground "#76946A"))))
+  (git-gutter:deleted ((t (:foreground "#C34043"))))
+  (git-gutter:modified ((t (:foreground "#DCA561"))))
   :config
   (load-theme 'kanagawa-wave t))
 
@@ -165,9 +169,7 @@
 (use-package git-gutter-fringe
   :ensure t
   :config
-  (global-git-gutter-mode +1)
-  (set-face-foreground 'git-gutter:deleted "#e82424")
-  (set-face-foreground 'git-gutter:modified "#e98a00"))
+  (global-git-gutter-mode +1))
 
 ;; Completion
 (setq completion-ignore-case t

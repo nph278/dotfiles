@@ -46,7 +46,7 @@ https://karthinks.com/software/lazy-elfeed/
 - [X] org "todo"
 - [X] org heading sizes
 - [X] paren highlights
-- [ ] git gutter faces
+- [X] git gutter faces
 - [ ] corfu
 ** TODO relative nums?
 - Also good for macro repitition
