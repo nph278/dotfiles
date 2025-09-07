@@ -76,12 +76,14 @@
   (evil-mode +1))
 (use-package evil-collection
   :ensure t
+  :after evil
   :config
   (evil-collection-init))
 
 ;; Undo tree
 (use-package undo-tree
   :ensure t
+  :after evil
   :config
   (global-undo-tree-mode)
   (evil-set-undo-system #'undo-tree))
