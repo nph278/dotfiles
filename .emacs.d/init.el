@@ -23,7 +23,7 @@
   (package-refresh-contents))
 
 ;; Move custom changes to other file
-(setq custom-file "~/.emacs.d/custom.el")
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file 'noerror)
 
 ;; Startup to scratch
