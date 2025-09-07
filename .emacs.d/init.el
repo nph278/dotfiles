@@ -4,16 +4,6 @@
 (setq gc-cons-threshold (* 64 1024 1024))
 (add-hook 'after-init-hook #'reset-gc-cons-threshold)
 
-;; Temporarily disable the file name handler
-(setq default-file-name-handler-alist file-name-handler-alist
-      file-name-handler-alist nil)
-(defun reset-file-name-handler-alist ()
-  (setq file-name-handler-alist
-        (append default-file-name-handler-alist
-                file-name-handler-alist))
-  (cl-delete-duplicates file-name-handler-alist :test 'equal))
-(add-hook 'after-init-hook #'reset-file-name-handler-alist)
-
 ;; Set up package.el to work with MELPA
 (require 'package)
 (add-to-list 'package-archives
