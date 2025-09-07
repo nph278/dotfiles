@@ -260,4 +260,6 @@
 (use-package corfu
   :ensure t
   :init
-  (global-corfu-mode))
+  (global-corfu-mode)
+  :custom
+  (corfu-cycle t))
