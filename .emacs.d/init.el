@@ -39,16 +39,17 @@
 (tool-bar-mode -1)
 
 ;; Theme
-(unless (package-installed-p 'kanagawa-themes)
-  (package-install 'kanagawa-themes))
-(setq kanagawa-themes-comment-italic t
-      kanagawa-themes-keyword-italic t
-      kanagawa-themes-org-agenda-height t
-      kanagawa-themes-org-bold t
-      kanagawa-themes-org-height t
-      kanagawa-themes-org-highlight t
-      kanagawa-themes-org-priority-bold t)
-(load-theme 'kanagawa-wave t)
+(use-package kanagawa-themes
+  :ensure t
+  :config
+  (setq kanagawa-themes-comment-italic t
+        kanagawa-themes-keyword-italic t
+        kanagawa-themes-org-agenda-height t
+        kanagawa-themes-org-bold t
+        kanagawa-themes-org-height t
+        kanagawa-themes-org-highlight t
+        kanagawa-themes-org-priority-bold t)
+  (load-theme 'kanagawa-wave t))
 
 ;; Allow all commands
 (setq disabled-command-function nil)
@@ -65,22 +66,25 @@
 (show-paren-mode +1)
 
 ;; Evil
-(unless (package-installed-p 'evil)
-  (package-install 'evil))
-(unless (package-installed-p 'evil-collection)
-  (package-install 'evil-collection))
-(setq evil-want-keybinding nil
-      evil-want-C-u-scroll t
-      evil-want-minibuffer t)
-(require 'evil)
-(evil-mode +1)
-(evil-collection-init)
+(use-package evil
+  :ensure t
+  :init
+  (setq evil-want-keybinding nil
+        evil-want-C-u-scroll t
+        evil-want-minibuffer t)
+  :config
+  (evil-mode +1))
+(use-package evil-collection
+  :ensure t
+  :config
+  (evil-collection-init))
 
 ;; Undo tree
-(unless (package-installed-p 'undo-tree)
-  (package-install 'undo-tree))
-(global-undo-tree-mode)
-(evil-set-undo-system #'undo-tree)
+(use-package undo-tree
+  :ensure t
+  :config
+  (global-undo-tree-mode)
+  (evil-set-undo-system #'undo-tree))
 
 ;; Prompts
 (setq use-short-answers t)
@@ -89,25 +93,26 @@
 (setq-default indent-tabs-mode nil)
 
 ;; Elfeed
-(unless (package-installed-p 'elfeed)
-  (package-install 'elfeed))
-(setq elfeed-feeds
-      '("http://radar.spacebar.org/f/a/weblog/rss/1"
-        "https://cp4space.hatsya.com/feed/"
-        "https://eukaryotewritesblog.com/feed/"
-        "https://www.subanima.org/rss/"
-        "http://wingolog.org/feed/atom"
-        "http://tromp.github.io/blog/atom.xml"
-        "http://www.mnftiu.cc/feed/"
-        "https://www.math3ma.com/blog/rss.xml"
-        "https://johncarlosbaez.wordpress.com/feed/"
-        "https://diagonalargument.com/feed/"
-        "https://qchu.wordpress.com/feed/"
-        "https://golem.ph.utexas.edu/category/atom10.xml"
-        "https://peterkagey.com/feed/"
-        "https://ionathan.ch/feed.xml"
-        "https://cameroncounts.wordpress.com/feed/"
-        "https://mathenchant.wordpress.com/feed/"))
+(use-package elfeed
+  :ensure t
+  :config
+  (setq elfeed-feeds
+        '("http://radar.spacebar.org/f/a/weblog/rss/1"
+          "https://cp4space.hatsya.com/feed/"
+          "https://eukaryotewritesblog.com/feed/"
+          "https://www.subanima.org/rss/"
+          "http://wingolog.org/feed/atom"
+          "http://tromp.github.io/blog/atom.xml"
+          "http://www.mnftiu.cc/feed/"
+          "https://www.math3ma.com/blog/rss.xml"
+          "https://johncarlosbaez.wordpress.com/feed/"
+          "https://diagonalargument.com/feed/"
+          "https://qchu.wordpress.com/feed/"
+          "https://golem.ph.utexas.edu/category/atom10.xml"
+          "https://peterkagey.com/feed/"
+          "https://ionathan.ch/feed.xml"
+          "https://cameroncounts.wordpress.com/feed/"
+          "https://mathenchant.wordpress.com/feed/")))
 
 ;; Toolbx
 (setq in-toolbox (string= (getenv "HOSTNAME") "toolbx"))
@@ -151,15 +156,16 @@
 (setq eldoc-idle-delay 0)
 
 ;; Magit
-(unless (package-installed-p 'magit)
-  (package-install 'magit))
+(use-package magit
+  :ensure t)
 
 ;; Git gutter
-(unless (package-installed-p 'git-gutter-fringe)
-  (package-install 'git-gutter-fringe))
-(global-git-gutter-mode)
-(set-face-foreground 'git-gutter:deleted "#e82424")
-(set-face-foreground 'git-gutter:modified "#e98a00")
+(use-package git-gutter-fringe
+  :ensure t
+  :config
+  (global-git-gutter-mode)
+  (set-face-foreground 'git-gutter:deleted "#e82424")
+  (set-face-foreground 'git-gutter:modified "#e98a00"))
 
 ;; Completion
 (setq completion-ignore-case t
@@ -169,15 +175,9 @@
       tab-always-indent 'complete
       completion-styles '(basic initials substring))
 
-;; Vertico
-;; (unless (package-installed-p 'vertico)
-;;   (package-install 'vertico))
-;; (vertico-mode)
-
 ;; Keepass-mode (with hacks bc it is unmaintained)
-(unless (package-installed-p 'keepass-mode)
-  (package-install 'keepass-mode))
-(require 'keepass-mode)
+(use-package keepass-mode
+  :ensure t)
 ;; Fix Egrep warning
 (defun my-keepass-mode-command (group command)
   "Generate KeePass COMMAND to run, on GROUP."
@@ -224,9 +224,9 @@
 (editorconfig-mode)
 
 ;; Rust
-(unless (package-installed-p 'rust-mode)
-  (package-install 'rust-mode))
-(setq rust-format-on-save t)
+(use-package rust-mode
+  :ensure t
+  :config (setq rust-format-on-save t))
 
 ;; Commenting
 (defun comment-indent-append ()
