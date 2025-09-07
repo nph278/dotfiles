@@ -10,7 +10,7 @@ https://karthinks.com/software/lazy-elfeed/
 *** TODO read all emacs docs pages with "completion"
 *** TODO icomplete OR vertico
 - icomplete: fido
-*** TODO corfu
+*** DONE corfu
 *** TODO marginalia
 *** TODO consult
 *** TODO snippets

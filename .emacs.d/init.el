@@ -250,3 +250,9 @@
 
 ;; Start in home directory
 (setq default-directory "~/")
+
+;; Corfu
+(use-package corfu
+  :ensure t
+  :init
+  (global-corfu-mode))
