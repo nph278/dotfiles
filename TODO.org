@@ -48,15 +48,14 @@ https://karthinks.com/software/lazy-elfeed/
 - [X] paren highlights
 - [X] git gutter faces
 - [X] corfu
-** TODO use reference to kanagawa theme for extra faces
-** TODO contribute extra faces to kanagawa
+** DONE contribute extra faces to kanagawa
 ** TODO relative nums?
 - Also good for macro repitition
 ** DONE magit
 - git-gutter(-fringe?)
 ** TODO org agenda?
 - maybe https://github.com/Somelauw/evil-org-mode/tree/master
-- from old:
+** TODO more org
   #+begin_src elisp
     (add-hook 'evil-org-mode-hook                     #'evil-org-settings nil 'local)
     (add-hook 'org-mode-hook                          #'evil-org-mode)
@@ -69,7 +68,6 @@ https://karthinks.com/software/lazy-elfeed/
 ** TODO working config reloading
 - exec'ing init.el causes git gutter to halt on open buffer. Maybe only if theme is altered.
 - then, switch exec_always to exec in sway-conf/emacs
-** TODO lispy(ville)/paredit/smth
 ** TODO AFTER emacs 3.3: dired open files in apps
 use this perhaps:
 #+begin_src elisp
