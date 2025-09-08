@@ -260,3 +260,10 @@
 (use-package evil-smartparens
   :ensure t
   :hook (smartparens-enabled))
+
+;; Package upgrade guard
+(use-package package-upgrade-guard
+  :vc (:url "https://github.com/kn66/package-upgrade-guard.el.git"
+            :rev :newest)
+  :config
+  (package-upgrade-guard-mode +1))
