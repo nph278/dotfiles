@@ -18,6 +18,8 @@ https://karthinks.com/software/lazy-elfeed/
 *** TODO embark
 *** TODO ido
 *** TODO abbrev/dabbrev/hippie-expand
+** TODO diff-mode theming
+e.g. package-upgrade-guard
 ** DONE package-upgrade-guard
 ** DONE emacs opens in not the home folder if sway config is reloaded
 ** TODO org mode sync with iphone
