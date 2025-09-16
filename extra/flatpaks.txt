@@ -3,3 +3,6 @@ vlc
 gimp
 blender
 audacity
+soundjuicer
+kicad
+libreoffice
