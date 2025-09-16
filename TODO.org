@@ -124,7 +124,7 @@ gco, gcO, and gc[motion]
 * TODO vlc upnp/dlna
 * DONE beets?
 nah i'm good
-* TODO horrific abcde aur installation & running
+* DONE horrific abcde aur installation & running
 - Deps: glyr & cdparanoia & follow aur dependency chain from abcde & abcde-musicbrainz-meta
   - Look in Downloads/aur folder
 - Separate toolbox? Yaogurt etc.??
