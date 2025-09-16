@@ -3,7 +3,6 @@ hyfetch
 emacs-wayland
 yt-dlp
 ffmpeg
-ispell
 glibc-locales
 stow
 keepassxc
