@@ -117,6 +117,8 @@ gco, gcO, and gc[motion]
 ** TODO buffer cleanup
 - custom-buffer-done-kill????
 ** TODO recentf
+** TODO maybe override execute command elisp functions
+avoid toolbox fiddling and works in flatpaks too
 * DONE git+stow
 * TODO rsync
 - backup elfeed archives
