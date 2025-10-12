@@ -142,6 +142,7 @@
 
 ;; Org
 (setq org-startup-with-inline-images t)
+(add-hook 'org-mode-hook #'toggle-truncate-lines)
 
 ;; No delay for docs at bottom
 (setq eldoc-idle-delay 0)
