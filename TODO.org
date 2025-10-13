@@ -180,3 +180,4 @@ in elfeed or as notification?
 * DONE allow pacman in toolbox without sudo
 * TODO make music metadata editing less HORIFFIC
 * TODO soundjuicer dark theme
+* TODO autoconnect ethernet laptop
