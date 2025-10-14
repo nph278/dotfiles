@@ -1,5 +1,5 @@
 flatseal
-vlc
+mpv
 gimp
 blender
 audacity

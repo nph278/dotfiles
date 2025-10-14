@@ -123,7 +123,8 @@ avoid toolbox fiddling and works in flatpaks too
 * TODO rsync
 - backup elfeed archives
 - streamline backup 2
-* TODO vlc upnp/dlna
+* DONE vlc upnp/dlna
+just use nfs+mpv
 * DONE beets?
 nah i'm good
 * DONE horrific abcde aur installation & running
@@ -180,4 +181,6 @@ in elfeed or as notification?
 * DONE allow pacman in toolbox without sudo
 * TODO make music metadata editing less HORIFFIC
 * TODO soundjuicer dark theme
-* TODO autoconnect ethernet laptop
+* DONE autoconnect ethernet laptop
+=nmcli up=
+* TODO automount nas nfs
