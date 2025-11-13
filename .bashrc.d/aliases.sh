@@ -1,6 +1,6 @@
 alias pacman='sudo pacman'
 alias dnf='sudo dnf'
-alias yt-dlp='python3 -m yt_dlp'
+alias yt-dlp='python3 -m yt_dlp --remote-components ejs:github'
 which mpv &> /dev/null || alias mpv='flatpak run io.mpv.Mpv'
 alias flac-add-numbers='for i in *.flac; do metaflac --set-tag=tracknumber="$(echo $i | cut -c 1-2)" "$i"; done'
 alias flac-add-art='metaflac *.flac --import-picture-from=$1'
