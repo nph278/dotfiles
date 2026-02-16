@@ -18,6 +18,7 @@ https://karthinks.com/software/lazy-elfeed/
 *** TODO embark
 *** TODO ido
 *** TODO abbrev/dabbrev/hippie-expand
+** TODO Buffer management
 ** TODO When Emacs 31: Package gaurd now in mainline
 ** TODO diff-mode theming
 e.g. package-upgrade-guard
