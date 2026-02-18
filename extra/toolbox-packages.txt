@@ -1,6 +1,6 @@
 fastfetch
 hyfetch
-emacs-wayland
+emacs-pgtk
 yt-dlp (install with pip)
 deno (for yt-dlp)
 ffmpeg
