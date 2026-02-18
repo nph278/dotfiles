@@ -8,3 +8,22 @@ Dry-run:
 #+begin_src sh
   stow -vnt ~ .
 #+end_src
+** Post-OS Install
+#+begin_src sh
+  sudo rpm-ostree install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+  reboot
+  sudo rpm-ostree install libavcodec-freeworld
+  reboot
+  sudo rpm-ostree update --uninstall rpmfusion-free-release --uninstall rpmfusion-nonfree-release --install rpmfusion-free-release --install rpmfusion-nonfree-release
+  reboot
+#+end_src
+** Update
+*** Minor version
+#+begin_src sh
+  rpm-ostree upgrade
+  reboot
+#+end_src
+*** Major version
+#+begin_src sh
+  rpm-ostree rebase fedora:fedora/[release number]/x86_64/sericea
+#+end_src
