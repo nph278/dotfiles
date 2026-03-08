@@ -30,6 +30,7 @@ Dry-run:
 
 ** How to do things
 *** CD Burn
+Files must be wav, pcm_s16le, 44100 Hz
 #+begin_src sh
   sudo wodim -v -eject dev='/dev/sr0' -audio -pad *.wav
 #+end_src
