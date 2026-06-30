@@ -1,12 +1,8 @@
 fastfetch
 hyfetch
 emacs-pgtk
-yt-dlp (install with pip)
-deno (for yt-dlp)
-ffmpeg
-glibc-locales
 stow
 keepassxc
-rust
-rust-analyzer
-guile
+guile3
+
+ffmpeg

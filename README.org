@@ -40,3 +40,6 @@ Files must be wav, pcm_s16le, 44100 Hz
   ibus restart
 #+end_src
 
+
+*** yt-dl
+Install deno from website and install yt-dlp from pip
